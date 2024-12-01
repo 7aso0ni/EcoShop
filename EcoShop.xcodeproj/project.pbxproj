@@ -20,6 +20,7 @@
 		570F2DE72CFB112E0025C9E3 /* EcoShopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570F2DE62CFB112E0025C9E3 /* EcoShopTests.swift */; };
 		570F2DF12CFB112E0025C9E3 /* EcoShopUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570F2DF02CFB112E0025C9E3 /* EcoShopUITests.swift */; };
 		570F2DF32CFB112E0025C9E3 /* EcoShopUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570F2DF22CFB112E0025C9E3 /* EcoShopUITestsLaunchTests.swift */; };
+		C283543D2CFC7E29006C6FC1 /* Ahmed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C283543C2CFC7E29006C6FC1 /* Ahmed.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		570F2DEC2CFB112E0025C9E3 /* EcoShopUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EcoShopUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		570F2DF02CFB112E0025C9E3 /* EcoShopUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EcoShopUITests.swift; sourceTree = "<group>"; };
 		570F2DF22CFB112E0025C9E3 /* EcoShopUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EcoShopUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C283543C2CFC7E29006C6FC1 /* Ahmed.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Ahmed.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				570F2DD82CFB112D0025C9E3 /* Assets.xcassets */,
 				570F2DDA2CFB112D0025C9E3 /* LaunchScreen.storyboard */,
 				570F2DDD2CFB112D0025C9E3 /* Info.plist */,
+				C283543C2CFC7E29006C6FC1 /* Ahmed.storyboard */,
 			);
 			path = EcoShop;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 				570F2DDC2CFB112D0025C9E3 /* LaunchScreen.storyboard in Resources */,
 				3A87630D2CFC22550025CF46 /* GoogleService-Info.plist in Resources */,
 				570F2DD92CFB112D0025C9E3 /* Assets.xcassets in Resources */,
+				C283543D2CFC7E29006C6FC1 /* Ahmed.storyboard in Resources */,
 				570F2DD72CFB112C0025C9E3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
