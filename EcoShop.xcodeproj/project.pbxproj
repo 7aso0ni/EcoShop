@@ -11,6 +11,9 @@
 		3A8763092CFC21000025CF46 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 3A8763082CFC21000025CF46 /* FirebaseFirestore */; };
 		3A87630B2CFC21000025CF46 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 3A87630A2CFC21000025CF46 /* FirebaseStorage */; };
 		3A87630D2CFC22550025CF46 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A87630C2CFC22550025CF46 /* GoogleService-Info.plist */; };
+		570CA3892CFD8E620055927E /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570CA3882CFD8E620055927E /* DashboardViewController.swift */; };
+		570CA38B2CFD8E750055927E /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 570CA38A2CFD8E750055927E /* Dashboard.storyboard */; };
+		570CA38D2CFD9B7E0055927E /* AhmedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570CA38C2CFD9B7E0055927E /* AhmedViewController.swift */; };
 		570F2DD02CFB112C0025C9E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570F2DCF2CFB112C0025C9E3 /* AppDelegate.swift */; };
 		570F2DD22CFB112C0025C9E3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570F2DD12CFB112C0025C9E3 /* SceneDelegate.swift */; };
 		570F2DD42CFB112C0025C9E3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570F2DD32CFB112C0025C9E3 /* ViewController.swift */; };
@@ -42,6 +45,9 @@
 
 /* Begin PBXFileReference section */
 		3A87630C2CFC22550025CF46 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		570CA3882CFD8E620055927E /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		570CA38A2CFD8E750055927E /* Dashboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dashboard.storyboard; sourceTree = "<group>"; };
+		570CA38C2CFD9B7E0055927E /* AhmedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AhmedViewController.swift; sourceTree = "<group>"; };
 		570F2DCC2CFB112C0025C9E3 /* EcoShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EcoShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		570F2DCF2CFB112C0025C9E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		570F2DD12CFB112C0025C9E3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +92,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		570CA3872CFD8E300055927E /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				570CA3882CFD8E620055927E /* DashboardViewController.swift */,
+				570CA38A2CFD8E750055927E /* Dashboard.storyboard */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
 		570F2DC32CFB112C0025C9E3 = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +124,7 @@
 		570F2DCE2CFB112C0025C9E3 /* EcoShop */ = {
 			isa = PBXGroup;
 			children = (
+				570CA3872CFD8E300055927E /* Dashboard */,
 				3A87630C2CFC22550025CF46 /* GoogleService-Info.plist */,
 				570F2DCF2CFB112C0025C9E3 /* AppDelegate.swift */,
 				570F2DD12CFB112C0025C9E3 /* SceneDelegate.swift */,
@@ -118,6 +134,7 @@
 				570F2DDA2CFB112D0025C9E3 /* LaunchScreen.storyboard */,
 				570F2DDD2CFB112D0025C9E3 /* Info.plist */,
 				C283543C2CFC7E29006C6FC1 /* Ahmed.storyboard */,
+				570CA38C2CFD9B7E0055927E /* AhmedViewController.swift */,
 			);
 			path = EcoShop;
 			sourceTree = "<group>";
@@ -252,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				570F2DDC2CFB112D0025C9E3 /* LaunchScreen.storyboard in Resources */,
+				570CA38B2CFD8E750055927E /* Dashboard.storyboard in Resources */,
 				3A87630D2CFC22550025CF46 /* GoogleService-Info.plist in Resources */,
 				570F2DD92CFB112D0025C9E3 /* Assets.xcassets in Resources */,
 				C283543D2CFC7E29006C6FC1 /* Ahmed.storyboard in Resources */,
@@ -281,8 +299,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				570F2DD42CFB112C0025C9E3 /* ViewController.swift in Sources */,
+				570CA38D2CFD9B7E0055927E /* AhmedViewController.swift in Sources */,
 				570F2DD02CFB112C0025C9E3 /* AppDelegate.swift in Sources */,
 				570F2DD22CFB112C0025C9E3 /* SceneDelegate.swift in Sources */,
+				570CA3892CFD8E620055927E /* DashboardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
