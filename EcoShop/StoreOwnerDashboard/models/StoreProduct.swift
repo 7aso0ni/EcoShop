@@ -36,6 +36,7 @@ struct StoreProduct: Identifiable {
    
    // Firestore document to StoreProduct
    init?(document: QueryDocumentSnapshot) {
+       print(document.data())
        guard let name = document.data()["name"] as? String,
              let imageURL = document.data()["imageURL"] as? String,
              let stockQuantity = document.data()["stockQuantity"] as? Int else {
@@ -61,6 +62,17 @@ struct StoreProduct: Identifiable {
        }
    }
    
+    static func fetchProducts(forOwnerId ownerId: String) async throws -> [StoreProduct] {
+           let db = Firestore.firestore()
+           let snapshot = try await db.collection("products")
+               .whereField("storeOwnerId", isEqualTo: ownerId)
+               .getDocuments()
+           
+           return snapshot.documents.compactMap { document in
+               return StoreProduct(document: document)
+           }
+       }
+    
    static func fetchProduct(withId id: String) async throws -> StoreProduct? {
        let db = Firestore.firestore()
        let document = try await db.collection("products").document(id).getDocument()

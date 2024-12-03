@@ -20,13 +20,13 @@ class StoreProdcutsController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         Task {
             do {
-                storeProducts = try await StoreProduct.fetchProducts()
-                
+                storeProducts = try await StoreProduct.fetchProducts(forOwnerId: "owner1")
+                let lastIndex = storeProducts.count + 2
+                print(self.storeProducts)
                 DispatchQueue.main.async{
-                    for i in 2...(self.storeProducts.count + 2) {
-                        print("\(self.storeProducts[i - 2].name)")
+                    for i in 2...lastIndex {
                         let newIndexPath = IndexPath(row: i, section: 0)
-                        self.tableView.insertRows(at: [newIndexPath], with: .automatic)
+                        self.tableView.reloadData()
                     }
                 }
             } catch {
@@ -56,8 +56,29 @@ class StoreProdcutsController: UITableViewController {
         let storeProduct = storeProducts[indexPath.row - 2]
         let cell = tableView.dequeueReusableCell(withIdentifier: "Product", for: indexPath) as! StoreProductCell
         cell.productNameLabel.text = storeProduct.name
+        cell.quantityLabel.text = "Qty: \(storeProduct.stockQuantity)"
+        cell.priceLabel.text = "Price: \(storeProduct.price ?? 10) BD"
+        setImageFromStringURL(imageURL: storeProduct.imageURL, sender: cell)
         
         return cell
+    }
+    
+    func setImageFromStringURL(imageURL: String, sender: StoreProductCell) {
+        if let url = URL(string: imageURL) {
+            URLSession.shared.dataTask(with: url) { (data, respnose, error) in
+                guard let imageData = data else { return }
+                DispatchQueue.main.async {
+                    sender.productImage.image = UIImage(data: imageData)
+                }
+            }.resume()
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if (indexPath.row == 0 || indexPath.row == 1) {
+            return UITableView.automaticDimension
+        }
+        return 165
     }
 
     /*

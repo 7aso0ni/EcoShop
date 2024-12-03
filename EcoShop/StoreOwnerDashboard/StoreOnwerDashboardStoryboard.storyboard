@@ -136,6 +136,7 @@
                                 <connections>
                                     <outlet property="priceLabel" destination="RBe-1q-Hmc" id="gVR-sa-TV8"/>
                                     <outlet property="productCardView" destination="kFl-0Q-mcZ" id="tHk-ya-8aa"/>
+                                    <outlet property="productImage" destination="18M-8f-xha" id="7qh-kE-tk8"/>
                                     <outlet property="productNameLabel" destination="kb6-re-q4g" id="xuP-sk-HmM"/>
                                     <outlet property="quantityLabel" destination="1qZ-XP-YsV" id="tn5-ey-WSZ"/>
                                 </connections>

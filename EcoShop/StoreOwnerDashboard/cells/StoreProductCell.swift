@@ -11,13 +11,15 @@ class StoreProductCell: UITableViewCell {
 
     @IBOutlet var productCardView: UIView!
     
+    @IBOutlet var productImage: UIImageView!
     @IBOutlet var priceLabel: UILabel!
     @IBOutlet var quantityLabel: UILabel!
     @IBOutlet var productNameLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        // productCardView.layer.cornerRadius = 10
+        productCardView.layer.cornerRadius = 10
     }
 
     @IBAction func editButton(_ sender: UIButton) {
