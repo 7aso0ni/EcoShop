@@ -16,10 +16,16 @@ class StoreProductCell: UITableViewCell {
     @IBOutlet var quantityLabel: UILabel!
     @IBOutlet var productNameLabel: UILabel!
     
+    @IBOutlet var editButton: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         // Initialization code
         productCardView.layer.cornerRadius = 10
+        productCardView.clipsToBounds = true
+        
+        productImage.layer.cornerRadius = 10 // Adjust radius value
+        productImage.clipsToBounds = true
     }
 
     @IBAction func editButton(_ sender: UIButton) {

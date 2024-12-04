@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3A47A47C2CFEAEDA00092B07 /* StoreProdcutsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A47A47B2CFEAEDA00092B07 /* StoreProdcutsController.swift */; };
 		3A47A47E2CFEC40600092B07 /* StoreProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A47A47D2CFEC40600092B07 /* StoreProduct.swift */; };
+		3A47A4832CFF358800092B07 /* StoreProductActionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A47A4822CFF358800092B07 /* StoreProductActionsCell.swift */; };
 		3A8763072CFC21000025CF46 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 3A8763062CFC21000025CF46 /* FirebaseAuth */; };
 		3A8763092CFC21000025CF46 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 3A8763082CFC21000025CF46 /* FirebaseFirestore */; };
 		3A87630B2CFC21000025CF46 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 3A87630A2CFC21000025CF46 /* FirebaseStorage */; };
@@ -47,6 +48,7 @@
 /* Begin PBXFileReference section */
 		3A47A47B2CFEAEDA00092B07 /* StoreProdcutsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreProdcutsController.swift; sourceTree = "<group>"; };
 		3A47A47D2CFEC40600092B07 /* StoreProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreProduct.swift; sourceTree = "<group>"; };
+		3A47A4822CFF358800092B07 /* StoreProductActionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreProductActionsCell.swift; sourceTree = "<group>"; };
 		3A87630C2CFC22550025CF46 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3A9AC6AD2CFDEADA005860A6 /* StoreProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreProductCell.swift; sourceTree = "<group>"; };
 		3AC1D8EB2CFD99FD00E3CE71 /* StoreOnwerDashboardStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StoreOnwerDashboardStoryboard.storyboard; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				3A9AC6AD2CFDEADA005860A6 /* StoreProductCell.swift */,
+				3A47A4822CFF358800092B07 /* StoreProductActionsCell.swift */,
 			);
 			path = cells;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 				3A47A47C2CFEAEDA00092B07 /* StoreProdcutsController.swift in Sources */,
 				570F2DD42CFB112C0025C9E3 /* ViewController.swift in Sources */,
 				3A9AC6AE2CFDEADA005860A6 /* StoreProductCell.swift in Sources */,
+				3A47A4832CFF358800092B07 /* StoreProductActionsCell.swift in Sources */,
 				570F2DD02CFB112C0025C9E3 /* AppDelegate.swift in Sources */,
 				570F2DD22CFB112C0025C9E3 /* SceneDelegate.swift in Sources */,
 				3A47A47E2CFEC40600092B07 /* StoreProduct.swift in Sources */,

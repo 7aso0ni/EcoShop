@@ -7,8 +7,28 @@
 
 import UIKit
 
-class StoreProdcutsController: UITableViewController {
+class StoreProdcutsController: UITableViewController, StoreProductActionsDelegate {
     var storeProducts = [StoreProduct]()
+    var searchTerm = ""
+    
+    func onSearch(sender: UITextField) {
+        let currentPosition = sender.selectedTextRange
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [weak self] in
+            self?.searchTerm = sender.text ?? ""
+            CATransaction.begin()
+            CATransaction.setCompletionBlock {
+                sender.becomeFirstResponder()
+            }
+            self?.tableView.reloadData()
+            CATransaction.commit()
+        }
+    }
+    
+    var filteredStoreProducts: [StoreProduct] {
+        get {
+            return storeProducts.filter({ searchTerm.isEmpty || $0.name.lowercased().contains(searchTerm.lowercased()) })
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,13 +41,9 @@ class StoreProdcutsController: UITableViewController {
         Task {
             do {
                 storeProducts = try await StoreProduct.fetchProducts(forOwnerId: "owner1")
-                let lastIndex = storeProducts.count + 2
-                print(self.storeProducts)
+ 
                 DispatchQueue.main.async{
-                    for i in 2...lastIndex {
-                        let newIndexPath = IndexPath(row: i, section: 0)
-                        self.tableView.reloadData()
-                    }
+                    self.tableView.reloadData()
                 }
             } catch {
                 print("Error fetching products: \(error)")
@@ -40,24 +56,29 @@ class StoreProdcutsController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 2 + storeProducts.count
+        return 2 + filteredStoreProducts.count
     }
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if indexPath.row == 0 || indexPath.row == 1 {
-            let identifier = indexPath.row == 0 ? "ProductsHeading" : "SearchAndAdd"
-            let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ProductsHeading", for: indexPath)
+            return cell
+        }
+        
+        if indexPath.row == 1 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "SearchAndAdd", for: indexPath) as! StoreProductActionsCell
+            cell.delegate = self
         
             return cell
         }
         
-        let storeProduct = storeProducts[indexPath.row - 2]
+        let storeProduct = filteredStoreProducts[indexPath.row - 2]
         let cell = tableView.dequeueReusableCell(withIdentifier: "Product", for: indexPath) as! StoreProductCell
         cell.productNameLabel.text = storeProduct.name
-        cell.quantityLabel.text = "Qty: \(storeProduct.stockQuantity)"
-        cell.priceLabel.text = "Price: \(storeProduct.price ?? 10) BD"
+        cell.quantityLabel.text = "Stock: \(storeProduct.stockQuantity)"
+        cell.priceLabel.text = "\(storeProduct.price) BD"
         setImageFromStringURL(imageURL: storeProduct.imageURL, sender: cell)
         
         return cell
@@ -74,9 +95,14 @@ class StoreProdcutsController: UITableViewController {
         }
     }
     
+    
+    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if (indexPath.row == 0 || indexPath.row == 1) {
+        if (indexPath.row == 0) {
             return UITableView.automaticDimension
+        }
+        if indexPath.row == 1 {
+            return 65
         }
         return 165
     }

@@ -14,29 +14,25 @@ struct StoreProduct: Identifiable {
    let imageURL: String
    var stockQuantity: Int
    var description: String?
-   var price: Double?
-   var category: String?
+   var price: Double
    
    // Initializer
    init(id: String = UUID().uuidString,
         name: String,
         imageURL: String,
         stockQuantity: Int,
-        description: String? = nil,
-        price: Double? = nil,
-        category: String? = nil) {
+        price: Double,
+        description: String? = nil) {
        self.id = id
        self.name = name
        self.imageURL = imageURL
        self.stockQuantity = stockQuantity
        self.description = description
        self.price = price
-       self.category = category
    }
    
    // Firestore document to StoreProduct
    init?(document: QueryDocumentSnapshot) {
-       print(document.data())
        guard let name = document.data()["name"] as? String,
              let imageURL = document.data()["imageURL"] as? String,
              let stockQuantity = document.data()["stockQuantity"] as? Int else {
@@ -48,8 +44,7 @@ struct StoreProduct: Identifiable {
        self.imageURL = imageURL
        self.stockQuantity = stockQuantity
        self.description = document.data()["description"] as? String
-       self.price = document.data()["price"] as? Double
-       self.category = document.data()["category"] as? String
+       self.price = document.data()["price"] as! Double
    }
    
    // Static methods for Firestore operations
@@ -106,8 +101,7 @@ struct StoreProduct: Identifiable {
            "imageURL": imageURL,
            "stockQuantity": stockQuantity,
            "description": description as Any,
-           "price": price as Any,
-           "category": category as Any
+           "price": price as Any
        ]
        
        try await db.collection("products").document(id).setData(productData)
