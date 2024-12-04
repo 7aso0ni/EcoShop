@@ -140,8 +140,13 @@ class AhmedViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("🔄 AhmedViewController - Preparing for segue")
         if let reviewVC = segue.destination as? ReviewViewController {
+            print("✅ AhmedViewController - Found ReviewViewController")
             reviewVC.productId = product?.id
+            print("📦 AhmedViewController - Set productId: \(String(describing: product?.id))")
+        } else {
+            print("❌ AhmedViewController - Failed to cast to ReviewViewController")
         }
     }
 }

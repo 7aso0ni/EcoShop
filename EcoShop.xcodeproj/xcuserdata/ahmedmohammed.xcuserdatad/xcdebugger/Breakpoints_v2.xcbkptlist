@@ -3,4 +3,144 @@
    uuid = "579B045D-CEAB-495E-B22A-F072D1530A0D"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0C75E680-457C-488C-B9D8-7EF468C6982F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EcoShop/ReviewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "ReviewCell"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "0C75E680-457C-488C-B9D8-7EF468C6982F - 33b6854b836ef977"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EcoShop.ReviewCell.reviewContentTextView.getter : Swift.Optional&lt;__C.UITextView&gt;"
+                  moduleName = "EcoShop"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ahmedmohammed/Desktop/EcoShop/EcoShop/ReviewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "0C75E680-457C-488C-B9D8-7EF468C6982F - 8f1dffa2e868b103"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EcoShop.ReviewCell.reviewContentTextView.setter : Swift.Optional&lt;__C.UITextView&gt;"
+                  moduleName = "EcoShop"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ahmedmohammed/Desktop/EcoShop/EcoShop/ReviewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  uuid = "0C75E680-457C-488C-B9D8-7EF468C6982F - 6a77532878439d08"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EcoShop.ReviewCell.reviewContentTextView.modify : Swift.Optional&lt;__C.UITextView&gt;"
+                  moduleName = "EcoShop"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ahmedmohammed/Desktop/EcoShop/EcoShop/ReviewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "0C75E680-457C-488C-B9D8-7EF468C6982F - f26ea0796541041b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EcoShop.ReviewCell.reviewContentTextView.modify : Swift.Optional&lt;__C.UITextView&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "EcoShop"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ahmedmohammed/Desktop/EcoShop/%3Ccompiler-generated%3E"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "0C75E680-457C-488C-B9D8-7EF468C6982F - 44d6dae9c3c92109"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EcoShop.ReviewCell.init(style: __C.UITableViewCellStyle, reuseIdentifier: Swift.Optional&lt;Swift.String&gt;) -&gt; EcoShop.ReviewCell"
+                  moduleName = "EcoShop"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ahmedmohammed/Desktop/EcoShop/EcoShop/ReviewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "120">
+               </Location>
+               <Location
+                  uuid = "0C75E680-457C-488C-B9D8-7EF468C6982F - 6936468890238cc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EcoShop.ReviewCell.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;EcoShop.ReviewCell&gt;"
+                  moduleName = "EcoShop"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ahmedmohammed/Desktop/EcoShop/EcoShop/ReviewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "96">
+               </Location>
+               <Location
+                  uuid = "0C75E680-457C-488C-B9D8-7EF468C6982F - 44d6dae9c3c92109"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EcoShop.ReviewCell.init(style: __C.UITableViewCellStyle, reuseIdentifier: Swift.Optional&lt;Swift.String&gt;) -&gt; EcoShop.ReviewCell"
+                  moduleName = "EcoShop"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ahmedmohammed/Desktop/EcoShop/EcoShop/ReviewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "124">
+               </Location>
+               <Location
+                  uuid = "0C75E680-457C-488C-B9D8-7EF468C6982F - 6936468890238cc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EcoShop.ReviewCell.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;EcoShop.ReviewCell&gt;"
+                  moduleName = "EcoShop"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ahmedmohammed/Desktop/EcoShop/EcoShop/ReviewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "100">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

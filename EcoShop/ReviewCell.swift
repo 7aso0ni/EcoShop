@@ -1,32 +1,47 @@
+//
+//  ReviewCell.swift
+//  EcoShop
+//
+//  Created by Ahmed Mohammed on 04/12/2024.
+//
+
 import UIKit
 
 class ReviewCell: UITableViewCell {
     // MARK: - Outlets
-    @IBOutlet weak var contentLabel: UILabel!
-    @IBOutlet weak var ratingLabel: UILabel!
-    @IBOutlet weak var userNameLabel: UILabel!
-    
-    // MARK: - Star Rating Outlets
-    @IBOutlet weak var star1: UIButton!
-    @IBOutlet weak var star2: UIButton!
-    @IBOutlet weak var star3: UIButton!
-    @IBOutlet weak var star4: UIButton!
-    @IBOutlet weak var star5: UIButton!
+    @IBOutlet weak var reviewContentTextView: UITextView!
+    @IBOutlet weak var reviewerNameLabel: UILabel!
+    @IBOutlet weak var ratingStarButton1: UIButton!
+    @IBOutlet weak var ratingStarButton2: UIButton!
+    @IBOutlet weak var ratingStarButton3: UIButton!
+    @IBOutlet weak var ratingStarButton4: UIButton!
+    @IBOutlet weak var ratingStarButton5: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        setupUI()
+    }
+    
+    private func setupUI() {
+        // Configure text view
+        reviewContentTextView.isEditable = false
+        reviewContentTextView.isScrollEnabled = false
+        
+        // Configure stars
+        [ratingStarButton1, ratingStarButton2, ratingStarButton3, ratingStarButton4, ratingStarButton5].forEach { star in
+            star?.isUserInteractionEnabled = false
+            star?.tintColor = .gray
+        }
     }
     
     func configure(with review: Review) {
-        contentLabel.text = review.content
-        ratingLabel.text = "Rating: \(review.rating)/5"
+        reviewContentTextView.text = review.content
+        reviewerNameLabel.text = "By: \(review.userName)"
         
-        // Update stars
-        let starButtons = [star1, star2, star3, star4, star5]
-        starButtons.enumerated().forEach { index, starButton in
-            let filled = index < review.rating
-            starButton?.tintColor = filled ? .systemYellow : .gray
+        // Update stars based on rating
+        let stars = [ratingStarButton1, ratingStarButton2, ratingStarButton3, ratingStarButton4, ratingStarButton5]
+        stars.enumerated().forEach { index, star in
+            star?.tintColor = index < review.rating ? .systemYellow : .gray
         }
     }
 }
