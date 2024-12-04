@@ -42,6 +42,9 @@
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Add Store"/>
+                                <connections>
+                                    <segue destination="tCD-SA-4Ng" kind="show" id="eF3-pu-yFS"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sayed Ali Abdulla" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tL9-Qb-KpK">
                                 <rect key="frame" x="0.0" y="194" width="430" height="54"/>
@@ -172,7 +175,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5bH-ri-v3g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2141.8604651162791" y="-262.01716738197428"/>
+            <point key="canvasLocation" x="2283" y="-270"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="UZT-D9-JfE">
@@ -244,7 +247,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Fn-xM-pot" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2141.8604651162791" y="493.77682403433482"/>
+            <point key="canvasLocation" x="2238" y="405"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="qSK-4r-mEB">
@@ -287,14 +290,36 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Add"/>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Store Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2An-ih-NDF">
+                                <rect key="frame" x="20" y="252" width="90" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="E-Mail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jd4-OH-tbl">
+                                <rect key="frame" x="20" y="376" width="49" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CR No." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YbR-Zd-1eV">
+                                <rect key="frame" x="20" y="500" width="54" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="TnS-wv-nVk"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="J6U-9O-Jet"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uyg-Cn-WQ2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2141.8604651162791" y="1170.3862660944208"/>
+            <point key="canvasLocation" x="2237" y="1172"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="2I0-Dt-9ck">
@@ -366,7 +391,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JGN-IG-UFu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2153" y="-969"/>
+            <point key="canvasLocation" x="2283" y="-975"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="FKI-5Q-Zci">
