@@ -104,6 +104,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		02D575E12D025F6A0092AB5B /* Product Details */ = {
+			isa = PBXGroup;
+			children = (
+				C283543C2CFC7E29006C6FC1 /* Ahmed.storyboard */,
+				C20A57152D00A7A60062197B /* Review.swift */,
+				C20A57132D00A7720062197B /* ReviewViewController.swift */,
+				570CA38C2CFD9B7E0055927E /* AhmedViewController.swift */,
+				C2E054812D003AB700E291CE /* Product.swift */,
+			);
+			path = "Product Details";
+			sourceTree = "<group>";
+		};
+		02D575E22D0260910092AB5B /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		02D575E32D02609A0092AB5B /* Admin */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Admin;
+			sourceTree = "<group>";
+		};
+		02D575E42D0260A70092AB5B /* Shop */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Shop;
+			sourceTree = "<group>";
+		};
 		570CA3872CFD8E300055927E /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +170,10 @@
 		570F2DCE2CFB112C0025C9E3 /* EcoShop */ = {
 			isa = PBXGroup;
 			children = (
+				02D575E42D0260A70092AB5B /* Shop */,
+				02D575E32D02609A0092AB5B /* Admin */,
+				02D575E22D0260910092AB5B /* Home */,
+				02D575E12D025F6A0092AB5B /* Product Details */,
 				570CA3872CFD8E300055927E /* Dashboard */,
 				3A87630C2CFC22550025CF46 /* GoogleService-Info.plist */,
 				570F2DCF2CFB112C0025C9E3 /* AppDelegate.swift */,
@@ -146,13 +183,8 @@
 				570F2DD82CFB112D0025C9E3 /* Assets.xcassets */,
 				570F2DDA2CFB112D0025C9E3 /* LaunchScreen.storyboard */,
 				570F2DDD2CFB112D0025C9E3 /* Info.plist */,
-				C283543C2CFC7E29006C6FC1 /* Ahmed.storyboard */,
 				C20A57192D00D1B90062197B /* ReviewCell.swift */,
 				C20A57172D00A8850062197B /* FirebaseManager.swift */,
-				C20A57152D00A7A60062197B /* Review.swift */,
-				C20A57132D00A7720062197B /* ReviewViewController.swift */,
-				570CA38C2CFD9B7E0055927E /* AhmedViewController.swift */,
-				C2E054812D003AB700E291CE /* Product.swift */,
 			);
 			path = EcoShop;
 			sourceTree = "<group>";

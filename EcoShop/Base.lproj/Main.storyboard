@@ -37,12 +37,12 @@
         <!--Ahmed-->
         <scene sceneID="CHN-SQ-lhQ">
             <objects>
-                <viewControllerPlaceholder storyboardName="Ahmed" id="ttl-fW-T9E" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="Dashboard" storyboardName="Ahmed" id="ttl-fW-T9E" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="Ahu-15-Q6P"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hXi-hL-F8c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="576" y="-280"/>
+            <point key="canvasLocation" x="36" y="-351"/>
         </scene>
     </scenes>
     <resources>
