@@ -12,7 +12,6 @@ class StoreProdcutsController: UITableViewController, StoreProductActionsDelegat
     var searchTerm = ""
     
     func onSearch(sender: UITextField) {
-        let currentPosition = sender.selectedTextRange
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [weak self] in
             self?.searchTerm = sender.text ?? ""
             CATransaction.begin()
@@ -105,6 +104,16 @@ class StoreProdcutsController: UITableViewController, StoreProductActionsDelegat
             return 65
         }
         return 165
+    }
+    
+    @IBAction func unwindToStoreProducts(segue: UIStoryboardSegue) {
+        let sourceViewController = segue.source as! StoreProductDetailTableViewController
+        
+        if let storeProduct = sourceViewController.storeProduct {
+            let newIndexPath = IndexPath(row: storeProducts.count, section: 0)
+            storeProducts.insert(storeProduct, at: 0)
+            tableView.reloadData()
+        }
     }
 
     /*

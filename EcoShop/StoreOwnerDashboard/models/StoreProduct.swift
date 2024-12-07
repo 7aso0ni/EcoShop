@@ -13,8 +13,9 @@ struct StoreProduct: Identifiable {
    let name: String
    let imageURL: String
    var stockQuantity: Int
-   var description: String?
+   var description: String
    var price: Double
+   var metrics: [[String: Any]]
    
    // Initializer
    init(id: String = UUID().uuidString,
@@ -22,13 +23,24 @@ struct StoreProduct: Identifiable {
         imageURL: String,
         stockQuantity: Int,
         price: Double,
-        description: String? = nil) {
+        description: String,
+        co2Saved: Int,
+        waterConserved: Int,
+        plasticReduced: Int,
+        enerygySaved: Int
+   ) {
        self.id = id
        self.name = name
        self.imageURL = imageURL
        self.stockQuantity = stockQuantity
        self.description = description
        self.price = price
+       self.metrics = [
+        ["name": "CO2 Emissions Saved", "value": co2Saved, "unit": "kg"],
+        ["name": "Water Conserved", "value": waterConserved, "unit": "liters"],
+        ["name": "Plastic Waste Reduced", "value": plasticReduced, "unit": "kg"],
+        ["name": "Energy Saved", "value": enerygySaved, "unit": "kWh"]
+       ]
    }
    
    // Firestore document to StoreProduct
@@ -43,8 +55,9 @@ struct StoreProduct: Identifiable {
        self.name = name
        self.imageURL = imageURL
        self.stockQuantity = stockQuantity
-       self.description = document.data()["description"] as? String
+       self.description = document.data()["description"] as! String
        self.price = document.data()["price"] as! Double
+       self.metrics = document.data()["metrics"] as! [[String: Any]]
    }
    
    // Static methods for Firestore operations
@@ -101,7 +114,8 @@ struct StoreProduct: Identifiable {
            "imageURL": imageURL,
            "stockQuantity": stockQuantity,
            "description": description as Any,
-           "price": price as Any
+           "price": price as Any,
+           "metrics": metrics as Any
        ]
        
        try await db.collection("products").document(id).setData(productData)
