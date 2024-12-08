@@ -1,53 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="neP-Na-GQt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AC0-mY-tsu">
     <device id="retina6_72" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="ZCf-BO-z25">
-            <objects>
-                <viewController id="neP-Na-GQt" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="PJE-to-UeN">
-                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3tC-GH-IKG">
-                                <rect key="frame" x="140" y="317" width="75" height="104"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                <connections>
-                                    <segue destination="ttl-fW-T9E" kind="showDetail" id="ADK-nR-tuG"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="mqI-Gd-l08"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0Ic-UN-MyQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-944.27480916030527" y="-165.49295774647888"/>
-        </scene>
-        <!--Ahmed-->
+        <!--Dashboard-waw-->
         <scene sceneID="CHN-SQ-lhQ">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="Dashboard" storyboardName="Ahmed" id="ttl-fW-T9E" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="Dashboard" storyboardName="Dashboard" referencedIdentifier="Dashboard-waw" id="ttl-fW-T9E" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="mD9-fx-IND"/>
                     <navigationItem key="navigationItem" id="Ahu-15-Q6P"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hXi-hL-F8c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="36" y="-351"/>
+            <point key="canvasLocation" x="-482" y="-476"/>
+        </scene>
+        <!--Ahmed-->
+        <scene sceneID="eSz-7z-ULe">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Ahmed" id="Umm-FW-iTZ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="Lra-kG-Quz"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rl3-y7-HMT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-443" y="-211"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="5mI-4K-cWh">
+            <objects>
+                <tabBarController id="AC0-mY-tsu" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="J2a-MV-wNx">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="ttl-fW-T9E" kind="relationship" relationship="viewControllers" id="NPC-CG-Mzq"/>
+                        <segue destination="Umm-FW-iTZ" kind="relationship" relationship="viewControllers" id="IHv-AF-WYQ"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ucg-i3-4Zo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1654" y="-313"/>
         </scene>
     </scenes>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>
