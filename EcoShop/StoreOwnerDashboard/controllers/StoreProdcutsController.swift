@@ -110,12 +110,45 @@ class StoreProdcutsController: UITableViewController, StoreProductActionsDelegat
         let sourceViewController = segue.source as! StoreProductDetailTableViewController
         
         if let storeProduct = sourceViewController.storeProduct {
-            let newIndexPath = IndexPath(row: storeProducts.count, section: 0)
-            storeProducts.insert(storeProduct, at: 0)
-            tableView.reloadData()
+            Task {
+                do {
+                    try await storeProduct.saveProduct()
+                    
+                    DispatchQueue.main.async {
+                        if let indexStoreProductIndex = self.storeProducts.firstIndex(where: { $0.id == storeProduct.id }) {
+                            self.storeProducts[indexStoreProductIndex] = storeProduct
+                            if let indexFilteredStoreProductIndex = self.filteredStoreProducts.firstIndex(where: { $0.id == storeProduct.id }) {
+                                self.tableView.reloadRows(at: [IndexPath(row: indexFilteredStoreProductIndex + 2, section: 0)], with: .automatic)
+                            }
+                        } else {
+                            self.storeProducts.insert(storeProduct, at: 0)
+                            self.tableView.reloadData()
+                        }
+                    }
+                } catch {
+                    print("Error saving product: \(error)")
+                }
+            }
         }
     }
 
+    @IBSegueAction func editStoreProduct(_ coder: NSCoder, sender: Any?) -> StoreProductDetailTableViewController? {
+        let detailController = StoreProductDetailTableViewController(coder: coder)
+        
+        guard let button = sender as? UIButton else {
+            return detailController
+        }
+        
+        guard button.titleLabel?.text == "EDIT" else {
+            return detailController
+        }
+        
+        if let indexPath = tableView.indexPath(for: button.superview?.superview?.superview as! UITableViewCell) {
+            detailController?.storeProduct = filteredStoreProducts[indexPath.row - 2]
+        }
+        
+        return detailController
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

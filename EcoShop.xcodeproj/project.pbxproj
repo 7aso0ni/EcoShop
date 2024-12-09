@@ -17,6 +17,7 @@
 		3A9AC6AE2CFDEADA005860A6 /* StoreProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9AC6AD2CFDEADA005860A6 /* StoreProductCell.swift */; };
 		3A9D7CDD2D02D4D400702663 /* StoreProductDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9D7CDC2D02D4D400702663 /* StoreProductDetailTableViewController.swift */; };
 		3AC1D8EC2CFD99FD00E3CE71 /* StoreOnwerDashboardStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AC1D8EB2CFD99FD00E3CE71 /* StoreOnwerDashboardStoryboard.storyboard */; };
+		3AFAD53F2D06ACBE000C7EB7 /* StoreOrdersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFAD53E2D06ACBE000C7EB7 /* StoreOrdersTableViewController.swift */; };
 		570F2DD02CFB112C0025C9E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570F2DCF2CFB112C0025C9E3 /* AppDelegate.swift */; };
 		570F2DD22CFB112C0025C9E3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570F2DD12CFB112C0025C9E3 /* SceneDelegate.swift */; };
 		570F2DD42CFB112C0025C9E3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570F2DD32CFB112C0025C9E3 /* ViewController.swift */; };
@@ -54,6 +55,7 @@
 		3A9AC6AD2CFDEADA005860A6 /* StoreProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreProductCell.swift; sourceTree = "<group>"; };
 		3A9D7CDC2D02D4D400702663 /* StoreProductDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreProductDetailTableViewController.swift; sourceTree = "<group>"; };
 		3AC1D8EB2CFD99FD00E3CE71 /* StoreOnwerDashboardStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StoreOnwerDashboardStoryboard.storyboard; sourceTree = "<group>"; };
+		3AFAD53E2D06ACBE000C7EB7 /* StoreOrdersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreOrdersTableViewController.swift; sourceTree = "<group>"; };
 		570F2DCC2CFB112C0025C9E3 /* EcoShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EcoShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		570F2DCF2CFB112C0025C9E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		570F2DD12CFB112C0025C9E3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 			children = (
 				3A47A47B2CFEAEDA00092B07 /* StoreProdcutsController.swift */,
 				3A9D7CDC2D02D4D400702663 /* StoreProductDetailTableViewController.swift */,
+				3AFAD53E2D06ACBE000C7EB7 /* StoreOrdersTableViewController.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AFAD53F2D06ACBE000C7EB7 /* StoreOrdersTableViewController.swift in Sources */,
 				3A47A47C2CFEAEDA00092B07 /* StoreProdcutsController.swift in Sources */,
 				570F2DD42CFB112C0025C9E3 /* ViewController.swift in Sources */,
 				3A9AC6AE2CFDEADA005860A6 /* StoreProductCell.swift in Sources */,

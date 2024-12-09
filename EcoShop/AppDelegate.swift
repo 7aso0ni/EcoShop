@@ -11,11 +11,15 @@ import FirebaseCore
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
+        
+        let secondaryOptions = FirebaseOptions(googleAppID: "1:409841563321:ios:5b70bff9e95eb6d1830d68", gcmSenderID: "409841563321")
+        secondaryOptions.apiKey = "AIzaSyAlMSFBfBgRSFLrrVa0HL4PSXxHoF2objI"
+        secondaryOptions.storageBucket = "tesla-clone-a0f5d.appspot.com"
+        FirebaseApp.configure(name: "secondary", options: secondaryOptions)
+        
         return true
     }
 
