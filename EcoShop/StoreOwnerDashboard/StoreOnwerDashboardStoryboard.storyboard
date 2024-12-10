@@ -172,17 +172,17 @@
         <!--Orders-->
         <scene sceneID="PSe-P2-Wzv">
             <objects>
-                <tableViewController id="v9Z-ak-z35" customClass="StoreOrdersTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="200-l0-Vs9">
+                <tableViewController id="v9Z-ak-z35" customClass="StoreOrdersTableViewController" customModule="EcoShop" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="200-l0-Vs9">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="OrdersHeading" id="gRy-ai-Dp2">
-                                <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                <rect key="frame" x="0.0" y="50" width="393" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gRy-ai-Dp2" id="wAI-un-OG4">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="STORE ORDERS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qSl-R0-cyD">
@@ -195,15 +195,15 @@
                                     </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Order" rowHeight="561" id="doo-X2-h5D">
-                                <rect key="frame" x="0.0" y="93.666667938232422" width="393" height="561"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Order" rowHeight="476" id="doo-X2-h5D" customClass="OrderedViewCell" customModule="EcoShop" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="94" width="393" height="476"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="doo-X2-h5D" id="dhk-hj-6Vo">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="561"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="476"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tff-fw-Fnt">
-                                            <rect key="frame" x="20" y="25" width="353" height="486"/>
+                                            <rect key="frame" x="20" y="25" width="353" height="426"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Order ID: 534AD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ziI-5F-bZs">
@@ -224,7 +224,7 @@
                                                     <rect key="frame" x="19" y="96" width="211" height="43"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain" imagePlacement="trailing" title="DISPATCHED" imagePadding="8" titleAlignment="leading">
+                                                    <buttonConfiguration key="configuration" style="plain" imagePlacement="trailing" title="Status" imagePadding="8" titleAlignment="leading">
                                                         <imageReference key="image" image="chevron.down" catalog="system" symbolScale="medium"/>
                                                         <backgroundConfiguration key="background" cornerRadius="9">
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -234,34 +234,29 @@
                                                         <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </buttonConfiguration>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date: 12/12/2024" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zig-Lh-JFT">
-                                                    <rect key="frame" x="194" y="28" width="133" height="20"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date: 12/12/2024" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zig-Lh-JFT">
+                                                    <rect key="frame" x="174" y="28" width="153" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="btD-8q-ddb">
-                                                    <rect key="frame" x="0.0" y="157" width="353" height="1"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </view>
-                                                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="NLi-kZ-kkR">
-                                                    <rect key="frame" x="0.0" y="166" width="353" height="253"/>
+                                                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="NLi-kZ-kkR" customClass="OrderedProductsTableView" customModule="EcoShop" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="153" width="353" height="198"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" red="0.66666666669999997" green="0.74901960779999999" blue="0.58823529409999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <color key="sectionIndexBackgroundColor" red="0.66666666669999997" green="0.74901960779999999" blue="0.58823529409999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <color key="sectionIndexTrackingBackgroundColor" red="0.66666666669999997" green="0.74901960779999999" blue="0.58823529409999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <prototypes>
-                                                        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="200" id="bqD-5v-mVd">
-                                                            <rect key="frame" x="0.0" y="50" width="353" height="200"/>
+                                                        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="OrderedProduct" rowHeight="157" id="bqD-5v-mVd" customClass="OrderedProductViewCell" customModule="EcoShop" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="50" width="353" height="157"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bqD-5v-mVd" id="pMv-p4-bdE">
-                                                                <rect key="frame" x="0.0" y="0.0" width="353" height="200"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="353" height="157"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3g0-TQ-5dB">
-                                                                        <rect key="frame" x="16" y="22" width="321" height="131"/>
+                                                                        <rect key="frame" x="16" y="15" width="321" height="131"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="swiftpm_step3.png" translatesAutoresizingMaskIntoConstraints="NO" id="7NZ-Yi-R6t">
@@ -270,7 +265,7 @@
                                                                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                                                             </imageView>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Qty: 20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9rN-fP-fOD">
-                                                                                <rect key="frame" x="154" y="71" width="146" height="21"/>
+                                                                                <rect key="frame" x="154" y="71" width="76" height="21"/>
                                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                                                                 <nil key="textColor"/>
@@ -297,23 +292,35 @@
                                                                 <color key="backgroundColor" red="0.66666666669999997" green="0.74901960779999999" blue="0.58823529409999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </tableViewCellContentView>
                                                             <color key="backgroundColor" red="0.66666666669999997" green="0.74901960779999999" blue="0.58823529409999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <connections>
+                                                                <outlet property="OrderedProductView" destination="3g0-TQ-5dB" id="diT-CR-fdS"/>
+                                                                <outlet property="productImageView" destination="7NZ-Yi-R6t" id="Ha7-Ac-R68"/>
+                                                                <outlet property="productNameLabel" destination="190-W5-UWy" id="san-M8-xbc"/>
+                                                                <outlet property="productPriceLabel" destination="l7R-xp-1ii" id="1gp-cf-hyp"/>
+                                                                <outlet property="productQuantityLabel" destination="9rN-fP-fOD" id="H7e-uF-t8U"/>
+                                                            </connections>
                                                         </tableViewCell>
                                                     </prototypes>
                                                 </tableView>
                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K89-fU-j7c">
-                                                    <rect key="frame" x="0.0" y="418" width="353" height="1"/>
+                                                    <rect key="frame" x="0.0" y="350" width="353" height="1"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TOTAL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H2z-rk-EWd">
-                                                    <rect key="frame" x="19" y="435" width="89" height="36"/>
+                                                    <rect key="frame" x="19" y="371" width="89" height="36"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="260 BD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mhv-B1-OS1">
-                                                    <rect key="frame" x="224" y="435" width="103" height="36"/>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ALs-qH-HlQ">
+                                                    <rect key="frame" x="0.0" y="153" width="353" height="1"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="260 BD" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ekm-AQ-fw5">
+                                                    <rect key="frame" x="151" y="371" width="184" height="36"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
                                                     <nil key="textColor"/>
@@ -324,6 +331,14 @@
                                         </view>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="orderDateLabel" destination="Zig-Lh-JFT" id="pqb-xB-dgR"/>
+                                    <outlet property="orderIdLabel" destination="ziI-5F-bZs" id="FGv-FG-7l3"/>
+                                    <outlet property="orderStatusButton" destination="j5M-un-88W" id="Nsx-pT-94e"/>
+                                    <outlet property="orderTotalPriceLabel" destination="ekm-AQ-fw5" id="7F2-ka-jkv"/>
+                                    <outlet property="orderView" destination="Tff-fw-Fnt" id="QKA-ze-f09"/>
+                                    <outlet property="orderedProductsTable" destination="NLi-kZ-kkR" id="m8h-Cv-emy"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -331,7 +346,7 @@
                             <outlet property="delegate" destination="v9Z-ak-z35" id="zY4-1v-RBI"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Orders" image="cube.box" catalog="system" selectedImage="cube.box" id="fj2-oZ-hZm"/>
+                    <tabBarItem key="tabBarItem" title="Orders" image="cube" catalog="system" id="fj2-oZ-hZm"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uuv-rB-gui" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -748,7 +763,7 @@
     <resources>
         <image name="benchmark-1.png" width="568" height="292"/>
         <image name="chevron.down" catalog="system" width="128" height="70"/>
-        <image name="cube.box" catalog="system" width="128" height="123"/>
+        <image name="cube" catalog="system" width="128" height="123"/>
         <image name="minus.circle.fill" catalog="system" width="128" height="123"/>
         <image name="photo" catalog="system" width="128" height="93"/>
         <image name="plus" catalog="system" width="128" height="113"/>

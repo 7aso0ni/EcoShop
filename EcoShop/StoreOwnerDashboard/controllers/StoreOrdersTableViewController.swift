@@ -7,31 +7,85 @@
 
 import UIKit
 
-class StoreOrdersTableViewController: UITableViewController {
+class StoreOrdersTableViewController: UITableViewController, OrderedViewCellDelegate {
+    var orders: [Order] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        Task {
+            do {
+                orders = try await Order.fetchOrders(forOwner: "owner1")
+                DispatchQueue.main.async{
+                    self.tableView.reloadData()
+                }
+            } catch {
+                print("Error fetching orders: \(error)")
+            }
+        }
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source
     
+    func onStatusChanged(sender: OrderedViewCell, status: Order.OrderStatus) {
+        if let indexPath = tableView.indexPath(for: sender) {
+            sender.orderStatusButton.isEnabled.toggle()
+            Task {
+                do {
+                    let order = orders[indexPath.row - 1]
+                    try await Order.updateOrderStatus(orderId: order.id, newStatus: status)
+                } catch {
+                    print("Error updating status of order: \(error)")
+                }
+                DispatchQueue.main.async{
+                    sender.orderStatusButton.isEnabled.toggle()
+                }
+            }
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 2
+        return 1 + orders.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let identifier = indexPath.row == 0 ? "OrdersHeading" : "Order"
-        let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
+        
+        guard indexPath.row > 0 else {
+            return tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
+        }
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! OrderedViewCell
+        let order = orders[indexPath.row - 1]
+        
+        cell.orderIdLabel.text = "Order ID: \(String(order.id.prefix(5).uppercased()))"
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy"
+        let formattedDate = "Date: \(formatter.string(from: order.dateOrdered))"
 
-        // Configure the cell...
+        cell.orderDateLabel.text = formattedDate
+        
+        cell.orderStatusButton.titleLabel?.text = order.status.rawValue
+        cell.orderTotalPriceLabel.text = "\(order.totalPrice) BD"
+        
+        cell.delegate = self
+        
+        Task {
+            do {
+                let orderedProducts = try await order.fetchOrderProducts()
 
+                DispatchQueue.main.async{
+                    cell.orderedProductsTable.orderedProducts = orderedProducts
+                    cell.orderedProductsTable.reloadData()
+                }
+            } catch {
+                print("Error fetching ordered products: \(error)")
+            }
+        }
+ 
         return cell
     }
     
@@ -40,7 +94,7 @@ class StoreOrdersTableViewController: UITableViewController {
             return UITableView.automaticDimension
         }
         
-        return 561
+        return 460
     }
 
     /*

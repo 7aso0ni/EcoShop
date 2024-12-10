@@ -45,6 +45,25 @@ struct StoreProduct: Identifiable {
         ["name": "Energy Saved", "value": enerygySaved, "unit": "kWh"]
        ]
    }
+    
+    init(id: String = UUID().uuidString,
+         storeOwnerId: String,
+         name: String,
+         imageURL: String,
+         stockQuantity: Int,
+         price: Double,
+         description: String,
+         metrics: [[String: Any]]
+    ) {
+        self.id = id
+        self.name = name
+        self.imageURL = imageURL
+        self.stockQuantity = stockQuantity
+        self.description = description
+        self.price = price
+        self.storeOwnerId = storeOwnerId
+        self.metrics = metrics
+    }
    
    // Firestore document to StoreProduct
    init?(document: QueryDocumentSnapshot) {

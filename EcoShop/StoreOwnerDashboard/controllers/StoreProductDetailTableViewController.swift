@@ -139,7 +139,6 @@ class StoreProductDetailTableViewController: UITableViewController, UIImagePicke
             storeProduct?.setMetricValue(name: "CO2 Emissions Saved", newValue: co2Saved)
             storeProduct?.setMetricValue(name: "Energy Saved", newValue: energySaved)
             
-            print(storeProduct?.stockQuantity)
         } else {
             storeProduct = StoreProduct(storeOwnerId: "owner1", name: name, imageURL: imageURL.absoluteString, stockQuantity: stock, price: price, description: description, co2Saved: co2Saved, waterConserved: waterConserved, plasticReduced: plasticReduced, enerygySaved: energySaved)
         }
