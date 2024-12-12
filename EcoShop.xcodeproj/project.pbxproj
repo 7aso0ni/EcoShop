@@ -8,7 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		021BC2BD2D05CF0E00C2E1C6 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021BC2BC2D05CF0E00C2E1C6 /* DashboardViewController.swift */; };
-		02D575E82D05C84A0092AB5B /* AddProductToDashboardForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D575E72D05C84A0092AB5B /* AddProductToDashboardForm.swift */; };
+		0275FAA72D0AE70100123695 /* OrderHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0275FAA62D0AE70100123695 /* OrderHistory.swift */; };
+		02B2FE1E2D07013C0088703F /* DashboardNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B2FE1D2D07013C0088703F /* DashboardNavigation.swift */; };
+		02B2FE202D0704CA0088703F /* AddProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B2FE1F2D0704CA0088703F /* AddProductViewController.swift */; };
 		3A8763072CFC21000025CF46 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 3A8763062CFC21000025CF46 /* FirebaseAuth */; };
 		3A8763092CFC21000025CF46 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 3A8763082CFC21000025CF46 /* FirebaseFirestore */; };
 		3A87630B2CFC21000025CF46 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 3A87630A2CFC21000025CF46 /* FirebaseStorage */; };
@@ -52,7 +54,9 @@
 
 /* Begin PBXFileReference section */
 		021BC2BC2D05CF0E00C2E1C6 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
-		02D575E72D05C84A0092AB5B /* AddProductToDashboardForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductToDashboardForm.swift; sourceTree = "<group>"; };
+		0275FAA62D0AE70100123695 /* OrderHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistory.swift; sourceTree = "<group>"; };
+		02B2FE1D2D07013C0088703F /* DashboardNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardNavigation.swift; sourceTree = "<group>"; };
+		02B2FE1F2D0704CA0088703F /* AddProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductViewController.swift; sourceTree = "<group>"; };
 		3A87630C2CFC22550025CF46 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		570CA38A2CFD8E750055927E /* Dashboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dashboard.storyboard; sourceTree = "<group>"; };
 		570CA38C2CFD9B7E0055927E /* AhmedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AhmedViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +117,7 @@
 				C20A57152D00A7A60062197B /* Review.swift */,
 				C20A57132D00A7720062197B /* ReviewViewController.swift */,
 				570CA38C2CFD9B7E0055927E /* AhmedViewController.swift */,
+				C20A57192D00D1B90062197B /* ReviewCell.swift */,
 				C2E054812D003AB700E291CE /* Product.swift */,
 			);
 			path = "Product Details";
@@ -143,8 +148,10 @@
 			isa = PBXGroup;
 			children = (
 				570CA38A2CFD8E750055927E /* Dashboard.storyboard */,
-				02D575E72D05C84A0092AB5B /* AddProductToDashboardForm.swift */,
 				021BC2BC2D05CF0E00C2E1C6 /* DashboardViewController.swift */,
+				02B2FE1D2D07013C0088703F /* DashboardNavigation.swift */,
+				02B2FE1F2D0704CA0088703F /* AddProductViewController.swift */,
+				0275FAA62D0AE70100123695 /* OrderHistory.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -186,7 +193,6 @@
 				570F2DD82CFB112D0025C9E3 /* Assets.xcassets */,
 				570F2DDA2CFB112D0025C9E3 /* LaunchScreen.storyboard */,
 				570F2DDD2CFB112D0025C9E3 /* Info.plist */,
-				C20A57192D00D1B90062197B /* ReviewCell.swift */,
 				C20A57172D00A8850062197B /* FirebaseManager.swift */,
 			);
 			path = EcoShop;
@@ -353,16 +359,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				570F2DD42CFB112C0025C9E3 /* ViewController.swift in Sources */,
+				0275FAA72D0AE70100123695 /* OrderHistory.swift in Sources */,
 				C20A571A2D00D1B90062197B /* ReviewCell.swift in Sources */,
 				570CA38D2CFD9B7E0055927E /* AhmedViewController.swift in Sources */,
 				C20A57182D00A8850062197B /* FirebaseManager.swift in Sources */,
 				C20A57162D00A7A60062197B /* Review.swift in Sources */,
-				02D575E82D05C84A0092AB5B /* AddProductToDashboardForm.swift in Sources */,
 				570F2DD02CFB112C0025C9E3 /* AppDelegate.swift in Sources */,
 				570F2DD22CFB112C0025C9E3 /* SceneDelegate.swift in Sources */,
+				02B2FE1E2D07013C0088703F /* DashboardNavigation.swift in Sources */,
 				021BC2BD2D05CF0E00C2E1C6 /* DashboardViewController.swift in Sources */,
 				C2E054822D003AB700E291CE /* Product.swift in Sources */,
 				C20A57142D00A7720062197B /* ReviewViewController.swift in Sources */,
+				02B2FE202D0704CA0088703F /* AddProductViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
