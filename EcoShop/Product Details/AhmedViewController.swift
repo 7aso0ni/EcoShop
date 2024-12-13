@@ -25,6 +25,7 @@ class AhmedViewController: UIViewController {
     @IBOutlet weak var star5: UIButton!
     
     // MARK: - Properties
+    var productId: String?
     private var product: Product?
     private var selectedQuantity: Int = 1
     
@@ -32,6 +33,12 @@ class AhmedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        
+        // Set a default product ID for testing if none is provided
+        if productId == nil {
+            productId = "02a3c9b2-6c12-40d5-8d4c-218a8ddd5d27"
+        }
+        
         fetchProductDetails()
     }
     
@@ -49,56 +56,113 @@ class AhmedViewController: UIViewController {
         quantityStepper.addTarget(self, action: #selector(stepperValueChanged), for: .valueChanged)
     }
     
+    private func setupStarRatingView() {
+        // Create a horizontal stack view for stars
+        let starStackView = UIStackView()
+        starStackView.axis = .horizontal
+        starStackView.distribution = .fillEqually
+        starStackView.spacing = 8
+        starStackView.translatesAutoresizingMaskIntoConstraints = false
+        
+        // Add existing star buttons to the stack view
+        [star1, star2, star3, star4, star5].forEach { button in
+            if let button = button {
+                starStackView.addArrangedSubview(button)
+                
+                // Configure each star button
+                button.translatesAutoresizingMaskIntoConstraints = false
+                NSLayoutConstraint.activate([
+                    button.widthAnchor.constraint(equalToConstant: 40),
+                    button.heightAnchor.constraint(equalToConstant: 40)
+                ])
+            }
+        }
+        
+        // Add stack view to the view hierarchy (assuming it should be below the product name)
+        if let firstStar = star1 {
+            view.addSubview(starStackView)
+            
+            // Position the stack view
+            NSLayoutConstraint.activate([
+                starStackView.topAnchor.constraint(equalTo: firstStar.topAnchor),
+                starStackView.leadingAnchor.constraint(equalTo: firstStar.leadingAnchor),
+                starStackView.heightAnchor.constraint(equalToConstant: 40)
+            ])
+        }
+    }
+    
     private func fetchProductDetails() {
-        // Use a specific product ID from your database
-        let productId = "02a3c9b2-6c12-40d5-8d4c-218a8ddd5d27"  // Use one of your actual product IDs
+        guard let id = productId else {
+            print("❌ No product ID available")
+            return
+        }
+        
+        print("🔍 Fetching product with ID: \(id)")
         
         Task {
             do {
-                if let product = try await Product.fetchProduct(withId: productId) {
-                    self.product = product
-                    updateUI(with: product)
+                if let fetchedProduct = try await Product.fetchProduct(withId: id) {
+                    print("✅ Successfully fetched product: \(fetchedProduct.name)")
+                    self.product = fetchedProduct
+                    DispatchQueue.main.async {
+                        self.updateUI(with: fetchedProduct)
+                    }
                 } else {
-                    showAlert(title: "Error", message: "Failed to load product details")
+                    print("❌ No product found with ID: \(id)")
+                    DispatchQueue.main.async {
+                        self.showAlert(title: "Error", message: "Product not found")
+                    }
                 }
             } catch {
-                print("Error fetching product: \(error)")
-                showAlert(title: "Error", message: "Failed to load product details")
+                print("❌ Error fetching product: \(error)")
+                DispatchQueue.main.async {
+                    self.showAlert(title: "Error", message: "Failed to load product details. Please try again.")
+                }
             }
         }
     }
     
     private func updateUI(with product: Product) {
-        DispatchQueue.main.async {
-            // Basic product info
-            self.productNameLabel.text = product.name
-            self.priceLabel.text = String(format: "%.2f BHD", product.price)
-            self.descriptionTextView.text = product.description
+        productNameLabel.text = product.name
+        priceLabel.text = String(format: "%.2f", product.price)
+        descriptionTextView.text = product.description
+        environmentalImpactTextView.text = product.environmentalImpactSummary
+        
+        // Update quantity stepper max value
+        quantityStepper.maximumValue = Double(product.stockQuantity)
+        
+        // Update rating stars
+        updateRatingStars(rating: product.rating)
+        
+        // Load image if URL is valid
+        if let url = URL(string: product.imageURL) {
+            URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
+                if let error = error {
+                    print("Error loading image: \(error)")
+                    return
+                }
+                
+                if let data = data, let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        self?.productImageView.image = image
+                    }
+                }
+            }.resume()
+        }
+    }
+    
+    private func updateRatingStars(rating: Int) {
+        let starButtons = [star1, star2, star3, star4, star5]
+        starButtons.enumerated().forEach { index, button in
+            guard let button = button else { return }
             
-            // Rating
-            let rating = product.rating
-            let starButtons = [self.star1, self.star2, self.star3, self.star4, self.star5]
+            // Create star images
+            let filledStar = UIImage(systemName: "star.fill")
+            let emptyStar = UIImage(systemName: "star")
             
-            starButtons.enumerated().forEach { index, starButton in
-                let filled = index < rating
-                starButton?.tintColor = filled ? .systemYellow : .gray
-            }
-            
-            // Metrics (Environmental Impact)
-            let metricsText = product.metrics.map { metric in
-                return "\(metric.name): \(metric.value)"
-            }.joined(separator: "\n")
-            self.environmentalImpactTextView.text = metricsText
-            
-            // Stock quantity for stepper
-            self.quantityStepper.maximumValue = Double(product.stockQuantity)
-            self.quantityStepper.value = 1
-            self.quantityLabel.text = "1"
-            
-            // Load product image
-            if let url = URL(string: product.imageURL) {
-                self.loadImage(from: url)
-            }
+            // Set image and color based on rating
+            button.setImage(index < rating ? filledStar : emptyStar, for: .normal)
+            button.tintColor = index < rating ? .systemYellow : .gray
         }
     }
     
@@ -117,9 +181,9 @@ class AhmedViewController: UIViewController {
         }.resume()
     }
     
-    private func showAlert(title: String, message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default))
+    private func showAlert(title: String, message: String, preferredStyle: UIAlertController.Style = .alert, actions: [UIAlertAction] = [UIAlertAction(title: "OK", style: .default)]) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: preferredStyle)
+        actions.forEach { alert.addAction($0) }
         present(alert, animated: true)
     }
     

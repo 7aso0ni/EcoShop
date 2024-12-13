@@ -26,11 +26,12 @@ class ReviewCell: UITableViewCell {
         // Configure text view
         reviewContentTextView.isEditable = false
         reviewContentTextView.isScrollEnabled = false
+        reviewContentTextView.backgroundColor = .clear
+        reviewContentTextView.textContainerInset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
         
         // Configure stars
         [ratingStarButton1, ratingStarButton2, ratingStarButton3, ratingStarButton4, ratingStarButton5].forEach { star in
             star?.isUserInteractionEnabled = false
-            star?.tintColor = .gray
         }
     }
     
@@ -40,8 +41,16 @@ class ReviewCell: UITableViewCell {
         
         // Update stars based on rating
         let stars = [ratingStarButton1, ratingStarButton2, ratingStarButton3, ratingStarButton4, ratingStarButton5]
-        stars.enumerated().forEach { index, star in
-            star?.tintColor = index < review.rating ? .systemYellow : .gray
+        stars.enumerated().forEach { index, button in
+            guard let button = button else { return }
+            
+            // Create star images
+            let filledStar = UIImage(systemName: "star.fill")
+            let emptyStar = UIImage(systemName: "star")
+            
+            // Set image and color based on rating
+            button.setImage(index < review.rating ? filledStar : emptyStar, for: .normal)
+            button.tintColor = index < review.rating ? .systemYellow : .gray
         }
     }
 }

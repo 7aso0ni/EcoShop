@@ -31,7 +31,6 @@ class ReviewViewController: UIViewController {
         // TableView setup
         reviewTableView.dataSource = self
         reviewTableView.delegate = self
-        reviewTableView.rowHeight = 150
         
         // Register cell nib
         let nib = UINib(nibName: "ReviewCell", bundle: nil)
@@ -138,18 +137,25 @@ extension ReviewViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print("🔄 Attempting to dequeue cell for row \(indexPath.row)")
-        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewCell", for: indexPath) as? ReviewCell else {
-            print("❌ Failed to dequeue ReviewCell - falling back to basic cell")
-            let basicCell = UITableViewCell(style: .subtitle, reuseIdentifier: nil)
-            basicCell.textLabel?.text = reviews[indexPath.row].content
-            return basicCell
+            return UITableViewCell()
         }
         
-        print("✅ Successfully dequeued ReviewCell")
         let review = reviews[indexPath.row]
         cell.configure(with: review)
+        
+        // Configure cell appearance
+        cell.backgroundColor = .clear
+        cell.selectionStyle = .none
+        
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150
     }
 }

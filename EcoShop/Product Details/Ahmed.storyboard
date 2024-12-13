@@ -1233,7 +1233,7 @@
                                                                 </constraints>
                                                             </stepper>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b2s-Rz-rVE">
-                                                                <rect key="frame" x="151" y="10" width="14.333333333333343" height="29"/>
+                                                                <rect key="frame" x="151" y="10" width="15" height="29"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="b2s-Rz-rVE" secondAttribute="height" multiplier="15:29" id="vtX-Zj-B9M"/>
                                                                 </constraints>
@@ -1895,7 +1895,7 @@
                                                                 </constraints>
                                                             </stepper>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vsP-ko-UlC">
-                                                                <rect key="frame" x="151" y="10" width="15" height="29"/>
+                                                                <rect key="frame" x="151" y="10" width="14.333333333333343" height="29"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="vsP-ko-UlC" secondAttribute="height" multiplier="15:29" id="BOz-LN-oz6"/>
                                                                 </constraints>

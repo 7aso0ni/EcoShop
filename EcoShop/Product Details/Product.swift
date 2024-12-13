@@ -10,7 +10,12 @@ import FirebaseFirestore
 
 struct Metric: Codable {
     let name: String
-    let value: String
+    let unit: String
+    let value: Double
+    
+    var formattedString: String {
+        return "\(name): \(String(format: "%.1f", value)) \(unit)"
+    }
 }
 
 struct Product: Codable {
@@ -24,6 +29,10 @@ struct Product: Codable {
     let averageRating: String
     let rating: Int
     let metrics: [Metric]
+    
+    var environmentalImpactSummary: String {
+        return metrics.map { $0.formattedString }.joined(separator: "\n")
+    }
     
     static func fetchProduct(withId id: String) async throws -> Product? {
         let db = Firestore.firestore()
@@ -46,10 +55,10 @@ struct Product: Codable {
             rating: data["rating"] as? Int ?? 0,
             metrics: (data["metrics"] as? [[String: Any]])?.compactMap { metricData in
                 guard let name = metricData["name"] as? String,
-                      let value = metricData["value"] as? String else { return nil }
-                return Metric(name: name, value: value)
+                      let unit = metricData["unit"] as? String,
+                      let value = metricData["value"] as? Double else { return nil }
+                return Metric(name: name, unit: unit, value: value)
             } ?? []
         )
     }
 }
-
