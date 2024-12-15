@@ -17,6 +17,11 @@ class ReviewCell: UITableViewCell {
     @IBOutlet weak var ratingStarButton4: UIButton!
     @IBOutlet weak var ratingStarButton5: UIButton!
     
+    // MARK: - Properties
+    private var starButtons: [UIButton] {
+        [ratingStarButton1, ratingStarButton2, ratingStarButton3, ratingStarButton4, ratingStarButton5]
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         setupUI()
@@ -26,31 +31,34 @@ class ReviewCell: UITableViewCell {
         // Configure text view
         reviewContentTextView.isEditable = false
         reviewContentTextView.isScrollEnabled = false
-        reviewContentTextView.backgroundColor = .clear
-        reviewContentTextView.textContainerInset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+        reviewContentTextView.textContainer.lineFragmentPadding = 0
+        reviewContentTextView.textContainerInset = .zero
         
-        // Configure stars
-        [ratingStarButton1, ratingStarButton2, ratingStarButton3, ratingStarButton4, ratingStarButton5].forEach { star in
-            star?.isUserInteractionEnabled = false
+        // Configure star buttons
+        starButtons.forEach { button in
+            button.isUserInteractionEnabled = false
+            button.setImage(UIImage(systemName: "star"), for: .normal)
+            button.tintColor = .systemYellow
         }
     }
     
     func configure(with review: Review) {
         reviewContentTextView.text = review.content
-        reviewerNameLabel.text = "By: \(review.userName)"
-        
-        // Update stars based on rating
-        let stars = [ratingStarButton1, ratingStarButton2, ratingStarButton3, ratingStarButton4, ratingStarButton5]
-        stars.enumerated().forEach { index, button in
-            guard let button = button else { return }
-            
-            // Create star images
-            let filledStar = UIImage(systemName: "star.fill")
-            let emptyStar = UIImage(systemName: "star")
-            
-            // Set image and color based on rating
-            button.setImage(index < review.rating ? filledStar : emptyStar, for: .normal)
-            button.tintColor = index < review.rating ? .systemYellow : .gray
+        reviewerNameLabel.text = review.username
+        updateStars(rating: review.rating)
+    }
+    
+    private func updateStars(rating: Int) {
+        starButtons.enumerated().forEach { index, button in
+            let imageName = index < rating ? "star.fill" : "star"
+            button.setImage(UIImage(systemName: imageName), for: .normal)
         }
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        reviewContentTextView.text = nil
+        reviewerNameLabel.text = nil
+        updateStars(rating: 0)
     }
 }
