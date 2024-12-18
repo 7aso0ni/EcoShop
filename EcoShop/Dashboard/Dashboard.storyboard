@@ -24,6 +24,10 @@
                                 <segment title="Monthly"/>
                                 <segment title="Daily"/>
                             </segments>
+                            <connections>
+                                <action selector="dateRangeChanged:" destination="tsy-nm-b7W" eventType="valueChanged" id="7YW-PT-2ck"/>
+                                <action selector="dateRangedChanged:" destination="3tg-CB-YQW" eventType="valueChanged" id="cuA-re-2Bl"/>
+                            </connections>
                         </segmentedControl>
                         <sections>
                             <tableViewSection id="R2l-1E-o7v">
@@ -236,6 +240,7 @@
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6nl-PT-Bjb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="3tg-CB-YQW" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1240" y="-230"/>
         </scene>

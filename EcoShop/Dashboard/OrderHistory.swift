@@ -48,66 +48,79 @@ struct Order: Codable {
     
 //    A closure that the function calls when it's done fetching data (successfully or with an error).
 //    it's marked as escaping because it will be called later after the fetching is done
-    static func fetchUserMetrics(userId: String, completion: @escaping (Result<[Metrics], Error>) -> Void) {
+    static func fetchUserMetrics(userId: String, startDate: Date?, completion: @escaping (Result<[Metrics], Error>) -> Void) {
         let db = Firestore.firestore()
         
-        db.collection("orders").whereField("userId", isEqualTo: userId).whereField("status", isNotEqualTo: "Canceled").getDocuments { (orderSnapshot, error) in
-            
+        // Query with userId and status
+        var query = db.collection("orders")
+            .whereField("userId", isEqualTo: userId)
+            .whereField("status", isNotEqualTo: "Canceled")
+        
+        // Add date filtering if startDate is provided
+        if let startDate = startDate {
+            query = query.whereField("dateOrdered", isGreaterThanOrEqualTo: Timestamp(date: startDate))
+        }
+        
+        query.getDocuments { (orderSnapshot, error) in
             if let error = error {
-                // return the error via the completion handler
+                // Return the error via the completion handler
                 completion(.failure(error))
                 return
             }
             
-            var allMetrics: [Metrics] = []
-            let group = DispatchGroup() // used to wait for all product fetches
+            guard let documents = orderSnapshot?.documents else {
+                completion(.success([])) // Return an empty array if no orders are found
+                return
+            }
             
-            for document in orderSnapshot!.documents {
+            var allMetrics: [Metrics] = []
+            let group = DispatchGroup() // Used to wait for all product fetches
+            
+            print("Processing \(documents.count) orders...")
+            
+            for document in documents {
                 let orderData = document.data()
                 if let products = orderData["products"] as? [[String: Any]] {
                     for product in products {
                         if let productId = product["id"] as? String {
-                            // start waiting for product data
-                            group.enter()
+                            group.enter() // Enter group before starting the async task
                             
                             db.collection("products").document(productId).getDocument { (productSnapshot, error) in
+                                defer { group.leave() } // Ensure group.leave is always called
+                                
                                 if let error = error {
-                                    completion(.failure(error))
-                                } else if let productData = productSnapshot?.data() {
-                                    if let productMetrics = productData["metrics"] as? [[String: Any]] {
-                                        for metricData in productMetrics {
-                                            
-                                       
+                                    print("Error fetching product: \(error.localizedDescription)")
+                                    return
+                                }
+                                
+                                if let productData = productSnapshot?.data(),
+                                   let productMetrics = productData["metrics"] as? [[String: Any]] {
+                                    for metricData in productMetrics {
                                         if let name = metricData["name"] as? String,
-                                            let unit = metricData["unit"] as? String,
-                                            let value = metricData["value"] as? Int {
-                                                                                        
-                            // Add the metric to the allMetrics
+                                           let unit = metricData["unit"] as? String,
+                                           let value = metricData["value"] as? Int {
                                             allMetrics.append(Metrics(name: name, unit: unit, value: value))
                                         }
-                                                                                    }
                                     }
                                 }
                             }
-                            
-                            group.leave() // finished fetching one product
                         }
                     }
                 }
+            }
+            
+            group.notify(queue: .main) { // Notify after all async tasks are done
+                let combinedMetrics = combineMetrics(allMetrics)
                 
-                //
-                group.notify(queue: .main) {
-                    let combineMetrics = combineMetrics(allMetrics)
-                    
-                    // return the combined metrics via the completion handler
-                    completion(.success(combineMetrics))
-                }
+                // Return the combined metrics via the completion handler
+                completion(.success(combinedMetrics))
             }
         }
     }
+
 }
 
-func combineMetrics(_ metrics: [Metrics]) -> [Metrics] {
+private func combineMetrics(_ metrics: [Metrics]) -> [Metrics] {
     var combinedMetrics: [Metrics] = []
     var metricMap: [String: Metrics] = [:]
     
@@ -124,3 +137,4 @@ func combineMetrics(_ metrics: [Metrics]) -> [Metrics] {
     combinedMetrics = Array(metricMap.values)
     return combinedMetrics
 }
+
