@@ -96,6 +96,15 @@ struct StoreOrder: Identifiable {
        return snapshot.documents.compactMap { StoreOrder(document: $0) }
    }
     
+    static func fetchOrders(forUser userId: String, status: OrderStatus) async throws -> [StoreOrder] {
+        let db = Firestore.firestore()
+        let snapshot = try await db.collection("orders")
+            .whereField("userId", isEqualTo: userId)
+            .whereField("status", isEqualTo: status.rawValue)
+            .getDocuments()
+        return snapshot.documents.compactMap { StoreOrder(document: $0) }
+    }
+    
     static func updateOrderStatus(orderId: String, newStatus: OrderStatus) async throws {
        let db = Firestore.firestore()
        try await db.collection("orders").document(orderId).updateData([

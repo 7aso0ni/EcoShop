@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		021BC2BD2D05CF0E00C2E1C6 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021BC2BC2D05CF0E00C2E1C6 /* DashboardViewController.swift */; };
+		0275FAA72D0AE70100123695 /* OrderHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0275FAA62D0AE70100123695 /* OrderHistory.swift */; };
+		02B2FE1E2D07013C0088703F /* DashboardNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B2FE1D2D07013C0088703F /* DashboardNavigation.swift */; };
+		02B2FE202D0704CA0088703F /* AddProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B2FE1F2D0704CA0088703F /* AddProductViewController.swift */; };
 		3A145E6B2D070EF1000E82AF /* OrderedProductsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A145E6A2D070EF1000E82AF /* OrderedProductsTableView.swift */; };
 		3A145E6F2D073F29000E82AF /* OrderedViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A145E6E2D073F29000E82AF /* OrderedViewCell.swift */; };
 		3A145E712D073F56000E82AF /* OrderedProductViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A145E702D073F56000E82AF /* OrderedProductViewCell.swift */; };
@@ -14,14 +18,14 @@
 		3A47A47C2CFEAEDA00092B07 /* StoreProdcutsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A47A47B2CFEAEDA00092B07 /* StoreProdcutsController.swift */; };
 		3A47A47E2CFEC40600092B07 /* StoreProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A47A47D2CFEC40600092B07 /* StoreProduct.swift */; };
 		3A47A4832CFF358800092B07 /* StoreProductActionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A47A4822CFF358800092B07 /* StoreProductActionsCell.swift */; };
-		021BC2BD2D05CF0E00C2E1C6 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021BC2BC2D05CF0E00C2E1C6 /* DashboardViewController.swift */; };
-		0275FAA72D0AE70100123695 /* OrderHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0275FAA62D0AE70100123695 /* OrderHistory.swift */; };
-		02B2FE1E2D07013C0088703F /* DashboardNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B2FE1D2D07013C0088703F /* DashboardNavigation.swift */; };
-		02B2FE202D0704CA0088703F /* AddProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B2FE1F2D0704CA0088703F /* AddProductViewController.swift */; };
 		3A8763072CFC21000025CF46 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 3A8763062CFC21000025CF46 /* FirebaseAuth */; };
 		3A8763092CFC21000025CF46 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 3A8763082CFC21000025CF46 /* FirebaseFirestore */; };
 		3A87630B2CFC21000025CF46 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 3A87630A2CFC21000025CF46 /* FirebaseStorage */; };
 		3A87630D2CFC22550025CF46 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A87630C2CFC22550025CF46 /* GoogleService-Info.plist */; };
+		3A9940C72D16A945001DBBB3 /* OrderManagement.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A9940C62D16A945001DBBB3 /* OrderManagement.storyboard */; };
+		3A9940CB2D16D51E001DBBB3 /* OrdersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9940CA2D16D51E001DBBB3 /* OrdersTableViewController.swift */; };
+		3A9940D02D16F45F001DBBB3 /* StatusPickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9940CF2D16F45F001DBBB3 /* StatusPickerTableViewCell.swift */; };
+		3A9940D22D172500001DBBB3 /* OrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9940D12D172500001DBBB3 /* OrderTableViewCell.swift */; };
 		3A9AC6AE2CFDEADA005860A6 /* StoreProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9AC6AD2CFDEADA005860A6 /* StoreProductCell.swift */; };
 		3A9D7CDD2D02D4D400702663 /* StoreProductDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9D7CDC2D02D4D400702663 /* StoreProductDetailTableViewController.swift */; };
 		3AC1D8EC2CFD99FD00E3CE71 /* StoreOnwerDashboardStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AC1D8EB2CFD99FD00E3CE71 /* StoreOnwerDashboardStoryboard.storyboard */; };
@@ -64,6 +68,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		021BC2BC2D05CF0E00C2E1C6 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		0275FAA62D0AE70100123695 /* OrderHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistory.swift; sourceTree = "<group>"; };
+		02B2FE1D2D07013C0088703F /* DashboardNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardNavigation.swift; sourceTree = "<group>"; };
+		02B2FE1F2D0704CA0088703F /* AddProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductViewController.swift; sourceTree = "<group>"; };
 		3A145E6A2D070EF1000E82AF /* OrderedProductsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderedProductsTableView.swift; sourceTree = "<group>"; };
 		3A145E6E2D073F29000E82AF /* OrderedViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderedViewCell.swift; sourceTree = "<group>"; };
 		3A145E702D073F56000E82AF /* OrderedProductViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderedProductViewCell.swift; sourceTree = "<group>"; };
@@ -72,15 +80,14 @@
 		3A47A47D2CFEC40600092B07 /* StoreProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreProduct.swift; sourceTree = "<group>"; };
 		3A47A4822CFF358800092B07 /* StoreProductActionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreProductActionsCell.swift; sourceTree = "<group>"; };
 		3A87630C2CFC22550025CF46 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3A9940C62D16A945001DBBB3 /* OrderManagement.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OrderManagement.storyboard; sourceTree = "<group>"; };
+		3A9940CA2D16D51E001DBBB3 /* OrdersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersTableViewController.swift; sourceTree = "<group>"; };
+		3A9940CF2D16F45F001DBBB3 /* StatusPickerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusPickerTableViewCell.swift; sourceTree = "<group>"; };
+		3A9940D12D172500001DBBB3 /* OrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableViewCell.swift; sourceTree = "<group>"; };
 		3A9AC6AD2CFDEADA005860A6 /* StoreProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreProductCell.swift; sourceTree = "<group>"; };
 		3A9D7CDC2D02D4D400702663 /* StoreProductDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreProductDetailTableViewController.swift; sourceTree = "<group>"; };
 		3AC1D8EB2CFD99FD00E3CE71 /* StoreOnwerDashboardStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StoreOnwerDashboardStoryboard.storyboard; sourceTree = "<group>"; };
 		3AFAD53E2D06ACBE000C7EB7 /* StoreOrdersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreOrdersTableViewController.swift; sourceTree = "<group>"; };
-		021BC2BC2D05CF0E00C2E1C6 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
-		0275FAA62D0AE70100123695 /* OrderHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistory.swift; sourceTree = "<group>"; };
-		02B2FE1D2D07013C0088703F /* DashboardNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardNavigation.swift; sourceTree = "<group>"; };
-		02B2FE1F2D0704CA0088703F /* AddProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductViewController.swift; sourceTree = "<group>"; };
-		3A87630C2CFC22550025CF46 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		570CA38A2CFD8E750055927E /* Dashboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dashboard.storyboard; sourceTree = "<group>"; };
 		570CA38C2CFD9B7E0055927E /* AhmedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AhmedViewController.swift; sourceTree = "<group>"; };
 		570F2DCC2CFB112C0025C9E3 /* EcoShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EcoShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -133,56 +140,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3A145E672D070DF2000E82AF /* views */ = {
-			isa = PBXGroup;
-			children = (
-				3A145E6A2D070EF1000E82AF /* OrderedProductsTableView.swift */,
-			);
-			path = views;
-			sourceTree = "<group>";
-		};
-		3A47A4782CFEAC4D00092B07 /* controllers */ = {
-			isa = PBXGroup;
-			children = (
-				3A47A47B2CFEAEDA00092B07 /* StoreProdcutsController.swift */,
-				3A9D7CDC2D02D4D400702663 /* StoreProductDetailTableViewController.swift */,
-				3AFAD53E2D06ACBE000C7EB7 /* StoreOrdersTableViewController.swift */,
-			);
-			path = controllers;
-			sourceTree = "<group>";
-		};
-		3A9AC6AC2CFDE967005860A6 /* cells */ = {
-			isa = PBXGroup;
-			children = (
-				3A9AC6AD2CFDEADA005860A6 /* StoreProductCell.swift */,
-				3A47A4822CFF358800092B07 /* StoreProductActionsCell.swift */,
-				3A145E6E2D073F29000E82AF /* OrderedViewCell.swift */,
-				3A145E702D073F56000E82AF /* OrderedProductViewCell.swift */,
-			);
-			path = cells;
-			sourceTree = "<group>";
-		};
-		3A9AC6AF2CFE119C005860A6 /* models */ = {
-			isa = PBXGroup;
-			children = (
-				3A47A47D2CFEC40600092B07 /* StoreProduct.swift */,
-				3A145E722D074236000E82AF /* Order.swift */,
-			);
-			path = models;
-			sourceTree = "<group>";
-		};
-		3AC1D8ED2CFD9CDD00E3CE71 /* StoreOwnerDashboard */ = {
-			isa = PBXGroup;
-			children = (
-				3A145E672D070DF2000E82AF /* views */,
-				3A47A4782CFEAC4D00092B07 /* controllers */,
-				3A9AC6AF2CFE119C005860A6 /* models */,
-				3A9AC6AC2CFDE967005860A6 /* cells */,
-				3AC1D8EB2CFD99FD00E3CE71 /* StoreOnwerDashboardStoryboard.storyboard */,
-			);
-			path = StoreOwnerDashboard;
-			sourceTree = "<group>";
-		};
 		02D575E12D025F6A0092AB5B /* Product Details */ = {
 			isa = PBXGroup;
 			children = (
@@ -215,6 +172,83 @@
 			children = (
 			);
 			path = Shop;
+			sourceTree = "<group>";
+		};
+		3A145E672D070DF2000E82AF /* views */ = {
+			isa = PBXGroup;
+			children = (
+				3A145E6A2D070EF1000E82AF /* OrderedProductsTableView.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		3A47A4782CFEAC4D00092B07 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3A47A47B2CFEAEDA00092B07 /* StoreProdcutsController.swift */,
+				3A9D7CDC2D02D4D400702663 /* StoreProductDetailTableViewController.swift */,
+				3AFAD53E2D06ACBE000C7EB7 /* StoreOrdersTableViewController.swift */,
+			);
+			path = controllers;
+			sourceTree = "<group>";
+		};
+		3A9940C52D16A7B3001DBBB3 /* OrderManagement */ = {
+			isa = PBXGroup;
+			children = (
+				3A9940CC2D16EA67001DBBB3 /* cells */,
+				3A9940C92D16D3F3001DBBB3 /* controllers */,
+				3A9940C62D16A945001DBBB3 /* OrderManagement.storyboard */,
+			);
+			path = OrderManagement;
+			sourceTree = "<group>";
+		};
+		3A9940C92D16D3F3001DBBB3 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3A9940CA2D16D51E001DBBB3 /* OrdersTableViewController.swift */,
+			);
+			path = controllers;
+			sourceTree = "<group>";
+		};
+		3A9940CC2D16EA67001DBBB3 /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				3A9940CF2D16F45F001DBBB3 /* StatusPickerTableViewCell.swift */,
+				3A9940D12D172500001DBBB3 /* OrderTableViewCell.swift */,
+			);
+			path = cells;
+			sourceTree = "<group>";
+		};
+		3A9AC6AC2CFDE967005860A6 /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				3A9AC6AD2CFDEADA005860A6 /* StoreProductCell.swift */,
+				3A47A4822CFF358800092B07 /* StoreProductActionsCell.swift */,
+				3A145E6E2D073F29000E82AF /* OrderedViewCell.swift */,
+				3A145E702D073F56000E82AF /* OrderedProductViewCell.swift */,
+			);
+			path = cells;
+			sourceTree = "<group>";
+		};
+		3A9AC6AF2CFE119C005860A6 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				3A47A47D2CFEC40600092B07 /* StoreProduct.swift */,
+				3A145E722D074236000E82AF /* Order.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		3AC1D8ED2CFD9CDD00E3CE71 /* StoreOwnerDashboard */ = {
+			isa = PBXGroup;
+			children = (
+				3A145E672D070DF2000E82AF /* views */,
+				3A47A4782CFEAC4D00092B07 /* controllers */,
+				3A9AC6AF2CFE119C005860A6 /* models */,
+				3A9AC6AC2CFDE967005860A6 /* cells */,
+				3AC1D8EB2CFD99FD00E3CE71 /* StoreOnwerDashboardStoryboard.storyboard */,
+			);
+			path = StoreOwnerDashboard;
 			sourceTree = "<group>";
 		};
 		570CA3872CFD8E300055927E /* Dashboard */ = {
@@ -253,6 +287,7 @@
 		570F2DCE2CFB112C0025C9E3 /* EcoShop */ = {
 			isa = PBXGroup;
 			children = (
+				3A9940C52D16A7B3001DBBB3 /* OrderManagement */,
 				3AC1D8ED2CFD9CDD00E3CE71 /* StoreOwnerDashboard */,
 				02D575E42D0260A70092AB5B /* Shop */,
 				02D575E32D02609A0092AB5B /* Admin */,
@@ -403,6 +438,7 @@
 			files = (
 				570F2DDC2CFB112D0025C9E3 /* LaunchScreen.storyboard in Resources */,
 				570CA38B2CFD8E750055927E /* Dashboard.storyboard in Resources */,
+				3A9940C72D16A945001DBBB3 /* OrderManagement.storyboard in Resources */,
 				C27DA67E2D00E24900E85102 /* ReviewCell.xib in Resources */,
 				3A87630D2CFC22550025CF46 /* GoogleService-Info.plist in Resources */,
 				3AC1D8EC2CFD99FD00E3CE71 /* StoreOnwerDashboardStoryboard.storyboard in Resources */,
@@ -434,6 +470,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A145E712D073F56000E82AF /* OrderedProductViewCell.swift in Sources */,
+				3A9940D02D16F45F001DBBB3 /* StatusPickerTableViewCell.swift in Sources */,
 				3A145E6F2D073F29000E82AF /* OrderedViewCell.swift in Sources */,
 				3AFAD53F2D06ACBE000C7EB7 /* StoreOrdersTableViewController.swift in Sources */,
 				3A145E6B2D070EF1000E82AF /* OrderedProductsTableView.swift in Sources */,
@@ -441,8 +478,10 @@
 				570F2DD42CFB112C0025C9E3 /* ViewController.swift in Sources */,
 				3A9AC6AE2CFDEADA005860A6 /* StoreProductCell.swift in Sources */,
 				3A47A4832CFF358800092B07 /* StoreProductActionsCell.swift in Sources */,
+				3A9940CB2D16D51E001DBBB3 /* OrdersTableViewController.swift in Sources */,
 				3A9D7CDD2D02D4D400702663 /* StoreProductDetailTableViewController.swift in Sources */,
 				0275FAA72D0AE70100123695 /* OrderHistory.swift in Sources */,
+				3A9940D22D172500001DBBB3 /* OrderTableViewCell.swift in Sources */,
 				C20A571A2D00D1B90062197B /* ReviewCell.swift in Sources */,
 				570CA38D2CFD9B7E0055927E /* AhmedViewController.swift in Sources */,
 				C20A57182D00A8850062197B /* FirebaseManager.swift in Sources */,
