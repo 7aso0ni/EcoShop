@@ -46,15 +46,4 @@
             <point key="canvasLocation" x="-1654" y="-313"/>
         </scene>
     </scenes>
-<<<<<<< HEAD
-    <inferredMetricsTieBreakers>
-        <segue reference="CGE-hd-3Wz"/>
-    </inferredMetricsTieBreakers>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
-=======
->>>>>>> cf030512e8752492b83acd800748514dd301ad7b
 </document>

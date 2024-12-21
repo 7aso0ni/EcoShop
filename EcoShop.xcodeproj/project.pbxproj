@@ -181,6 +181,8 @@
 				3AC1D8EB2CFD99FD00E3CE71 /* StoreOnwerDashboardStoryboard.storyboard */,
 			);
 			path = StoreOwnerDashboard;
+			sourceTree = "<group>";
+		};
 		02D575E12D025F6A0092AB5B /* Product Details */ = {
 			isa = PBXGroup;
 			children = (

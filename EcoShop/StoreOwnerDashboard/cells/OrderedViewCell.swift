@@ -8,7 +8,7 @@
 import UIKit
 
 protocol OrderedViewCellDelegate: AnyObject {
-    func onStatusChanged(sender: OrderedViewCell, status: Order.OrderStatus)
+    func onStatusChanged(sender: OrderedViewCell, status: StoreOrder.OrderStatus)
 }
 
 class OrderedViewCell: UITableViewCell {
@@ -34,7 +34,7 @@ class OrderedViewCell: UITableViewCell {
     
     func onStatusChange(_ status: String) {
         orderStatusButton.setTitle(status, for: .normal)
-        if let newStatus = Order.OrderStatus(rawValue: status) {
+        if let newStatus = StoreOrder.OrderStatus(rawValue: status) {
               delegate?.onStatusChanged(sender: self, status: newStatus)
           }
     }

@@ -1,5 +1,5 @@
 //
-//  Order.swift
+//  StoreOrder.swift
 //  EcoShop
 //
 //  Created by user244986 on 12/9/24.
@@ -8,7 +8,7 @@
 import Foundation
 import FirebaseFirestore
 
-struct Order: Identifiable {
+struct StoreOrder: Identifiable {
    let id: String
    let products: [OrderProduct]
    let storeOwnerId: String
@@ -79,21 +79,21 @@ struct Order: Identifiable {
     
     func fetchOrderProducts() async throws -> [StoreProduct] {
           let productIds = self.products.map { $0.id }
-          return try await Order.fetchProductsForOrder(productIds: productIds)
+          return try await StoreOrder.fetchProductsForOrder(productIds: productIds)
       }
    
-   static func fetchOrders() async throws -> [Order] {
+   static func fetchOrders() async throws -> [StoreOrder] {
        let db = Firestore.firestore()
        let snapshot = try await db.collection("orders").getDocuments()
-       return snapshot.documents.compactMap { Order(document: $0) }
+       return snapshot.documents.compactMap { StoreOrder(document: $0) }
    }
    
-   static func fetchOrders(forOwner ownerId: String) async throws -> [Order] {
+   static func fetchOrders(forOwner ownerId: String) async throws -> [StoreOrder] {
        let db = Firestore.firestore()
        let snapshot = try await db.collection("orders")
            .whereField("storeOwnerId", isEqualTo: ownerId)
            .getDocuments()
-       return snapshot.documents.compactMap { Order(document: $0) }
+       return snapshot.documents.compactMap { StoreOrder(document: $0) }
    }
     
     static func updateOrderStatus(orderId: String, newStatus: OrderStatus) async throws {

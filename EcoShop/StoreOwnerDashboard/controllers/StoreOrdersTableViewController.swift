@@ -8,14 +8,14 @@
 import UIKit
 
 class StoreOrdersTableViewController: UITableViewController, OrderedViewCellDelegate {
-    var orders: [Order] = []
+    var orders: [StoreOrder] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         Task {
             do {
-                orders = try await Order.fetchOrders(forOwner: "owner1")
+                orders = try await StoreOrder.fetchOrders(forOwner: "owner1")
                 DispatchQueue.main.async{
                     self.tableView.reloadData()
                 }
@@ -28,13 +28,13 @@ class StoreOrdersTableViewController: UITableViewController, OrderedViewCellDele
 
     // MARK: - Table view data source
     
-    func onStatusChanged(sender: OrderedViewCell, status: Order.OrderStatus) {
+    func onStatusChanged(sender: OrderedViewCell, status: StoreOrder.OrderStatus) {
         if let indexPath = tableView.indexPath(for: sender) {
             sender.orderStatusButton.isEnabled.toggle()
             Task {
                 do {
                     let order = orders[indexPath.row - 1]
-                    try await Order.updateOrderStatus(orderId: order.id, newStatus: status)
+                    try await StoreOrder.updateOrderStatus(orderId: order.id, newStatus: status)
                 } catch {
                     print("Error updating status of order: \(error)")
                 }
@@ -51,7 +51,7 @@ class StoreOrdersTableViewController: UITableViewController, OrderedViewCellDele
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let identifier = indexPath.row == 0 ? "OrdersHeading" : "Order"
+        let identifier = indexPath.row == 0 ? "OrdersHeading" : "StoreOrder"
         
         guard indexPath.row > 0 else {
             return tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
@@ -60,7 +60,7 @@ class StoreOrdersTableViewController: UITableViewController, OrderedViewCellDele
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! OrderedViewCell
         let order = orders[indexPath.row - 1]
         
-        cell.orderIdLabel.text = "Order ID: \(String(order.id.prefix(5).uppercased()))"
+        cell.orderIdLabel.text = "StoreOrder ID: \(String(order.id.prefix(5).uppercased()))"
         
         let formatter = DateFormatter()
         formatter.dateFormat = "dd/MM/yyyy"
