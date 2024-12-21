@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_72" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="255" id="npo-AM-YAE" customClass="ReviewCell" customModule="EcoShop" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="255"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="npo-AM-YAE" id="jR2-7c-Z3y">
+                <rect key="frame" x="0.0" y="0.0" width="393" height="255"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gip-jE-0Ur">
+                        <rect key="frame" x="20" y="31" width="45" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zaI-oy-S97">
+                        <rect key="frame" x="213" y="24" width="52" height="35"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="zaI-oy-S97" secondAttribute="height" multiplier="52:35" id="m0E-Ox-FRe"/>
+                        </constraints>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" image="star" catalog="system"/>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Qp-XC-NMf">
+                        <rect key="frame" x="246" y="24" width="52" height="35"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" image="star" catalog="system"/>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s86-pF-oYR">
+                        <rect key="frame" x="281" y="23" width="52" height="35"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="s86-pF-oYR" secondAttribute="height" multiplier="52:35" id="fvx-Vc-qV1"/>
+                        </constraints>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" image="star" catalog="system"/>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jbt-oN-T30">
+                        <rect key="frame" x="321" y="24" width="52" height="35"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" image="star" catalog="system"/>
+                    </button>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="6cQ-9T-sss">
+                        <rect key="frame" x="20" y="105" width="353" height="128"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="128" id="ehF-K8-m2s"/>
+                        </constraints>
+                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                        <color key="textColor" systemColor="labelColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ak3-Nt-Sm7">
+                        <rect key="frame" x="170.66666666666666" y="24" width="51.666666666666657" height="35"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" image="star" catalog="system"/>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="jbt-oN-T30" firstAttribute="leading" secondItem="4Qp-XC-NMf" secondAttribute="trailing" constant="23" id="1bk-YP-xeN"/>
+                    <constraint firstItem="Gip-jE-0Ur" firstAttribute="centerY" secondItem="jbt-oN-T30" secondAttribute="centerY" id="7SI-86-qa7"/>
+                    <constraint firstItem="6cQ-9T-sss" firstAttribute="leading" secondItem="jR2-7c-Z3y" secondAttribute="leadingMargin" id="Doq-KS-cif"/>
+                    <constraint firstAttribute="bottom" secondItem="zaI-oy-S97" secondAttribute="bottom" constant="196" id="F9n-Zc-ZOW"/>
+                    <constraint firstAttribute="bottom" secondItem="s86-pF-oYR" secondAttribute="bottom" constant="197" id="FZe-cx-Bv7"/>
+                    <constraint firstItem="zaI-oy-S97" firstAttribute="top" secondItem="jR2-7c-Z3y" secondAttribute="top" constant="24" id="Hsk-pf-jEq"/>
+                    <constraint firstItem="6cQ-9T-sss" firstAttribute="top" secondItem="Ak3-Nt-Sm7" secondAttribute="bottom" constant="46" id="JEX-fT-cBT"/>
+                    <constraint firstItem="6cQ-9T-sss" firstAttribute="centerX" secondItem="Ak3-Nt-Sm7" secondAttribute="centerX" id="Prv-JQ-ooO"/>
+                    <constraint firstItem="Ak3-Nt-Sm7" firstAttribute="leading" secondItem="Gip-jE-0Ur" secondAttribute="trailing" constant="105.66666666666666" id="UO9-eB-Wn8"/>
+                    <constraint firstItem="s86-pF-oYR" firstAttribute="leading" secondItem="zaI-oy-S97" secondAttribute="trailing" constant="16" id="b5A-Qg-Jh5"/>
+                    <constraint firstItem="Gip-jE-0Ur" firstAttribute="centerY" secondItem="4Qp-XC-NMf" secondAttribute="centerY" id="huF-y3-AgM"/>
+                    <constraint firstItem="6cQ-9T-sss" firstAttribute="trailing" secondItem="jbt-oN-T30" secondAttribute="trailing" id="jR4-V6-sFb"/>
+                    <constraint firstItem="Gip-jE-0Ur" firstAttribute="centerY" secondItem="Ak3-Nt-Sm7" secondAttribute="centerY" id="ls9-Gk-YBo"/>
+                    <constraint firstItem="s86-pF-oYR" firstAttribute="top" secondItem="jR2-7c-Z3y" secondAttribute="top" constant="23" id="rUN-Vc-Grc"/>
+                    <constraint firstItem="6cQ-9T-sss" firstAttribute="trailing" secondItem="jR2-7c-Z3y" secondAttribute="trailingMargin" id="uJd-PW-F7t"/>
+                    <constraint firstItem="zaI-oy-S97" firstAttribute="leading" secondItem="Gip-jE-0Ur" secondAttribute="trailing" constant="148" id="w44-SG-o0Y"/>
+                    <constraint firstAttribute="trailing" secondItem="s86-pF-oYR" secondAttribute="trailing" constant="60" id="wCQ-zg-wx3"/>
+                    <constraint firstAttribute="bottom" secondItem="Ak3-Nt-Sm7" secondAttribute="bottom" constant="196" id="wau-z9-zQd"/>
+                </constraints>
+            </tableViewCellContentView>
+            <accessibility key="accessibilityConfiguration" identifier="ReviewCell"/>
+            <connections>
+                <outlet property="ratingStarButton1" destination="Ak3-Nt-Sm7" id="b82-rX-wgd"/>
+                <outlet property="ratingStarButton2" destination="zaI-oy-S97" id="Tqs-iD-Bv6"/>
+                <outlet property="ratingStarButton3" destination="4Qp-XC-NMf" id="PBD-t5-L1N"/>
+                <outlet property="ratingStarButton4" destination="s86-pF-oYR" id="Ev9-Rw-poy"/>
+                <outlet property="ratingStarButton5" destination="jbt-oN-T30" id="i3t-hA-5Mr"/>
+                <outlet property="reviewContentTextView" destination="6cQ-9T-sss" id="Z3v-IV-gXw"/>
+                <outlet property="reviewerNameLabel" destination="Gip-jE-0Ur" id="JQB-KI-mzU"/>
+            </connections>
+            <point key="canvasLocation" x="28.604651162790699" y="-112.33905579399142"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="star" catalog="system" width="128" height="116"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

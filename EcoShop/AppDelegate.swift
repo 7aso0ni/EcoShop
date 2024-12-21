@@ -7,36 +7,41 @@
 
 import UIKit
 import FirebaseCore
+import FirebaseFirestore
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        // Configure Firebase
         FirebaseApp.configure()
         
         let secondaryOptions = FirebaseOptions(googleAppID: "1:409841563321:ios:5b70bff9e95eb6d1830d68", gcmSenderID: "409841563321")
         secondaryOptions.apiKey = "AIzaSyAlMSFBfBgRSFLrrVa0HL4PSXxHoF2objI"
         secondaryOptions.storageBucket = "tesla-clone-a0f5d.appspot.com"
         FirebaseApp.configure(name: "secondary", options: secondaryOptions)
+        // Enable Firestore debug logging during development
+        let db = Firestore.firestore()
+        let settings = db.settings
+        settings.isPersistenceEnabled = true
+        db.settings = settings
         
         return true
     }
 
-    // MARK: UISceneSession Lifecycle
+    func applicationWillTerminate(_ application: UIApplication) {
+        // Cleanup Firestore connections
+        let db = Firestore.firestore()
+        db.terminate { _ in
+            print("Firestore connection terminated cleanly")
+        }
+    }
 
+    // MARK: UISceneSession Lifecycle
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-        // Called when a new scene session is being created.
-        // Use this method to select a configuration to create the new scene with.
         return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
     }
 
     func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-        // Called when the user discards a scene session.
-        // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
-        // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
-
-
 }
-

@@ -14,6 +14,10 @@
 		3A47A47C2CFEAEDA00092B07 /* StoreProdcutsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A47A47B2CFEAEDA00092B07 /* StoreProdcutsController.swift */; };
 		3A47A47E2CFEC40600092B07 /* StoreProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A47A47D2CFEC40600092B07 /* StoreProduct.swift */; };
 		3A47A4832CFF358800092B07 /* StoreProductActionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A47A4822CFF358800092B07 /* StoreProductActionsCell.swift */; };
+		021BC2BD2D05CF0E00C2E1C6 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021BC2BC2D05CF0E00C2E1C6 /* DashboardViewController.swift */; };
+		0275FAA72D0AE70100123695 /* OrderHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0275FAA62D0AE70100123695 /* OrderHistory.swift */; };
+		02B2FE1E2D07013C0088703F /* DashboardNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B2FE1D2D07013C0088703F /* DashboardNavigation.swift */; };
+		02B2FE202D0704CA0088703F /* AddProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B2FE1F2D0704CA0088703F /* AddProductViewController.swift */; };
 		3A8763072CFC21000025CF46 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 3A8763062CFC21000025CF46 /* FirebaseAuth */; };
 		3A8763092CFC21000025CF46 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 3A8763082CFC21000025CF46 /* FirebaseFirestore */; };
 		3A87630B2CFC21000025CF46 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 3A87630A2CFC21000025CF46 /* FirebaseStorage */; };
@@ -22,6 +26,8 @@
 		3A9D7CDD2D02D4D400702663 /* StoreProductDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9D7CDC2D02D4D400702663 /* StoreProductDetailTableViewController.swift */; };
 		3AC1D8EC2CFD99FD00E3CE71 /* StoreOnwerDashboardStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AC1D8EB2CFD99FD00E3CE71 /* StoreOnwerDashboardStoryboard.storyboard */; };
 		3AFAD53F2D06ACBE000C7EB7 /* StoreOrdersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFAD53E2D06ACBE000C7EB7 /* StoreOrdersTableViewController.swift */; };
+		570CA38B2CFD8E750055927E /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 570CA38A2CFD8E750055927E /* Dashboard.storyboard */; };
+		570CA38D2CFD9B7E0055927E /* AhmedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570CA38C2CFD9B7E0055927E /* AhmedViewController.swift */; };
 		570F2DD02CFB112C0025C9E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570F2DCF2CFB112C0025C9E3 /* AppDelegate.swift */; };
 		570F2DD22CFB112C0025C9E3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570F2DD12CFB112C0025C9E3 /* SceneDelegate.swift */; };
 		570F2DD42CFB112C0025C9E3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570F2DD32CFB112C0025C9E3 /* ViewController.swift */; };
@@ -31,7 +37,13 @@
 		570F2DE72CFB112E0025C9E3 /* EcoShopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570F2DE62CFB112E0025C9E3 /* EcoShopTests.swift */; };
 		570F2DF12CFB112E0025C9E3 /* EcoShopUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570F2DF02CFB112E0025C9E3 /* EcoShopUITests.swift */; };
 		570F2DF32CFB112E0025C9E3 /* EcoShopUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570F2DF22CFB112E0025C9E3 /* EcoShopUITestsLaunchTests.swift */; };
+		C20A57142D00A7720062197B /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20A57132D00A7720062197B /* ReviewViewController.swift */; };
+		C20A57162D00A7A60062197B /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20A57152D00A7A60062197B /* Review.swift */; };
+		C20A57182D00A8850062197B /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20A57172D00A8850062197B /* FirebaseManager.swift */; };
+		C20A571A2D00D1B90062197B /* ReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20A57192D00D1B90062197B /* ReviewCell.swift */; };
+		C27DA67E2D00E24900E85102 /* ReviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C27DA67D2D00E24900E85102 /* ReviewCell.xib */; };
 		C283543D2CFC7E29006C6FC1 /* Ahmed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C283543C2CFC7E29006C6FC1 /* Ahmed.storyboard */; };
+		C2E054822D003AB700E291CE /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E054812D003AB700E291CE /* Product.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +76,13 @@
 		3A9D7CDC2D02D4D400702663 /* StoreProductDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreProductDetailTableViewController.swift; sourceTree = "<group>"; };
 		3AC1D8EB2CFD99FD00E3CE71 /* StoreOnwerDashboardStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StoreOnwerDashboardStoryboard.storyboard; sourceTree = "<group>"; };
 		3AFAD53E2D06ACBE000C7EB7 /* StoreOrdersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreOrdersTableViewController.swift; sourceTree = "<group>"; };
+		021BC2BC2D05CF0E00C2E1C6 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		0275FAA62D0AE70100123695 /* OrderHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistory.swift; sourceTree = "<group>"; };
+		02B2FE1D2D07013C0088703F /* DashboardNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardNavigation.swift; sourceTree = "<group>"; };
+		02B2FE1F2D0704CA0088703F /* AddProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductViewController.swift; sourceTree = "<group>"; };
+		3A87630C2CFC22550025CF46 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		570CA38A2CFD8E750055927E /* Dashboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dashboard.storyboard; sourceTree = "<group>"; };
+		570CA38C2CFD9B7E0055927E /* AhmedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AhmedViewController.swift; sourceTree = "<group>"; };
 		570F2DCC2CFB112C0025C9E3 /* EcoShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EcoShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		570F2DCF2CFB112C0025C9E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		570F2DD12CFB112C0025C9E3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,7 +96,13 @@
 		570F2DEC2CFB112E0025C9E3 /* EcoShopUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EcoShopUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		570F2DF02CFB112E0025C9E3 /* EcoShopUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EcoShopUITests.swift; sourceTree = "<group>"; };
 		570F2DF22CFB112E0025C9E3 /* EcoShopUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EcoShopUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C20A57132D00A7720062197B /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
+		C20A57152D00A7A60062197B /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		C20A57172D00A8850062197B /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		C20A57192D00D1B90062197B /* ReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCell.swift; sourceTree = "<group>"; };
+		C27DA67D2D00E24900E85102 /* ReviewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewCell.xib; sourceTree = "<group>"; };
 		C283543C2CFC7E29006C6FC1 /* Ahmed.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Ahmed.storyboard; sourceTree = "<group>"; };
+		C2E054812D003AB700E291CE /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,11 +181,56 @@
 				3AC1D8EB2CFD99FD00E3CE71 /* StoreOnwerDashboardStoryboard.storyboard */,
 			);
 			path = StoreOwnerDashboard;
+		02D575E12D025F6A0092AB5B /* Product Details */ = {
+			isa = PBXGroup;
+			children = (
+				C283543C2CFC7E29006C6FC1 /* Ahmed.storyboard */,
+				C20A57152D00A7A60062197B /* Review.swift */,
+				C20A57132D00A7720062197B /* ReviewViewController.swift */,
+				570CA38C2CFD9B7E0055927E /* AhmedViewController.swift */,
+				C20A57192D00D1B90062197B /* ReviewCell.swift */,
+				C2E054812D003AB700E291CE /* Product.swift */,
+			);
+			path = "Product Details";
+			sourceTree = "<group>";
+		};
+		02D575E22D0260910092AB5B /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		02D575E32D02609A0092AB5B /* Admin */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Admin;
+			sourceTree = "<group>";
+		};
+		02D575E42D0260A70092AB5B /* Shop */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Shop;
+			sourceTree = "<group>";
+		};
+		570CA3872CFD8E300055927E /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				570CA38A2CFD8E750055927E /* Dashboard.storyboard */,
+				021BC2BC2D05CF0E00C2E1C6 /* DashboardViewController.swift */,
+				02B2FE1D2D07013C0088703F /* DashboardNavigation.swift */,
+				02B2FE1F2D0704CA0088703F /* AddProductViewController.swift */,
+				0275FAA62D0AE70100123695 /* OrderHistory.swift */,
+			);
+			path = Dashboard;
 			sourceTree = "<group>";
 		};
 		570F2DC32CFB112C0025C9E3 = {
 			isa = PBXGroup;
 			children = (
+				C27DA67D2D00E24900E85102 /* ReviewCell.xib */,
 				570F2DCE2CFB112C0025C9E3 /* EcoShop */,
 				570F2DE52CFB112E0025C9E3 /* EcoShopTests */,
 				570F2DEF2CFB112E0025C9E3 /* EcoShopUITests */,
@@ -182,6 +252,11 @@
 			isa = PBXGroup;
 			children = (
 				3AC1D8ED2CFD9CDD00E3CE71 /* StoreOwnerDashboard */,
+				02D575E42D0260A70092AB5B /* Shop */,
+				02D575E32D02609A0092AB5B /* Admin */,
+				02D575E22D0260910092AB5B /* Home */,
+				02D575E12D025F6A0092AB5B /* Product Details */,
+				570CA3872CFD8E300055927E /* Dashboard */,
 				3A87630C2CFC22550025CF46 /* GoogleService-Info.plist */,
 				570F2DCF2CFB112C0025C9E3 /* AppDelegate.swift */,
 				570F2DD12CFB112C0025C9E3 /* SceneDelegate.swift */,
@@ -190,7 +265,7 @@
 				570F2DD82CFB112D0025C9E3 /* Assets.xcassets */,
 				570F2DDA2CFB112D0025C9E3 /* LaunchScreen.storyboard */,
 				570F2DDD2CFB112D0025C9E3 /* Info.plist */,
-				C283543C2CFC7E29006C6FC1 /* Ahmed.storyboard */,
+				C20A57172D00A8850062197B /* FirebaseManager.swift */,
 			);
 			path = EcoShop;
 			sourceTree = "<group>";
@@ -325,6 +400,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				570F2DDC2CFB112D0025C9E3 /* LaunchScreen.storyboard in Resources */,
+				570CA38B2CFD8E750055927E /* Dashboard.storyboard in Resources */,
+				C27DA67E2D00E24900E85102 /* ReviewCell.xib in Resources */,
 				3A87630D2CFC22550025CF46 /* GoogleService-Info.plist in Resources */,
 				3AC1D8EC2CFD99FD00E3CE71 /* StoreOnwerDashboardStoryboard.storyboard in Resources */,
 				570F2DD92CFB112D0025C9E3 /* Assets.xcassets in Resources */,
@@ -363,10 +440,20 @@
 				3A9AC6AE2CFDEADA005860A6 /* StoreProductCell.swift in Sources */,
 				3A47A4832CFF358800092B07 /* StoreProductActionsCell.swift in Sources */,
 				3A9D7CDD2D02D4D400702663 /* StoreProductDetailTableViewController.swift in Sources */,
+				0275FAA72D0AE70100123695 /* OrderHistory.swift in Sources */,
+				C20A571A2D00D1B90062197B /* ReviewCell.swift in Sources */,
+				570CA38D2CFD9B7E0055927E /* AhmedViewController.swift in Sources */,
+				C20A57182D00A8850062197B /* FirebaseManager.swift in Sources */,
+				C20A57162D00A7A60062197B /* Review.swift in Sources */,
 				570F2DD02CFB112C0025C9E3 /* AppDelegate.swift in Sources */,
 				3A145E732D074236000E82AF /* Order.swift in Sources */,
 				570F2DD22CFB112C0025C9E3 /* SceneDelegate.swift in Sources */,
 				3A47A47E2CFEC40600092B07 /* StoreProduct.swift in Sources */,
+				02B2FE1E2D07013C0088703F /* DashboardNavigation.swift in Sources */,
+				021BC2BD2D05CF0E00C2E1C6 /* DashboardViewController.swift in Sources */,
+				C2E054822D003AB700E291CE /* Product.swift in Sources */,
+				C20A57142D00A7720062197B /* ReviewViewController.swift in Sources */,
+				02B2FE202D0704CA0088703F /* AddProductViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
