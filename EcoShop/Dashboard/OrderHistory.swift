@@ -9,8 +9,6 @@ import Foundation
 import FirebaseFirestore
 
 struct Metrics: Codable, AdditiveArithmetic {
-    
-    
     let name: String
     let unit: String
     let value: Int
@@ -51,7 +49,7 @@ struct Order: Codable {
     static func fetchUserMetrics(userId: String, startDate: Date?, completion: @escaping (Result<[Metrics], Error>) -> Void) {
         let db = Firestore.firestore()
         
-        // Query with userId and status
+        // Query orders collection
         var query = db.collection("orders")
             .whereField("userId", isEqualTo: userId)
             .whereField("status", isNotEqualTo: "Canceled")
@@ -61,35 +59,36 @@ struct Order: Codable {
             query = query.whereField("dateOrdered", isGreaterThanOrEqualTo: Timestamp(date: startDate))
         }
         
+        var allMetrics: [Metrics] = []
+        let group = DispatchGroup() // Used to wait for all asynchronous queries
+        
+        // Fetch metrics from orders
+        group.enter()
         query.getDocuments { (orderSnapshot, error) in
             if let error = error {
-                // Return the error via the completion handler
+                group.leave()
                 completion(.failure(error))
                 return
             }
             
             guard let documents = orderSnapshot?.documents else {
-                completion(.success([])) // Return an empty array if no orders are found
+                group.leave()
                 return
             }
-            
-            var allMetrics: [Metrics] = []
-            let group = DispatchGroup() // Used to wait for all product fetches
-            
-            print("Processing \(documents.count) orders...")
             
             for document in documents {
                 let orderData = document.data()
                 if let products = orderData["products"] as? [[String: Any]] {
                     for product in products {
-                        if let productId = product["id"] as? String {
-                            group.enter() // Enter group before starting the async task
+                        if let productId = product["id"] as? String,
+                            let quantity = product["quantity"] as? Int{
+                            group.enter()
                             
                             db.collection("products").document(productId).getDocument { (productSnapshot, error) in
                                 defer { group.leave() } // Ensure group.leave is always called
                                 
                                 if let error = error {
-                                    print("Error fetching product: \(error.localizedDescription)")
+                                    completion(.failure(error))
                                     return
                                 }
                                 
@@ -99,7 +98,7 @@ struct Order: Codable {
                                         if let name = metricData["name"] as? String,
                                            let unit = metricData["unit"] as? String,
                                            let value = metricData["value"] as? Int {
-                                            allMetrics.append(Metrics(name: name, unit: unit, value: value))
+                                            allMetrics.append(Metrics(name: name, unit: unit, value: value * quantity))
                                         }
                                     }
                                 }
@@ -109,14 +108,43 @@ struct Order: Codable {
                 }
             }
             
-            group.notify(queue: .main) { // Notify after all async tasks are done
-                let combinedMetrics = combineMetrics(allMetrics)
-                
-                // Return the combined metrics via the completion handler
-                completion(.success(combinedMetrics))
+            group.leave()
+        }
+        
+        // Fetch metrics from outside_product_metrics
+        group.enter()
+        db.collection("outside_product_metrics").getDocuments { (outsideMetricsSnapshot, error) in
+            defer { group.leave() } // Ensure group.leave is always called
+            
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+            
+            guard let outsideMetricsDocs = outsideMetricsSnapshot?.documents else { return }
+            
+            for document in outsideMetricsDocs {
+                let data = document.data()
+                if let metricsArray = data["metrics"] as? [[String: Any]],
+                    let quantity = data["quantity"] as? Int {
+                    for metricData in metricsArray {
+                        if let name = metricData["name"] as? String,
+                           let unit = metricData["unit"] as? String,
+                           let value = metricData["value"] as? Int {
+                            allMetrics.append(Metrics(name: name, unit: unit, value: value * quantity))
+                        }
+                    }
+                }
             }
         }
+        
+        // Notify after all asynchronous tasks are done
+        group.notify(queue: .main) {
+            let combinedMetrics = combineMetrics(allMetrics)
+            completion(.success(combinedMetrics))
+        }
     }
+
 
 }
 
