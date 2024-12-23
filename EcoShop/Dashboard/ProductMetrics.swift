@@ -12,6 +12,7 @@ struct ProductMetric: Codable {
     let productName: String
     let metrics: [Metrics]
     let quantity: Int
+    let userId: String
     var dateOrderd: Date = Date()
     
     static func SaveProductMetric(_ metric: ProductMetric, completion: @escaping (Result<Bool, Error>) -> Void) {

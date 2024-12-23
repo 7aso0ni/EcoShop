@@ -20,7 +20,8 @@ class DashboardViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        tableView.backgroundColor = .background
         // Do any additional setup after loading the view.
         fetchAndPrint(startDate: nil)
         
@@ -32,8 +33,11 @@ class DashboardViewController: UITableViewController {
         
         Order.fetchUserMetrics(userId: userId, startDate: startDate) { result in
             switch result {
-            case .success(let metrics):
-                print("Fetched Metrics:")
+            case .success(let data):
+                let metrics = data.metrics
+                let itemCount = data.itemCount
+                
+                self.numberOfItems.text = "\(itemCount) Items included"
                
                 if let energySaved = metrics.first(where: { $0.name == "Energy Saved" }) {
                     self.energySaved.text = "\(energySaved.value) \(energySaved.unit) of \(energySaved.name)"

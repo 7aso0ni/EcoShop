@@ -46,7 +46,7 @@ struct Order: Codable {
     
 //    A closure that the function calls when it's done fetching data (successfully or with an error).
 //    it's marked as escaping because it will be called later after the fetching is done
-    static func fetchUserMetrics(userId: String, startDate: Date?, completion: @escaping (Result<[Metrics], Error>) -> Void) {
+    static func fetchUserMetrics(userId: String, startDate: Date?, completion: @escaping (Result<(metrics: [Metrics], itemCount: Int), Error>) -> Void) {
         let db = Firestore.firestore()
         
         // Query orders collection
@@ -59,6 +59,7 @@ struct Order: Codable {
             query = query.whereField("dateOrdered", isGreaterThanOrEqualTo: Timestamp(date: startDate))
         }
         
+        var itemCount = 0
         var allMetrics: [Metrics] = []
         let group = DispatchGroup() // Used to wait for all asynchronous queries
         
@@ -82,6 +83,8 @@ struct Order: Codable {
                     for product in products {
                         if let productId = product["id"] as? String,
                             let quantity = product["quantity"] as? Int{
+                            // add the quantity to the item count to get how many items included in the calcuation
+                            itemCount += quantity
                             group.enter()
                             
                             db.collection("products").document(productId).getDocument { (productSnapshot, error) in
@@ -111,9 +114,9 @@ struct Order: Codable {
             group.leave()
         }
         
-        // Fetch metrics from outside_product_metrics
+        // Fetch metrics from outside_product_metrics collection for that specific user
         group.enter()
-        db.collection("outside_product_metrics").getDocuments { (outsideMetricsSnapshot, error) in
+        db.collection("outside_product_metrics").whereField("userId", isEqualTo: userId).getDocuments { (outsideMetricsSnapshot, error) in
             defer { group.leave() } // Ensure group.leave is always called
             
             if let error = error {
@@ -127,6 +130,8 @@ struct Order: Codable {
                 let data = document.data()
                 if let metricsArray = data["metrics"] as? [[String: Any]],
                     let quantity = data["quantity"] as? Int {
+                    itemCount += quantity // Add the quantity to the item count
+
                     for metricData in metricsArray {
                         if let name = metricData["name"] as? String,
                            let unit = metricData["unit"] as? String,
@@ -141,7 +146,7 @@ struct Order: Codable {
         // Notify after all asynchronous tasks are done
         group.notify(queue: .main) {
             let combinedMetrics = combineMetrics(allMetrics)
-            completion(.success(combinedMetrics))
+            completion(.success((metrics: combinedMetrics, itemCount: itemCount)))
         }
     }
 

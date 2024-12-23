@@ -21,6 +21,7 @@ class AddProductViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        tableView.backgroundColor = .background
         // Do any additional setup after loading the view.
     }
     
@@ -82,7 +83,10 @@ class AddProductViewController: UITableViewController {
            ]
         
             let productMetric = ProductMetric(
-                productName: productName, metrics: metrics, quantity: amountBrought
+                productName: productName,
+                metrics: metrics,
+                quantity: amountBrought,
+                userId: "9264ab1a-5d43-403b-a23f-bf4d6b332fff"
             )
         
         // Save the product metric
