@@ -11,12 +11,21 @@ class DashboardViewController: UITableViewController {
     
     var isLoading = true;
     var userMetrics: [Metrics] = []
-
+    
+    @IBOutlet weak var numberOfItems: UITextField!
+    @IBOutlet weak var CO2Emission: UITextField!
+    @IBOutlet weak var waterConserved: UITextField!
+    @IBOutlet weak var plasticWaste: UITextField!
+    @IBOutlet weak var energySaved: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        tableView.backgroundColor = .background
         // Do any additional setup after loading the view.
         fetchAndPrint(startDate: nil)
+        
+        
     }
     
     func fetchAndPrint(startDate: Date?) {
@@ -24,10 +33,35 @@ class DashboardViewController: UITableViewController {
         
         Order.fetchUserMetrics(userId: userId, startDate: startDate) { result in
             switch result {
-            case .success(let metrics):
-                print("Fetched Metrics:")
-                for metric in metrics {
-                    print("Name: \(metric.name), Value: \(metric.value), Unit: \(metric.unit)")
+            case .success(let data):
+                let metrics = data.metrics
+                let itemCount = data.itemCount
+                
+                self.numberOfItems.text = "\(itemCount) Items included"
+               
+                if let energySaved = metrics.first(where: { $0.name == "Energy Saved" }) {
+                    self.energySaved.text = "\(energySaved.value) \(energySaved.unit) of \(energySaved.name)"
+                } else {
+                    self.energySaved.text = "No data for Energy Saved"
+                }
+                
+                if let co2 = metrics.first(where: { $0.name == "CO2 Emissions Saved" }) {
+                    self.CO2Emission.text = "\(co2.value) \(co2.unit) of \(co2.name)"
+                } else {
+                    self.CO2Emission.text = "No data for CO2 Emission"
+                }
+                
+                if let waterCons = metrics.first(where: {$0.name == "Water Conserved"}) {
+                    self.waterConserved.text = "\(waterCons.value) \(waterCons.unit) of \(waterCons.name)"
+                } else {
+                    self.waterConserved.text = "No data for Water Conserved"
+                }
+                
+                if let plasticWaste = metrics.first(where: {$0.name
+                    == "Plastic Waste Reduced"}) {
+                    self.plasticWaste.text = "\(plasticWaste.value) \(plasticWaste.unit) of \(plasticWaste.name)"
+                } else {
+                    self.plasticWaste.text = "No data for Plastic Waste Reduction"
                 }
                 
             case .failure(let error):
