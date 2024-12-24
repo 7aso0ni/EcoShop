@@ -26,7 +26,7 @@ class AhmedViewController: UIViewController {
     
     // MARK: - Properties
     var productId: String?
-    private var product: Product?
+    var product: Product?
     private var selectedQuantity: Int = 1
     
     // MARK: - Lifecycle
@@ -214,3 +214,4 @@ class AhmedViewController: UIViewController {
         }
     }
 }
+

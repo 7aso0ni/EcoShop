@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AC0-mY-tsu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AC0-mY-tsu">
     <device id="retina6_72" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -21,6 +21,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hXi-hL-F8c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-482" y="-476"/>
+        </scene>
+        <!--Product-->
+        <scene sceneID="ucb-Om-1m0">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Product" id="QuM-fM-JMT" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="Dpj-gF-ph1"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pco-xS-G6V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-485" y="-366"/>
         </scene>
         <!--Ahmed-->
         <scene sceneID="eSz-7z-ULe">
@@ -44,8 +54,7 @@
                         <color key="selectedImageTintColor" systemColor="tintColor"/>
                     </tabBar>
                     <connections>
-                        <segue destination="Umm-FW-iTZ" kind="relationship" relationship="viewControllers" id="IHv-AF-WYQ"/>
-                        <segue destination="ttl-fW-T9E" kind="relationship" relationship="viewControllers" id="dfx-Q2-9HQ"/>
+                        <segue destination="QuM-fM-JMT" kind="relationship" relationship="viewControllers" id="TWY-7G-im6"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ucg-i3-4Zo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

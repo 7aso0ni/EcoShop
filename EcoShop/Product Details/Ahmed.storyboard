@@ -369,7 +369,7 @@
         <!--Ahmed View Controller-->
         <scene sceneID="Rcb-G1-Wfz">
             <objects>
-                <viewController id="4az-pw-Y4H" customClass="AhmedViewController" customModule="EcoShop" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AhmedViewController" id="4az-pw-Y4H" customClass="AhmedViewController" customModule="EcoShop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Hwo-kk-avh">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1233,7 +1233,7 @@
                                                                 </constraints>
                                                             </stepper>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b2s-Rz-rVE">
-                                                                <rect key="frame" x="151" y="10" width="14.333333333333343" height="29"/>
+                                                                <rect key="frame" x="151" y="10" width="15" height="29"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="b2s-Rz-rVE" secondAttribute="height" multiplier="15:29" id="vtX-Zj-B9M"/>
                                                                 </constraints>
@@ -1895,7 +1895,7 @@
                                                                 </constraints>
                                                             </stepper>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vsP-ko-UlC">
-                                                                <rect key="frame" x="151" y="10" width="14.333333333333343" height="29"/>
+                                                                <rect key="frame" x="151" y="10" width="15" height="29"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="vsP-ko-UlC" secondAttribute="height" multiplier="15:29" id="BOz-LN-oz6"/>
                                                                 </constraints>

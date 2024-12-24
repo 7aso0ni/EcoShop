@@ -12,7 +12,6 @@
         <!--Product View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="Y6W-OH-hqX" customClass="ProductViewController" customModule="EcoShop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
@@ -92,6 +91,9 @@
                                                             </constraints>
                                                             <state key="normal" title="Button"/>
                                                             <buttonConfiguration key="configuration" style="filled" title="View"/>
+                                                            <connections>
+                                                                <segue destination="lW8-Rq-0a4" kind="show" identifier="viewProductSegue" id="dWt-Vk-ZAb"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.8980392157" green="0.92156862750000001" blue="0.87450980389999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -155,7 +157,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n8I-Sh-KYS">
                                 <rect key="frame" x="367" y="59" width="63" height="44"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="button:n8I-Sh-KYS:image" catalog="system">
+                                <buttonConfiguration key="configuration" style="plain" image="button:n8I-Sh-KYS:image">
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                             </button>
@@ -189,8 +191,19 @@
                         <outlet property="table" destination="w9b-Jm-vVj" id="kRu-Pf-0fl"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="47.441860465116278" y="-2.5751072961373391"/>
+        </scene>
+        <!--Ahmed-->
+        <scene sceneID="HWt-vi-de0">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Ahmed" id="lW8-Rq-0a4" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="3MX-q7-yNX"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="42e-E7-2km" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="489" y="358"/>
         </scene>
         <!--Product View Controller-->
         <scene sceneID="dRc-02-XOe">
@@ -307,7 +320,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="button:n8I-Sh-KYS:image" catalog="system" width="128" height="123">
+        <image name="button:n8I-Sh-KYS:image" width="128" height="123">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMSAAGGoF8QD05T
 S2V5ZWRBcmNoaXZlctEICVRyb290gAGvEBELDBscIRkmKywzNjlDS0xQU1UkbnVsbNcNDg8QERITFBUW

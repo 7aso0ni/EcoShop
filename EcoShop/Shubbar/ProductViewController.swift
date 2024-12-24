@@ -110,12 +110,24 @@ class ProductViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     @objc private func viewButtonTapped(_ sender: UIButton) {
-        let selectedProduct = filteredProducts[sender.tag]
+        let index = sender.tag
+        let selectedProduct = filteredProducts[index]
         
         let storyboard = UIStoryboard(name: "Ahmed", bundle: nil)
-        if let friendVC = storyboard.instantiateViewController(withIdentifier: "AhmedViewController") as? AhmedViewController {
-            friendVC.productId = selectedProduct.id
-            self.navigationController?.pushViewController(friendVC, animated: true)
+        if let ahmedVC = storyboard.instantiateViewController(withIdentifier: "AhmedViewController") as? AhmedViewController {
+            ahmedVC.product = selectedProduct
+            self.navigationController?.pushViewController(ahmedVC, animated: true)
+        } else {
+            print("Error: could not find AhmedViewController in the storyboard")
+        }
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "viewProductSegue",
+           let destinationVC = segue.destination as? AhmedViewController,
+           let button = sender as? UIButton {
+            let selectedProduct = products[button.tag]
+            destinationVC.productId = selectedProduct.id
+            
         }
     }
 }
