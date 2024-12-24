@@ -92,7 +92,7 @@
                                                             <state key="normal" title="Button"/>
                                                             <buttonConfiguration key="configuration" style="filled" title="View"/>
                                                             <connections>
-                                                                <segue destination="lW8-Rq-0a4" kind="show" identifier="viewProductSegue" id="dWt-Vk-ZAb"/>
+                                                                <segue destination="lW8-Rq-0a4" kind="showDetail" identifier="viewProductSegue" id="dWt-Vk-ZAb"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>

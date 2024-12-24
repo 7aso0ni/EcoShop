@@ -39,6 +39,7 @@ class AhmedViewController: UIViewController {
             productId = "02a3c9b2-6c12-40d5-8d4c-218a8ddd5d27"
         }
         
+        
         fetchProductDetails()
     }
     

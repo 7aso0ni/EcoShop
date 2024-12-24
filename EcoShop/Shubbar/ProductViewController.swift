@@ -123,7 +123,8 @@ class ProductViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "viewProductSegue",
-           let destinationVC = segue.destination as? AhmedViewController,
+           let navController = segue.destination as? UINavigationController,
+           let destinationVC = navController.topViewController as? AhmedViewController,
            let button = sender as? UIButton {
             let selectedProduct = products[button.tag]
             destinationVC.productId = selectedProduct.id
