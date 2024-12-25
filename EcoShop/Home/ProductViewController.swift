@@ -34,7 +34,7 @@ class ProductViewController: UIViewController, UITableViewDataSource, UITableVie
             let db = Firestore.firestore()
             let snapshot = try await db.collection("products").getDocuments()
             self.products = snapshot.documents.compactMap { doc in
-                try? Product(
+                Product(
                     id: doc.documentID,
                     name: doc["name"] as? String ?? "",
                     price: doc["price"] as? Double ?? 0.0,

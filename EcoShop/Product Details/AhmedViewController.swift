@@ -136,6 +136,8 @@ class AhmedViewController: UIViewController {
                   let url = URL(string: product.imageURL) else { continue }
             
             URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
+                guard self != nil else { return }
+                
                 if let error = error {
                     print("❌ Error loading image: \(error)")
                     return
@@ -256,6 +258,8 @@ class AhmedViewController: UIViewController {
     
     private func loadImage(from url: URL) {
         URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
+            guard let self = self else { return }
+            
             if let error = error {
                 print("Error loading image: \(error)")
                 return
@@ -263,7 +267,7 @@ class AhmedViewController: UIViewController {
             
             if let data = data, let image = UIImage(data: data) {
                 DispatchQueue.main.async {
-                    self?.productImageView.image = image
+                    self.productImageView.image = image
                 }
             }
         }.resume()

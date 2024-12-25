@@ -68,7 +68,7 @@ struct Product: Codable {
         
         print("Fetched data: \(data)")
         
-        return try? Product(
+        return Product(
             id: snapshot.documentID,
             name: data["name"] as? String ?? "",
             price: data["price"] as? Double ?? 0.0,
@@ -108,7 +108,7 @@ struct Product: Codable {
     return nil
 } ?? []
                 
-                let product = try Product(
+                let product = Product(
                     id: document.documentID,
                     name: document["name"] as? String ?? "",
                     price: document["price"] as? Double ?? 0.0,

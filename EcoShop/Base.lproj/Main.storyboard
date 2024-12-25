@@ -49,34 +49,8 @@
             </objects>
             <point key="canvasLocation" x="994" y="-62"/>
         </scene>
-        <!--AhmednNavController-->
-        <scene sceneID="Xpu-lI-ChR">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Ahmed" referencedIdentifier="AhmednNavController" id="q51-np-jzt" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Cart" image="cart" catalog="system" selectedImage="firebaseIcon" id="7fY-Q8-KOe">
-                        <color key="badgeColor" name="containerColor"/>
-                    </tabBarItem>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Dd5-VP-WSW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1009" y="65"/>
-        </scene>
-        <!--AhmednNavController-->
-        <scene sceneID="CGS-KI-tkP">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Ahmed" referencedIdentifier="AhmednNavController" id="OBx-yQ-vlX" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Cart" image="cart" catalog="system" selectedImage="firebaseIcon" id="ngI-gg-T4a">
-                        <color key="badgeColor" name="containerColor"/>
-                    </tabBarItem>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zOf-nZ-EIw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1009" y="65"/>
-        </scene>
     </scenes>
     <resources>
-        <image name="cart" catalog="system" width="128" height="102"/>
-        <image name="firebaseIcon" width="128" height="128"/>
         <image name="leaf.fill" catalog="system" width="128" height="109"/>
         <namedColor name="containerColor">
             <color red="0.69800001382827759" green="0.75700002908706665" blue="0.62400001287460327" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
