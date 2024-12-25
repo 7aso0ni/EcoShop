@@ -27,10 +27,10 @@
             </objects>
             <point key="canvasLocation" x="-443" y="-211"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Main Tab Bar Controller-->
         <scene sceneID="5mI-4K-cWh">
             <objects>
-                <tabBarController id="AC0-mY-tsu" sceneMemberID="viewController">
+                <tabBarController id="AC0-mY-tsu" customClass="MainTabBarController" customModule="EcoShop" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="J2a-MV-wNx">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -40,6 +40,8 @@
                         <segue destination="Umm-FW-iTZ" kind="relationship" relationship="viewControllers" id="IHv-AF-WYQ"/>
                         <segue destination="ttl-fW-T9E" kind="relationship" relationship="viewControllers" id="dfx-Q2-9HQ"/>
                         <segue destination="Hkx-hk-0hN" kind="relationship" relationship="viewControllers" id="fR1-Ca-z6w"/>
+                        <segue destination="A8A-iA-xkh" kind="relationship" relationship="viewControllers" id="9EY-f1-T4i"/>
+                        <segue destination="Bmn-JV-SIa" kind="relationship" relationship="viewControllers" id="cCN-zS-ay2"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ucg-i3-4Zo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -55,6 +57,26 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="inC-9t-hPa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-933" y="-22"/>
+        </scene>
+        <!--ShoppingCart-->
+        <scene sceneID="WCL-ZG-3pd">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ShoppingCart" id="A8A-iA-xkh" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="qgk-4g-SfZ"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="biX-fj-7yA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1248" y="103"/>
+        </scene>
+        <!--StoreOnwerDashboardStoryboard-->
+        <scene sceneID="3xs-t1-Qtx">
+            <objects>
+                <viewControllerPlaceholder storyboardName="StoreOnwerDashboardStoryboard" id="Bmn-JV-SIa" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="RrL-nL-RdK"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vrd-4K-jct" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1746" y="169"/>
         </scene>
     </scenes>
 </document>

@@ -12,6 +12,7 @@ struct StoreOrder: Identifiable {
    let id: String
    let products: [OrderProduct]
    let storeOwnerId: String
+   let userId: String
    let totalPrice: Double
    let status: OrderStatus
    let dateOrdered: Date
@@ -27,10 +28,28 @@ struct StoreOrder: Identifiable {
        case inFlight = "In Flight"
        case cancelled = "Cancelled"
    }
+    
+    init(id: String = UUID().uuidString,
+         storeOwnerId: String,
+         userId: String,
+         totalPrice: Double,
+         status: OrderStatus,
+         dateOrdered: Date,
+         products: [OrderProduct]
+    ) {
+        self.id = id
+        self.userId = userId
+        self.storeOwnerId = storeOwnerId
+        self.totalPrice = totalPrice
+        self.status = status
+        self.dateOrdered = dateOrdered
+        self.products = products
+    }
    
    init?(document: QueryDocumentSnapshot) {
        guard
            let storeOwnerId = document.data()["storeOwnerId"] as? String,
+           let userId = document.data()["userId"] as? String,
            let totalPrice = document.data()["totalPrice"] as? Double,
            let statusString = document.data()["status"] as? String,
            let timestamp = document.data()["dateOrdered"] as? Timestamp,
@@ -40,6 +59,7 @@ struct StoreOrder: Identifiable {
        
        self.id = document.documentID
        self.storeOwnerId = storeOwnerId
+       self.userId = userId
        self.totalPrice = totalPrice
        self.status = OrderStatus(rawValue: statusString) ?? .pending
        self.dateOrdered = timestamp.dateValue()
@@ -110,5 +130,24 @@ struct StoreOrder: Identifiable {
        try await db.collection("orders").document(orderId).updateData([
            "status": newStatus.rawValue
        ])
+    }
+    
+    func saveOrder() async throws {
+        let db = Firestore.firestore()
+        // Convert to dictionary for Firestore
+        let orderData: [String: Any] = [
+            "id": id,
+            "products": products.map { [
+                "id": $0.id,
+                "quantity": $0.quantity
+            ]},
+            "storeOwnerId": storeOwnerId,
+            "userId": userId,
+            "totalPrice": totalPrice,
+            "status": status.rawValue,
+            "dateOrdered": Timestamp(date: dateOrdered)
+        ]
+               
+        try await db.collection("orders").document(id).setData(orderData)
     }
 }

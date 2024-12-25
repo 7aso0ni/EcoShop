@@ -158,9 +158,7 @@ struct StoreProduct: Identifiable {
            "price": price as Any,
            "metrics": metrics as Any
        ]
-       
-       print(productData)
-       
+              
        try await db.collection("products").document(id).setData(productData)
    }
 }

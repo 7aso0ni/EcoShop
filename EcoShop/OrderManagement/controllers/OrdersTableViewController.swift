@@ -90,7 +90,6 @@ class OrdersTableViewController: UITableViewController, StatusPickerTableViewCel
         }
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "OrderIdentifier", for: indexPath) as? OrderTableViewCell else {
-            print("Failed to dequeue OrderTableViewCell")
             return UITableViewCell()
         }
         
@@ -104,8 +103,8 @@ class OrdersTableViewController: UITableViewController, StatusPickerTableViewCel
 
        cell.orderDateLabel.text = formattedDate
 
-        cell.orderStatusLabel.text = order.status.rawValue
-        cell.orderTotalPriceLabel.text = "\(order.totalPrice) BD"
+        cell.orderStatusLabel.text = order.status.rawValue.uppercased(with: .autoupdatingCurrent)
+        cell.orderTotalPriceLabel.text = "\(round(order.totalPrice)) BD"
         cell.delegate = self
         
         cell.cancelOrderButton.isHidden = (order.status == StoreOrder.OrderStatus.cancelled || order.status == StoreOrder.OrderStatus.completed)
