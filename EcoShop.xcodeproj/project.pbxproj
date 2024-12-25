@@ -3,12 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 70;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		021BC2BD2D05CF0E00C2E1C6 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021BC2BC2D05CF0E00C2E1C6 /* DashboardViewController.swift */; };
 		0275FAA72D0AE70100123695 /* OrderHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0275FAA62D0AE70100123695 /* OrderHistory.swift */; };
+		029208F82D1C288A00BA5D05 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029208F72D1C288A00BA5D05 /* FilterViewController.swift */; };
+		029208FC2D1C289500BA5D05 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029208F92D1C289500BA5D05 /* CustomTableViewCell.swift */; };
+		029208FD2D1C289500BA5D05 /* Product.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 029208FA2D1C289500BA5D05 /* Product.storyboard */; };
+		029208FE2D1C289500BA5D05 /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029208FB2D1C289500BA5D05 /* ProductViewController.swift */; };
 		02974FB22D188161002F0E57 /* ProductMetrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02974FB12D188161002F0E57 /* ProductMetrics.swift */; };
 		02B2FE1E2D07013C0088703F /* DashboardNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B2FE1D2D07013C0088703F /* DashboardNavigation.swift */; };
 		02B2FE202D0704CA0088703F /* AddProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B2FE1F2D0704CA0088703F /* AddProductViewController.swift */; };
@@ -56,6 +60,10 @@
 /* Begin PBXFileReference section */
 		021BC2BC2D05CF0E00C2E1C6 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		0275FAA62D0AE70100123695 /* OrderHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistory.swift; sourceTree = "<group>"; };
+		029208F72D1C288A00BA5D05 /* FilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FilterViewController.swift; path = "../../../../Downloads/Shubbar copy/FilterViewController.swift"; sourceTree = "<group>"; };
+		029208F92D1C289500BA5D05 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomTableViewCell.swift; path = "../../../../Downloads/Shubbar copy/CustomTableViewCell.swift"; sourceTree = "<group>"; };
+		029208FA2D1C289500BA5D05 /* Product.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Product.storyboard; path = "../../../../Downloads/Shubbar copy/Product.storyboard"; sourceTree = "<group>"; };
+		029208FB2D1C289500BA5D05 /* ProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProductViewController.swift; path = "../../../../Downloads/Shubbar copy/ProductViewController.swift"; sourceTree = "<group>"; };
 		02974FB12D188161002F0E57 /* ProductMetrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductMetrics.swift; sourceTree = "<group>"; };
 		02B2FE1D2D07013C0088703F /* DashboardNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardNavigation.swift; sourceTree = "<group>"; };
 		02B2FE1F2D0704CA0088703F /* AddProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +120,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		029208F62D1C26DA00BA5D05 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				029208F72D1C288A00BA5D05 /* FilterViewController.swift */,
+				029208F92D1C289500BA5D05 /* CustomTableViewCell.swift */,
+				029208FA2D1C289500BA5D05 /* Product.storyboard */,
+				029208FB2D1C289500BA5D05 /* ProductViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		02D575E12D025F6A0092AB5B /* Product Details */ = {
 			isa = PBXGroup;
 			children = (
@@ -123,27 +142,6 @@
 				C2E054812D003AB700E291CE /* Product.swift */,
 			);
 			path = "Product Details";
-			sourceTree = "<group>";
-		};
-		02D575E22D0260910092AB5B /* Home */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Home;
-			sourceTree = "<group>";
-		};
-		02D575E32D02609A0092AB5B /* Admin */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Admin;
-			sourceTree = "<group>";
-		};
-		02D575E42D0260A70092AB5B /* Shop */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Shop;
 			sourceTree = "<group>";
 		};
 		570CA3872CFD8E300055927E /* Dashboard */ = {
@@ -183,9 +181,7 @@
 		570F2DCE2CFB112C0025C9E3 /* EcoShop */ = {
 			isa = PBXGroup;
 			children = (
-				02D575E42D0260A70092AB5B /* Shop */,
-				02D575E32D02609A0092AB5B /* Admin */,
-				02D575E22D0260910092AB5B /* Home */,
+				029208F62D1C26DA00BA5D05 /* Home */,
 				02D575E12D025F6A0092AB5B /* Product Details */,
 				570CA3872CFD8E300055927E /* Dashboard */,
 				3A87630C2CFC22550025CF46 /* GoogleService-Info.plist */,
@@ -332,6 +328,7 @@
 			files = (
 				570F2DDC2CFB112D0025C9E3 /* LaunchScreen.storyboard in Resources */,
 				570CA38B2CFD8E750055927E /* Dashboard.storyboard in Resources */,
+				029208FD2D1C289500BA5D05 /* Product.storyboard in Resources */,
 				C27DA67E2D00E24900E85102 /* ReviewCell.xib in Resources */,
 				3A87630D2CFC22550025CF46 /* GoogleService-Info.plist in Resources */,
 				570F2DD92CFB112D0025C9E3 /* Assets.xcassets in Resources */,
@@ -363,13 +360,16 @@
 			files = (
 				570F2DD42CFB112C0025C9E3 /* ViewController.swift in Sources */,
 				0275FAA72D0AE70100123695 /* OrderHistory.swift in Sources */,
+				029208FC2D1C289500BA5D05 /* CustomTableViewCell.swift in Sources */,
 				C20A571A2D00D1B90062197B /* ReviewCell.swift in Sources */,
+				029208FE2D1C289500BA5D05 /* ProductViewController.swift in Sources */,
 				570CA38D2CFD9B7E0055927E /* AhmedViewController.swift in Sources */,
 				C20A57182D00A8850062197B /* FirebaseManager.swift in Sources */,
 				C20A57162D00A7A60062197B /* Review.swift in Sources */,
 				570F2DD02CFB112C0025C9E3 /* AppDelegate.swift in Sources */,
 				570F2DD22CFB112C0025C9E3 /* SceneDelegate.swift in Sources */,
 				02B2FE1E2D07013C0088703F /* DashboardNavigation.swift in Sources */,
+				029208F82D1C288A00BA5D05 /* FilterViewController.swift in Sources */,
 				021BC2BD2D05CF0E00C2E1C6 /* DashboardViewController.swift in Sources */,
 				C2E054822D003AB700E291CE /* Product.swift in Sources */,
 				C20A57142D00A7720062197B /* ReviewViewController.swift in Sources */,

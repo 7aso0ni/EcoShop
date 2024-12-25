@@ -126,7 +126,7 @@ class ProductViewController: UIViewController, UITableViewDataSource, UITableVie
            let navController = segue.destination as? UINavigationController,
            let destinationVC = navController.topViewController as? AhmedViewController,
            let button = sender as? UIButton {
-            let selectedProduct = products[button.tag]
+            let selectedProduct = filteredProducts[button.tag]
             destinationVC.productId = selectedProduct.id
             
         }

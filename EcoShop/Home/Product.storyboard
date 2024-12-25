@@ -23,6 +23,7 @@
                                     <constraint firstAttribute="width" constant="367" id="Oeb-bI-jUh"/>
                                     <constraint firstAttribute="height" constant="44" id="lDJ-ez-9CF"/>
                                 </constraints>
+                                <color key="barTintColor" red="0.8980392157" green="0.94117647059999998" blue="0.87450980389999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="Y6W-OH-hqX" id="okx-5Y-9jQ"/>
@@ -36,7 +37,7 @@
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Pn-cK-7Ne">
                                 <rect key="frame" x="0.0" y="162" width="430" height="200"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" red="0.8980392157" green="0.92156862750000001" blue="0.87450980389999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Products" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yBK-j3-Thu">
                                 <rect key="frame" x="20" y="370" width="101" height="32"/>
@@ -50,6 +51,7 @@
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="w9b-Jm-vVj">
                                         <rect key="frame" x="0.0" y="0.0" width="430" height="488"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="sectionIndexBackgroundColor" red="0.8980392157" green="0.94117647059999998" blue="0.87450980389999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ProductCell" rowHeight="146" id="l8o-00-BP9" customClass="CustomTableViewCell" customModule="EcoShop" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="50" width="430" height="146"/>
@@ -146,7 +148,7 @@
                                         </prototypes>
                                     </tableView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" red="0.8980392157" green="0.92156862750000001" blue="0.87450980389999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstItem="w9b-Jm-vVj" firstAttribute="leading" secondItem="4mo-Rd-d1S" secondAttribute="leading" id="9nN-eo-L2i"/>
                                     <constraint firstAttribute="bottom" secondItem="w9b-Jm-vVj" secondAttribute="bottom" id="Zj9-Y6-rNx"/>
@@ -163,7 +165,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.8980392157" green="0.92156862750000001" blue="0.87450980389999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="ZCa-Tu-BWW" firstAttribute="top" secondItem="xA0-ZT-XNy" secondAttribute="bottom" constant="19" id="092-dy-79I"/>
                             <constraint firstItem="n8I-Sh-KYS" firstAttribute="leading" secondItem="xA0-ZT-XNy" secondAttribute="trailing" id="2wZ-qh-cZ8"/>

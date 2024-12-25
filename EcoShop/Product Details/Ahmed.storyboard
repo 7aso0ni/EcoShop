@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6PZ-am-oWH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6PZ-am-oWH">
     <device id="retina6_72" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -972,11 +972,13 @@
             </objects>
             <point key="canvasLocation" x="-1563" y="1033"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Product Details-->
         <scene sceneID="tdT-Cn-ngZ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6PZ-am-oWH" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Product Details" selectedImage="cart" catalog="system" id="dqy-Fw-gcp"/>
                     <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="jQM-pR-faR">
                         <rect key="frame" x="0.0" y="59" width="430" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1233,7 +1235,7 @@
                                                                 </constraints>
                                                             </stepper>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b2s-Rz-rVE">
-                                                                <rect key="frame" x="151" y="10" width="14.333333333333343" height="29"/>
+                                                                <rect key="frame" x="151" y="10" width="15" height="29"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="b2s-Rz-rVE" secondAttribute="height" multiplier="15:29" id="vtX-Zj-B9M"/>
                                                                 </constraints>
@@ -2542,6 +2544,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="cart" catalog="system" width="128" height="102"/>
         <image name="star" catalog="system" width="128" height="116"/>
         <namedColor name="AccentColor">
             <color red="1" green="0.79199999570846558" blue="0.15700000524520874" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
