@@ -26,12 +26,37 @@ struct Product: Codable {
     let imageURL: String
     let stockQuantity: Int
     let storeOwnerId: String
-    let averageRating: String
-    let rating: Int
     let metrics: [Metric]
+    let isCertified: Bool
     
     var environmentalImpactSummary: String {
         return metrics.map { $0.formattedString }.joined(separator: "\n")
+    }
+    
+    // Computed property for average rating
+    var averageRating: Double {
+        get async throws {
+            print("📊 Calculating average rating for product: \(id)")
+            let reviews = try await Review.fetchReviews(for: id)
+            print("📝 Found \(reviews.count) reviews")
+            
+            if reviews.isEmpty {
+                print("ℹ️ No reviews found, returning 0.0")
+                return 0.0
+            }
+            
+            // Print individual ratings
+            reviews.forEach { review in
+                print("⭐️ Review by \(review.username): \(review.rating) stars")
+            }
+            
+            let totalRating = reviews.reduce(0) { $0 + $1.rating }
+            let average = Double(totalRating) / Double(reviews.count)
+            print("✨ Total rating: \(totalRating)")
+            print("📈 Average rating: \(average)")
+            
+            return average
+        }
     }
     
     static func fetchProduct(withId id: String) async throws -> Product? {
@@ -51,14 +76,73 @@ struct Product: Codable {
             imageURL: data["imageURL"] as? String ?? "",
             stockQuantity: data["stockQuantity"] as? Int ?? 0,
             storeOwnerId: data["storeOwnerId"] as? String ?? "",
-            averageRating: data["averageRating"] as? String ?? "0.0",
-            rating: data["rating"] as? Int ?? 0,
             metrics: (data["metrics"] as? [[String: Any]])?.compactMap { metricData in
                 guard let name = metricData["name"] as? String,
                       let unit = metricData["unit"] as? String,
                       let value = metricData["value"] as? Double else { return nil }
                 return Metric(name: name, unit: unit, value: value)
-            } ?? []
+            } ?? [],
+            isCertified: data["isCertified"] as? Bool ?? false
         )
     }
+    static func fetchTopRatedProducts(limit: Int = 3) async throws -> [Product] {
+        print("🔍 Fetching top \(limit) rated products")
+        let db = Firestore.firestore()
+        let productsRef = db.collection("products")
+        
+        // First, fetch all products
+        let snapshot = try await productsRef.getDocuments()
+        
+        // Create array to hold products with their ratings
+        var productsWithRatings: [(Product, Double)] = []
+        
+        // Process each product sequentially
+        for document in snapshot.documents {
+            do {
+            let metrics = (document["metrics"] as? [[String: Any]])?.compactMap { metricData -> Metric? in
+    if let name = metricData["name"] as? String,
+       let value = metricData["value"] as? Double,
+       let unit = metricData["unit"] as? String {
+        return Metric(name: name, unit: unit, value: value)
+    }
+    return nil
+} ?? []
+                
+                let product = try Product(
+                    id: document.documentID,
+                    name: document["name"] as? String ?? "",
+                    price: document["price"] as? Double ?? 0.0,
+                    description: document["description"] as? String ?? "",
+                    imageURL: document["imageURL"] as? String ?? "",
+                    stockQuantity: document["stockQuantity"] as? Int ?? 0,
+                    storeOwnerId: document["storeOwnerId"] as? String ?? "",
+                    metrics: metrics,
+                    isCertified: document["isCertified"] as? Bool ?? false
+                )
+                
+                // Calculate average rating for each product
+                let reviews = try await Review.fetchReviews(for: product.id)
+                let avgRating = reviews.isEmpty ? 0.0 : Double(reviews.reduce(0) { $0 + $1.rating }) / Double(reviews.count)
+                print("📊 Product: \(product.name) - Average Rating: \(avgRating)")
+                
+                productsWithRatings.append((product, avgRating))
+            } catch {
+                print("❌ Error processing product document: \(error)")
+                continue
+            }
+        }
+        
+        // Sort products by average rating and get top N
+        productsWithRatings.sort { $0.1 > $1.1 }
+        let topProducts = productsWithRatings.prefix(limit).map { $0.0 }
+        
+        print("✅ Found top \(topProducts.count) rated products:")
+        topProducts.forEach { product in
+            print("🏆 \(product.name)")
+        }
+        
+        return Array(topProducts)
+    }
+
+    
 }

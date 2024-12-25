@@ -142,5 +142,113 @@
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0051ED06-38E8-4571-9B15-1916A798D5EE"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EcoShop/Product Details/AhmedViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "AhmedViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "0051ED06-38E8-4571-9B15-1916A798D5EE - bcf8f8a766c5c2b8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EcoShop.AhmedViewController.productNameLabel.getter : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "EcoShop"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ahmedmohammed/Documents/EcoShopCheckifwork/EcoShop/Product%20Details/AhmedViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "0051ED06-38E8-4571-9B15-1916A798D5EE - 6b9591a5b6c3a6c4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EcoShop.AhmedViewController.productNameLabel.setter : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "EcoShop"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ahmedmohammed/Documents/EcoShopCheckifwork/EcoShop/Product%20Details/AhmedViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  uuid = "0051ED06-38E8-4571-9B15-1916A798D5EE - 12ed02757881ada6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EcoShop.AhmedViewController.productNameLabel.modify : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "EcoShop"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ahmedmohammed/Documents/EcoShopCheckifwork/EcoShop/Product%20Details/AhmedViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "0051ED06-38E8-4571-9B15-1916A798D5EE - a0e752cae02b810f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EcoShop.AhmedViewController.productNameLabel.modify : Swift.Optional&lt;__C.UILabel&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "EcoShop"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ahmedmohammed/Documents/EcoShopCheckifwork/%3Ccompiler-generated%3E"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "0051ED06-38E8-4571-9B15-1916A798D5EE - 6bc459a07b895500"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EcoShop.AhmedViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; EcoShop.AhmedViewController"
+                  moduleName = "EcoShop"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ahmedmohammed/Documents/EcoShopCheckifwork/EcoShop/Product%20Details/AhmedViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "240">
+               </Location>
+               <Location
+                  uuid = "0051ED06-38E8-4571-9B15-1916A798D5EE - 7bc7669fa09c7ba"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EcoShop.AhmedViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;EcoShop.AhmedViewController&gt;"
+                  moduleName = "EcoShop"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ahmedmohammed/Documents/EcoShopCheckifwork/EcoShop/Product%20Details/AhmedViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "216">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

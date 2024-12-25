@@ -42,14 +42,13 @@ class ProductViewController: UIViewController, UITableViewDataSource, UITableVie
                     imageURL: doc["imageURL"] as? String ?? "",
                     stockQuantity: doc["stockQuantity"] as? Int ?? 0,
                     storeOwnerId: doc["storeOwnerId"] as? String ?? "",
-                    averageRating: doc["averageRating"] as? String ?? "0.0",
-                    rating: doc["rating"] as? Int ?? 0,
                     metrics: (doc["metrics"] as? [[String: Any]])?.compactMap { metricData in
                         guard let name = metricData["name"] as? String,
                               let unit = metricData["unit"] as? String,
                               let value = metricData["value"] as? Double else { return nil }
                         return Metric(name: name, unit: unit, value: value)
-                    } ?? []
+                    } ?? [],
+                    isCertified: doc["isCertified"] as? Bool ?? false
                 )
             }
             self.filteredProducts = self.products // Initialize filteredProducts with all products
@@ -115,20 +114,14 @@ class ProductViewController: UIViewController, UITableViewDataSource, UITableVie
         
         let storyboard = UIStoryboard(name: "Ahmed", bundle: nil)
         if let ahmedVC = storyboard.instantiateViewController(withIdentifier: "AhmedViewController") as? AhmedViewController {
-            ahmedVC.product = selectedProduct
+            ahmedVC.productId = selectedProduct.id
             self.navigationController?.pushViewController(ahmedVC, animated: true)
         } else {
             print("Error: could not find AhmedViewController in the storyboard")
         }
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "viewProductSegue",
-           let navController = segue.destination as? UINavigationController,
-           let destinationVC = navController.topViewController as? AhmedViewController,
-           let button = sender as? UIButton {
-            let selectedProduct = filteredProducts[button.tag]
-            destinationVC.productId = selectedProduct.id
-            
-        }
+        // Removing this since we're using direct navigation instead of segues
     }
 }

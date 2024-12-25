@@ -24,10 +24,16 @@ class AhmedViewController: UIViewController {
     @IBOutlet weak var star4: UIButton!
     @IBOutlet weak var star5: UIButton!
     
+    @IBOutlet private weak var topRatedImage1: UIImageView!
+    @IBOutlet private weak var topRatedImage2: UIImageView!
+    @IBOutlet private weak var topRatedImage3: UIImageView!
+    @IBOutlet weak var certificationImageView: UIImageView!
+    
     // MARK: - Properties
     var productId: String?
-    var product: Product?
+    private var product: Product?
     private var selectedQuantity: Int = 1
+    private var topRatedProducts: [Product] = []
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -39,8 +45,10 @@ class AhmedViewController: UIViewController {
             productId = "02a3c9b2-6c12-40d5-8d4c-218a8ddd5d27"
         }
         
-        
-        fetchProductDetails()
+        fetchTopRatedProducts()
+        if let productId = productId {
+            fetchProductDetails(for: productId)
+        }
     }
     
     // MARK: - Private Methods
@@ -55,6 +63,15 @@ class AhmedViewController: UIViewController {
         
         // Add stepper value changed action
         quantityStepper.addTarget(self, action: #selector(stepperValueChanged), for: .valueChanged)
+        
+        // Setup tap gestures for top rated product images
+        [topRatedImage1, topRatedImage2, topRatedImage3].enumerated().forEach { index, imageView in
+            guard let imageView = imageView else { return }
+            imageView.isUserInteractionEnabled = true
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(topRatedImageTapped(_:)))
+            imageView.tag = index
+            imageView.addGestureRecognizer(tapGesture)
+        }
     }
     
     private func setupStarRatingView() {
@@ -92,31 +109,97 @@ class AhmedViewController: UIViewController {
         }
     }
     
-    private func fetchProductDetails() {
-        guard let id = productId else {
-            print("❌ No product ID available")
+    private func fetchTopRatedProducts() {
+        Task {
+            do {
+                print("🔄 Fetching top rated products")
+                let products = try await Product.fetchTopRatedProducts()
+                self.topRatedProducts = products
+                
+                // Update UI with top rated products
+                await MainActor.run {
+                    updateTopRatedProductsUI()
+                }
+            } catch {
+                print("❌ Error fetching top rated products: \(error)")
+            }
+        }
+    }
+    
+    private func updateTopRatedProductsUI() {
+        let imageViews = [topRatedImage1, topRatedImage2, topRatedImage3]
+        
+        // Load images for top rated products
+        for (index, product) in topRatedProducts.enumerated() {
+            guard index < imageViews.count,
+                  let imageView = imageViews[index],
+                  let url = URL(string: product.imageURL) else { continue }
+            
+            URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
+                if let error = error {
+                    print("❌ Error loading image: \(error)")
+                    return
+                }
+                
+                if let data = data, let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        imageView.image = image
+                    }
+                }
+            }.resume()
+        }
+    }
+    
+    @objc private func topRatedImageTapped(_ gesture: UITapGestureRecognizer) {
+        print("🔵 Image tapped")
+        
+        guard let index = gesture.view?.tag else {
+            print("❌ Could not get tag from tapped view")
             return
         }
         
-        print("🔍 Fetching product with ID: \(id)")
+        print("📍 Tapped image index: \(index)")
         
+        guard index < topRatedProducts.count else {
+            print("❌ Index out of bounds. Index: \(index), Products count: \(topRatedProducts.count)")
+            return
+        }
+        
+        let product = topRatedProducts[index]
+        print("✅ Found product: \(product.name) with ID: \(product.id)")
+        
+        // Navigate to product details
+        let storyboard = UIStoryboard(name: "Ahmed", bundle: nil)
+        print("📱 Got storyboard reference")
+        
+        if let detailsVC = storyboard.instantiateViewController(withIdentifier: "AhmedViewController") as? AhmedViewController {
+            print("✅ Successfully created details view controller")
+            detailsVC.productId = product.id
+            print("➡️ Attempting navigation push")
+            navigationController?.pushViewController(detailsVC, animated: true)
+        } else {
+            print("❌ Failed to create details view controller")
+        }
+    }
+    
+    private func fetchProductDetails(for productId: String) {
         Task {
             do {
-                if let fetchedProduct = try await Product.fetchProduct(withId: id) {
+                if let fetchedProduct = try await Product.fetchProduct(withId: productId) {
                     print("✅ Successfully fetched product: \(fetchedProduct.name)")
                     self.product = fetchedProduct
-                    DispatchQueue.main.async {
+                    await MainActor.run {
                         self.updateUI(with: fetchedProduct)
                     }
                 } else {
-                    print("❌ No product found with ID: \(id)")
-                    DispatchQueue.main.async {
+                    print("❌ No product found with ID: \(productId)")
+                    await MainActor.run {
                         self.showAlert(title: "Error", message: "Product not found")
                     }
                 }
             } catch {
                 print("❌ Error fetching product: \(error)")
-                DispatchQueue.main.async {
+                await MainActor.run {
                     self.showAlert(title: "Error", message: "Failed to load product details. Please try again.")
                 }
             }
@@ -129,26 +212,30 @@ class AhmedViewController: UIViewController {
         descriptionTextView.text = product.description
         environmentalImpactTextView.text = product.environmentalImpactSummary
         
+        // Update certification image visibility based on isCertified value
+        certificationImageView.isHidden = !product.isCertified
+        
         // Update quantity stepper max value
         quantityStepper.maximumValue = Double(product.stockQuantity)
         
-        // Update rating stars
-        updateRatingStars(rating: product.rating)
+        // Load average rating asynchronously
+        Task {
+            do {
+                print("🔄 Starting average rating calculation for product: \(product.name)")
+                let avgRating = try await product.averageRating
+                print("✅ Final average rating: \(avgRating)")
+                await MainActor.run {
+                    print("🌟 Updating UI with rounded rating: \(Int(round(avgRating)))")
+                    self.updateRatingStars(rating: Int(round(avgRating)))
+                }
+            } catch {
+                print("❌ Error calculating average rating: \(error)")
+            }
+        }
         
         // Load image if URL is valid
         if let url = URL(string: product.imageURL) {
-            URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
-                if let error = error {
-                    print("Error loading image: \(error)")
-                    return
-                }
-                
-                if let data = data, let image = UIImage(data: data) {
-                    DispatchQueue.main.async {
-                        self?.productImageView.image = image
-                    }
-                }
-            }.resume()
+            loadImage(from: url)
         }
     }
     
@@ -215,4 +302,3 @@ class AhmedViewController: UIViewController {
         }
     }
 }
-
