@@ -84,10 +84,6 @@
 		C2E054812D003AB700E291CE /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		768B4A882D1961CA0000609F /* Shubbar */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Shubbar; sourceTree = "<group>"; };
-/* End PBXFileSystemSynchronizedRootGroup section */
-
 /* Begin PBXFrameworksBuildPhase section */
 		570F2DC92CFB112C0025C9E3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
@@ -187,7 +183,6 @@
 		570F2DCE2CFB112C0025C9E3 /* EcoShop */ = {
 			isa = PBXGroup;
 			children = (
-				768B4A882D1961CA0000609F /* Shubbar */,
 				02D575E42D0260A70092AB5B /* Shop */,
 				02D575E32D02609A0092AB5B /* Admin */,
 				02D575E22D0260910092AB5B /* Home */,
@@ -237,9 +232,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				768B4A882D1961CA0000609F /* Shubbar */,
 			);
 			name = EcoShop;
 			packageProductDependencies = (
