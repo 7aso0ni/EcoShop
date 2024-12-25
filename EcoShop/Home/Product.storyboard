@@ -1,15 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FZv-As-XJZ">
     <device id="retina6_72" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Product View Controller-->
+        <!--Product Nav Controller-->
+        <scene sceneID="Evg-Ed-VPM">
+            <objects>
+                <navigationController storyboardIdentifier="homeNav" id="FZv-As-XJZ" customClass="ProductNavController" customModule="EcoShop" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="iYH-Y7-whk">
+                        <rect key="frame" x="0.0" y="59" width="430" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="pbw-cd-fPO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4BV-qP-xV3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1120" y="-3"/>
+        </scene>
+        <!--Home-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
                 <viewController id="Y6W-OH-hqX" customClass="ProductViewController" customModule="EcoShop" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,7 +34,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="xA0-ZT-XNy">
-                                <rect key="frame" x="0.0" y="59" width="367" height="44"/>
+                                <rect key="frame" x="0.0" y="103" width="367" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="367" id="Oeb-bI-jUh"/>
                                     <constraint firstAttribute="height" constant="44" id="lDJ-ez-9CF"/>
@@ -30,13 +46,13 @@
                                 </connections>
                             </searchBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Featured" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZCa-Tu-BWW">
-                                <rect key="frame" x="20" y="122" width="101" height="32"/>
+                                <rect key="frame" x="20" y="166" width="101" height="32"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Pn-cK-7Ne">
-                                <rect key="frame" x="0.0" y="162" width="430" height="200"/>
+                                <rect key="frame" x="0.0" y="206" width="430" height="156"/>
                                 <color key="backgroundColor" red="0.8980392157" green="0.92156862750000001" blue="0.87450980389999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Products" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yBK-j3-Thu">
@@ -46,10 +62,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4mo-Rd-d1S">
-                                <rect key="frame" x="0.0" y="410" width="430" height="488"/>
+                                <rect key="frame" x="0.0" y="410" width="430" height="439"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="w9b-Jm-vVj">
-                                        <rect key="frame" x="0.0" y="0.0" width="430" height="488"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="430" height="439"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <color key="sectionIndexBackgroundColor" red="0.8980392157" green="0.94117647059999998" blue="0.87450980389999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <prototypes>
@@ -94,7 +110,7 @@
                                                             <state key="normal" title="Button"/>
                                                             <buttonConfiguration key="configuration" style="filled" title="View"/>
                                                             <connections>
-                                                                <segue destination="lW8-Rq-0a4" kind="showDetail" identifier="viewProductSegue" id="dWt-Vk-ZAb"/>
+                                                                <segue destination="tTQ-Qs-KOQ" kind="showDetail" id="PfR-GS-JFD"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
@@ -157,7 +173,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n8I-Sh-KYS">
-                                <rect key="frame" x="367" y="59" width="63" height="44"/>
+                                <rect key="frame" x="367" y="103" width="63" height="44"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="button:n8I-Sh-KYS:image">
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -188,6 +204,9 @@
                             <constraint firstItem="yBK-j3-Thu" firstAttribute="centerX" secondItem="ZCa-Tu-BWW" secondAttribute="centerX" id="zFS-iX-TIr"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" id="5d2-jH-EFb"/>
+                    <navigationItem key="navigationItem" id="B0G-zM-AGy"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="searchBar" destination="xA0-ZT-XNy" id="86J-5h-Gc3"/>
                         <outlet property="table" destination="w9b-Jm-vVj" id="kRu-Pf-0fl"/>
@@ -196,16 +215,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="47.441860465116278" y="-2.5751072961373391"/>
-        </scene>
-        <!--Ahmed-->
-        <scene sceneID="HWt-vi-de0">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Ahmed" id="lW8-Rq-0a4" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="3MX-q7-yNX"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="42e-E7-2km" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="489" y="358"/>
         </scene>
         <!--Product View Controller-->
         <scene sceneID="dRc-02-XOe">
@@ -319,6 +328,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hAM-fW-OK9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="936.2790697674418" y="-2.5751072961373391"/>
+        </scene>
+        <!--AhmednNavController-->
+        <scene sceneID="yTM-43-cbE">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Ahmed" referencedIdentifier="AhmednNavController" id="tTQ-Qs-KOQ" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="2D7-24-7QF"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8On-LR-mwu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="423" y="407"/>
         </scene>
     </scenes>
     <resources>
@@ -17270,6 +17289,7 @@ gVQAD4FZAA+BZgAPgWkAD4F2AA+BewAPgYMAD4GGAA+BiwAPgZMAAAAAAAAEAQAAAAAAAABWAAAAAAAA
 AAAAAAAAAA+Blg
 </mutableData>
         </image>
+        <image name="house.fill" catalog="system" width="128" height="104"/>
         <image name="star" catalog="system" width="128" height="116"/>
         <namedColor name="AccentColor">
             <color red="1" green="0.79199999570846558" blue="0.15700000524520874" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

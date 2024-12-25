@@ -19,8 +19,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="eK5-gI-FLC" kind="relationship" relationship="viewControllers" id="yon-S0-tYh"/>
-                        <segue destination="q51-np-jzt" kind="relationship" relationship="viewControllers" id="ijc-XS-UvQ"/>
-                        <segue destination="toV-IV-1aa" kind="relationship" relationship="viewControllers" id="sPo-jd-pcT"/>
+                        <segue destination="DZi-So-uaQ" kind="relationship" relationship="viewControllers" id="ZmZ-io-yH7"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eHt-2V-nu2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -41,20 +40,20 @@
             <point key="canvasLocation" x="976" y="-160"/>
         </scene>
         <!--Product-->
-        <scene sceneID="OIx-g7-pCk">
+        <scene sceneID="oXV-Fr-MwH">
             <objects>
-                <viewControllerPlaceholder storyboardName="Product" id="toV-IV-1aa" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="7Wx-ZH-S9c"/>
+                <viewControllerPlaceholder storyboardIdentifier="homeNav" storyboardName="Product" id="DZi-So-uaQ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="Qey-4s-wNt"/>
                 </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WVU-wZ-eQL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N9M-vA-t5R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="964" y="-61"/>
+            <point key="canvasLocation" x="994" y="-62"/>
         </scene>
-        <!--AhmedViewController-->
+        <!--AhmednNavController-->
         <scene sceneID="Xpu-lI-ChR">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="AhmedViewController" storyboardName="Ahmed" referencedIdentifier="AhmedViewController" id="q51-np-jzt" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Cart" selectedImage="firebaseIcon" id="7fY-Q8-KOe">
+                <viewControllerPlaceholder storyboardName="Ahmed" referencedIdentifier="AhmednNavController" id="q51-np-jzt" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Cart" image="cart" catalog="system" selectedImage="firebaseIcon" id="7fY-Q8-KOe">
                         <color key="badgeColor" name="containerColor"/>
                     </tabBarItem>
                 </viewControllerPlaceholder>
@@ -62,9 +61,22 @@
             </objects>
             <point key="canvasLocation" x="1009" y="65"/>
         </scene>
+        <!--AhmednNavController-->
+        <scene sceneID="CGS-KI-tkP">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Ahmed" referencedIdentifier="AhmednNavController" id="OBx-yQ-vlX" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Cart" image="cart" catalog="system" selectedImage="firebaseIcon" id="ngI-gg-T4a">
+                        <color key="badgeColor" name="containerColor"/>
+                    </tabBarItem>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zOf-nZ-EIw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1009" y="65"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="firebaseIcon" width="24" height="24"/>
+        <image name="cart" catalog="system" width="128" height="102"/>
+        <image name="firebaseIcon" width="128" height="128"/>
         <image name="leaf.fill" catalog="system" width="128" height="109"/>
         <namedColor name="containerColor">
             <color red="0.69800001382827759" green="0.75700002908706665" blue="0.62400001287460327" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
