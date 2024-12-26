@@ -26,6 +26,16 @@
             </objects>
             <point key="canvasLocation" x="98" y="-50"/>
         </scene>
+        <!--Product-->
+        <scene sceneID="oXV-Fr-MwH">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="homeNav" storyboardName="Product" id="DZi-So-uaQ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="Qey-4s-wNt"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N9M-vA-t5R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="994" y="-62"/>
+        </scene>
         <!--Dashboard-waw-->
         <scene sceneID="dA0-6W-qTS">
             <objects>
@@ -38,16 +48,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fau-Br-3kp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="976" y="-160"/>
-        </scene>
-        <!--Product-->
-        <scene sceneID="oXV-Fr-MwH">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="homeNav" storyboardName="Product" id="DZi-So-uaQ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Qey-4s-wNt"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="N9M-vA-t5R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="994" y="-62"/>
         </scene>
     </scenes>
     <resources>
