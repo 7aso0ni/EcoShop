@@ -41,13 +41,13 @@
                                             <rect key="frame" x="0.0" y="0.0" width="390" height="135"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Number of items included in metric" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2yl-3v-Axe">
-                                                    <rect key="frame" x="40" y="17" width="310" height="18.666666666666671"/>
+                                                <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Number of items included in metric" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2yl-3v-Axe">
+                                                    <rect key="frame" x="40" y="17" width="310" height="19"/>
                                                     <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
-                                                <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="100 Items included" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gyU-aH-JrM">
-                                                    <rect key="frame" x="40" y="55" width="310" height="25.666666666666686"/>
+                                                <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="100 Items included" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gyU-aH-JrM">
+                                                    <rect key="frame" x="40" y="50" width="310" height="35"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
@@ -60,6 +60,7 @@
                                                 <constraint firstItem="gyU-aH-JrM" firstAttribute="leading" secondItem="qmA-pS-khL" secondAttribute="leadingMargin" constant="20" id="CZy-Kn-yc3"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="gyU-aH-JrM" secondAttribute="trailing" constant="20" id="Mgp-xk-EPM"/>
                                                 <constraint firstItem="2yl-3v-Axe" firstAttribute="leading" secondItem="qmA-pS-khL" secondAttribute="leadingMargin" constant="20" id="hpy-yY-43T"/>
+                                                <constraint firstItem="gyU-aH-JrM" firstAttribute="centerY" secondItem="qmA-pS-khL" secondAttribute="centerY" id="iMe-u1-ogn"/>
                                                 <constraint firstItem="2yl-3v-Axe" firstAttribute="top" secondItem="qmA-pS-khL" secondAttribute="topMargin" constant="5" id="tJy-aP-2Zt"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -82,12 +83,12 @@
                                             <rect key="frame" x="0.0" y="0.0" width="390" height="134"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="CO2 Emission Saved" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IAk-ap-BJ3">
-                                                    <rect key="frame" x="40" y="17" width="310" height="18.666666666666671"/>
+                                                <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="CO2 Emission Saved" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IAk-ap-BJ3">
+                                                    <rect key="frame" x="40" y="17" width="310" height="19"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
-                                                <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="5KG of CO2 saved" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jZ1-G2-YVs">
+                                                <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="5KG of CO2 saved" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jZ1-G2-YVs">
                                                     <rect key="frame" x="40" y="50" width="310" height="34"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -95,6 +96,7 @@
                                             </subviews>
                                             <color key="backgroundColor" name="containerColor"/>
                                             <constraints>
+                                                <constraint firstItem="jZ1-G2-YVs" firstAttribute="centerY" secondItem="Kg9-f4-fvb" secondAttribute="centerY" id="3B0-Zu-RAe"/>
                                                 <constraint firstItem="IAk-ap-BJ3" firstAttribute="top" secondItem="Kg9-f4-fvb" secondAttribute="topMargin" constant="5" id="N1P-wo-vGo"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="jZ1-G2-YVs" secondAttribute="bottom" constant="38" id="NrQ-5k-DBl"/>
                                                 <constraint firstItem="IAk-ap-BJ3" firstAttribute="leading" secondItem="Kg9-f4-fvb" secondAttribute="leadingMargin" constant="20" id="S0L-0A-iqX"/>
@@ -122,13 +124,13 @@
                                             <rect key="frame" x="0.0" y="0.0" width="390" height="135"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Water Concerved" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bng-S9-flR">
-                                                    <rect key="frame" x="40" y="17" width="310" height="18.666666666666671"/>
+                                                <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Water Concerved" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bng-S9-flR">
+                                                    <rect key="frame" x="40" y="17" width="310" height="20"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
-                                                <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="500 Liters of water saved" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zji-nC-m9t">
-                                                    <rect key="frame" x="40" y="50" width="310" height="34"/>
+                                                <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="500 Liters of water saved" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zji-nC-m9t">
+                                                    <rect key="frame" x="40" y="51" width="310" height="33"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
@@ -139,6 +141,7 @@
                                                 <constraint firstItem="Bng-S9-flR" firstAttribute="leading" secondItem="96Y-SG-gU4" secondAttribute="leadingMargin" constant="20" id="8xw-XQ-oOA"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Bng-S9-flR" secondAttribute="trailing" constant="20" id="La2-1Y-Txc"/>
                                                 <constraint firstItem="Zji-nC-m9t" firstAttribute="leading" secondItem="96Y-SG-gU4" secondAttribute="leadingMargin" constant="20" id="QTF-wY-axc"/>
+                                                <constraint firstItem="Zji-nC-m9t" firstAttribute="centerY" secondItem="96Y-SG-gU4" secondAttribute="centerY" id="akK-I5-Zke"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="Zji-nC-m9t" secondAttribute="bottom" constant="39" id="giR-aP-kd0"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Zji-nC-m9t" secondAttribute="trailing" constant="20" id="hp6-nE-BoL"/>
                                                 <constraint firstItem="Bng-S9-flR" firstAttribute="top" secondItem="96Y-SG-gU4" secondAttribute="topMargin" constant="5" id="oEs-Gw-uwv"/>
@@ -161,13 +164,13 @@
                                             <rect key="frame" x="0.0" y="0.0" width="390" height="135"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Plastic waster reduced" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xta-14-IqE">
-                                                    <rect key="frame" x="40" y="17" width="310" height="18.666666666666671"/>
+                                                <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Plastic waster reduced" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xta-14-IqE">
+                                                    <rect key="frame" x="40" y="17" width="310" height="19"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
-                                                <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="2KG Plastic avoided" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uiX-uu-RFG">
-                                                    <rect key="frame" x="40" y="50" width="310" height="34"/>
+                                                <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="2KG Plastic avoided" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uiX-uu-RFG">
+                                                    <rect key="frame" x="40" y="50" width="310" height="35"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
@@ -178,6 +181,7 @@
                                                 <constraint firstItem="xta-14-IqE" firstAttribute="leading" secondItem="ZJ0-yd-l8H" secondAttribute="leadingMargin" constant="20" id="0Zg-Ai-34q"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="uiX-uu-RFG" secondAttribute="trailing" constant="20" id="ANn-PN-eGx"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="xta-14-IqE" secondAttribute="trailing" constant="20" id="APi-WL-yxx"/>
+                                                <constraint firstItem="uiX-uu-RFG" firstAttribute="centerY" secondItem="ZJ0-yd-l8H" secondAttribute="centerY" id="Asq-3b-ubP"/>
                                                 <constraint firstItem="xta-14-IqE" firstAttribute="top" secondItem="ZJ0-yd-l8H" secondAttribute="topMargin" constant="5" id="EYI-zz-5WE"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="uiX-uu-RFG" secondAttribute="bottom" constant="38" id="UJT-pk-z1Z"/>
                                                 <constraint firstItem="uiX-uu-RFG" firstAttribute="leading" secondItem="ZJ0-yd-l8H" secondAttribute="leadingMargin" constant="20" id="hpR-9J-hB7"/>
@@ -203,13 +207,16 @@
                                             <rect key="frame" x="0.0" y="0.0" width="390" height="135"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Energy Saved" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w1J-Gi-zko">
+                                                <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Energy Saved" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w1J-Gi-zko">
                                                     <rect key="frame" x="40" y="17" width="310" height="19"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="19" id="Kgs-14-DH2"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
-                                                <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="10kWh of energy saved" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Snz-5Z-BZu">
-                                                    <rect key="frame" x="40" y="50.333333333333343" width="310" height="24"/>
+                                                <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="10kWh of energy saved" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Snz-5Z-BZu">
+                                                    <rect key="frame" x="40" y="50" width="310" height="35"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
