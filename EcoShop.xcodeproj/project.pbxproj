@@ -17,6 +17,12 @@
 		029E4E312D1C2E180006B4B7 /* AhmednNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029E4E302D1C2E180006B4B7 /* AhmednNavController.swift */; };
 		02B2FE1E2D07013C0088703F /* DashboardNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B2FE1D2D07013C0088703F /* DashboardNavigation.swift */; };
 		02B2FE202D0704CA0088703F /* AddProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B2FE1F2D0704CA0088703F /* AddProductViewController.swift */; };
+		02B69B5B2D1F6243004C9505 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B69B552D1F6242004C9505 /* LoginViewController.swift */; };
+		02B69B5C2D1F6243004C9505 /* Hasan.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02B69B562D1F6242004C9505 /* Hasan.storyboard */; };
+		02B69B5D2D1F6243004C9505 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B69B572D1F6242004C9505 /* OnboardingViewController.swift */; };
+		02B69B5E2D1F6243004C9505 /* MainUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B69B582D1F6242004C9505 /* MainUIViewController.swift */; };
+		02B69B5F2D1F6243004C9505 /* ProfileSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B69B592D1F6242004C9505 /* ProfileSetupViewController.swift */; };
+		02B69B602D1F6243004C9505 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B69B5A2D1F6242004C9505 /* SignUpViewController.swift */; };
 		02DF3B282D1C39F100C3100A /* ProductNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DF3B272D1C39F100C3100A /* ProductNavController.swift */; };
 		3A8763072CFC21000025CF46 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 3A8763062CFC21000025CF46 /* FirebaseAuth */; };
 		3A8763092CFC21000025CF46 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 3A8763082CFC21000025CF46 /* FirebaseFirestore */; };
@@ -70,6 +76,12 @@
 		029E4E302D1C2E180006B4B7 /* AhmednNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AhmednNavController.swift; sourceTree = "<group>"; };
 		02B2FE1D2D07013C0088703F /* DashboardNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardNavigation.swift; sourceTree = "<group>"; };
 		02B2FE1F2D0704CA0088703F /* AddProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductViewController.swift; sourceTree = "<group>"; };
+		02B69B552D1F6242004C9505 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		02B69B562D1F6242004C9505 /* Hasan.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Hasan.storyboard; sourceTree = "<group>"; };
+		02B69B572D1F6242004C9505 /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		02B69B582D1F6242004C9505 /* MainUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainUIViewController.swift; sourceTree = "<group>"; };
+		02B69B592D1F6242004C9505 /* ProfileSetupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileSetupViewController.swift; sourceTree = "<group>"; };
+		02B69B5A2D1F6242004C9505 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		02DF3B272D1C39F100C3100A /* ProductNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductNavController.swift; sourceTree = "<group>"; };
 		3A87630C2CFC22550025CF46 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		570CA38A2CFD8E750055927E /* Dashboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dashboard.storyboard; sourceTree = "<group>"; };
@@ -136,6 +148,19 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		02B69B542D1F622A004C9505 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				02B69B562D1F6242004C9505 /* Hasan.storyboard */,
+				02B69B552D1F6242004C9505 /* LoginViewController.swift */,
+				02B69B582D1F6242004C9505 /* MainUIViewController.swift */,
+				02B69B572D1F6242004C9505 /* OnboardingViewController.swift */,
+				02B69B592D1F6242004C9505 /* ProfileSetupViewController.swift */,
+				02B69B5A2D1F6242004C9505 /* SignUpViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		02D575E12D025F6A0092AB5B /* Product Details */ = {
 			isa = PBXGroup;
 			children = (
@@ -187,6 +212,7 @@
 		570F2DCE2CFB112C0025C9E3 /* EcoShop */ = {
 			isa = PBXGroup;
 			children = (
+				02B69B542D1F622A004C9505 /* Login */,
 				029208F62D1C26DA00BA5D05 /* Home */,
 				02D575E12D025F6A0092AB5B /* Product Details */,
 				570CA3872CFD8E300055927E /* Dashboard */,
@@ -340,6 +366,7 @@
 				570F2DD92CFB112D0025C9E3 /* Assets.xcassets in Resources */,
 				C283543D2CFC7E29006C6FC1 /* Ahmed.storyboard in Resources */,
 				570F2DD72CFB112C0025C9E3 /* Main.storyboard in Resources */,
+				02B69B5C2D1F6243004C9505 /* Hasan.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,21 +395,26 @@
 				570F2DD42CFB112C0025C9E3 /* ViewController.swift in Sources */,
 				0275FAA72D0AE70100123695 /* OrderHistory.swift in Sources */,
 				029208FC2D1C289500BA5D05 /* CustomTableViewCell.swift in Sources */,
+				02B69B5D2D1F6243004C9505 /* OnboardingViewController.swift in Sources */,
 				C20A571A2D00D1B90062197B /* ReviewCell.swift in Sources */,
 				029208FE2D1C289500BA5D05 /* ProductViewController.swift in Sources */,
 				570CA38D2CFD9B7E0055927E /* AhmedViewController.swift in Sources */,
 				C20A57182D00A8850062197B /* FirebaseManager.swift in Sources */,
+				02B69B5B2D1F6243004C9505 /* LoginViewController.swift in Sources */,
 				C20A57162D00A7A60062197B /* Review.swift in Sources */,
 				02DF3B282D1C39F100C3100A /* ProductNavController.swift in Sources */,
 				570F2DD02CFB112C0025C9E3 /* AppDelegate.swift in Sources */,
 				570F2DD22CFB112C0025C9E3 /* SceneDelegate.swift in Sources */,
 				02B2FE1E2D07013C0088703F /* DashboardNavigation.swift in Sources */,
+				02B69B5F2D1F6243004C9505 /* ProfileSetupViewController.swift in Sources */,
 				029208F82D1C288A00BA5D05 /* FilterViewController.swift in Sources */,
 				021BC2BD2D05CF0E00C2E1C6 /* DashboardViewController.swift in Sources */,
+				02B69B602D1F6243004C9505 /* SignUpViewController.swift in Sources */,
 				C2E054822D003AB700E291CE /* Product.swift in Sources */,
 				C20A57142D00A7720062197B /* ReviewViewController.swift in Sources */,
 				02B2FE202D0704CA0088703F /* AddProductViewController.swift in Sources */,
 				02974FB22D188161002F0E57 /* ProductMetrics.swift in Sources */,
+				02B69B5E2D1F6243004C9505 /* MainUIViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
