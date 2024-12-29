@@ -5,6 +5,8 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,8 +20,11 @@
                         <tabBarAppearance key="standardAppearance"/>
                     </tabBar>
                     <connections>
-                        <segue destination="eK5-gI-FLC" kind="relationship" relationship="viewControllers" id="yon-S0-tYh"/>
-                        <segue destination="DZi-So-uaQ" kind="relationship" relationship="viewControllers" id="ZmZ-io-yH7"/>
+                        <segue destination="DZi-So-uaQ" kind="relationship" relationship="viewControllers" id="XrC-Kd-shs"/>
+                        <segue destination="eK5-gI-FLC" kind="relationship" relationship="viewControllers" id="HnC-Pp-Nie"/>
+                        <segue destination="HUU-bh-mJP" kind="relationship" relationship="viewControllers" id="ecs-jf-qlN"/>
+                        <segue destination="Kb4-Sf-VhF" kind="relationship" relationship="viewControllers" id="CD3-Rm-mHU"/>
+                        <segue destination="k5J-WY-XOu" kind="relationship" relationship="viewControllers" id="Xda-tD-FZ2"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eHt-2V-nu2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -34,7 +39,23 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N9M-vA-t5R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="994" y="-62"/>
+            <point key="canvasLocation" x="991" y="-202"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="ZU6-dP-Lub">
+            <objects>
+                <viewController id="HUU-bh-mJP" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pGi-C2-kUi">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="EqT-tm-YDW"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Profile" image="person.crop.circle.fill" catalog="system" id="uEj-im-FGd"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qJ4-Ja-0UA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1291" y="309"/>
         </scene>
         <!--Dashboard-waw-->
         <scene sceneID="dA0-6W-qTS">
@@ -47,13 +68,50 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fau-Br-3kp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="976" y="-160"/>
+            <point key="canvasLocation" x="972" y="-299"/>
+        </scene>
+        <!--Orders-->
+        <scene sceneID="sAS-UZ-dUr">
+            <objects>
+                <viewController id="Kb4-Sf-VhF" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YvZ-zw-EPS">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="s74-zE-Q1F"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Orders" id="EMs-8S-Kck"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UdG-Rw-Cfl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="497" y="639"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="AX3-p1-1di">
+            <objects>
+                <viewController id="k5J-WY-XOu" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qNf-u6-PJn">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Wvx-5y-t5i"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Settings" image="gearshape.fill" catalog="system" id="lLe-2r-zbU"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uc2-Uy-nPd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-518" y="652"/>
         </scene>
     </scenes>
     <resources>
+        <image name="gearshape.fill" catalog="system" width="128" height="123"/>
         <image name="leaf.fill" catalog="system" width="128" height="109"/>
+        <image name="person.crop.circle.fill" catalog="system" width="128" height="123"/>
         <namedColor name="containerColor">
             <color red="0.69800001382827759" green="0.75700002908706665" blue="0.62400001287460327" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

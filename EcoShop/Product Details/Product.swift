@@ -28,6 +28,7 @@ struct Product: Codable {
     let storeOwnerId: String
     let metrics: [Metric]
     let isCertified: Bool
+    let category: String
     
     var environmentalImpactSummary: String {
         return metrics.map { $0.formattedString }.joined(separator: "\n")
@@ -76,13 +77,15 @@ struct Product: Codable {
             imageURL: data["imageURL"] as? String ?? "",
             stockQuantity: data["stockQuantity"] as? Int ?? 0,
             storeOwnerId: data["storeOwnerId"] as? String ?? "",
+            
             metrics: (data["metrics"] as? [[String: Any]])?.compactMap { metricData in
                 guard let name = metricData["name"] as? String,
                       let unit = metricData["unit"] as? String,
                       let value = metricData["value"] as? Double else { return nil }
                 return Metric(name: name, unit: unit, value: value)
             } ?? [],
-            isCertified: data["isCertified"] as? Bool ?? false
+            isCertified: data["isCertified"] as? Bool ?? false,
+            category: data["category"] as? String ?? "Uncategorized"
         )
     }
     static func fetchTopRatedProducts(limit: Int = 3) async throws -> [Product] {
@@ -117,7 +120,8 @@ struct Product: Codable {
                     stockQuantity: document["stockQuantity"] as? Int ?? 0,
                     storeOwnerId: document["storeOwnerId"] as? String ?? "",
                     metrics: metrics,
-                    isCertified: document["isCertified"] as? Bool ?? false
+                    isCertified: document["isCertified"] as? Bool ?? false,
+                    category: document["category"] as? String ?? "Uncategorized"
                 )
                 
                 // Calculate average rating for each product

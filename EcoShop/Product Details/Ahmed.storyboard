@@ -32,18 +32,25 @@
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8RO-CU-FtF">
                                                                 <rect key="frame" x="95" y="20" width="240" height="160"/>
                                                             </imageView>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pencil" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Iwa-85-9Nq">
-                                                                <rect key="frame" x="367" y="29" width="55" height="52"/>
-                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="Iwa-85-9Nq">
+                                                                <rect key="frame" x="353" y="29" width="69" height="64"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="Iwa-85-9Nq" secondAttribute="height" multiplier="69:64" id="4sA-4R-mJN"/>
+                                                                    <constraint firstAttribute="width" constant="69" id="hIo-l0-YGh"/>
+                                                                    <constraint firstAttribute="height" constant="64" id="kWS-Og-UjX"/>
+                                                                </constraints>
                                                             </imageView>
                                                         </subviews>
                                                         <color key="backgroundColor" name="background"/>
                                                         <constraints>
                                                             <constraint firstItem="8RO-CU-FtF" firstAttribute="leading" secondItem="xJf-Z0-cvh" secondAttribute="leading" constant="95" id="7Ko-pb-Skv"/>
                                                             <constraint firstAttribute="height" constant="200" id="H6g-GG-Wzj"/>
+                                                            <constraint firstItem="Iwa-85-9Nq" firstAttribute="top" secondItem="xJf-Z0-cvh" secondAttribute="top" constant="29" id="OQY-3y-YBq"/>
                                                             <constraint firstItem="8RO-CU-FtF" firstAttribute="top" secondItem="xJf-Z0-cvh" secondAttribute="top" constant="20" id="QuZ-Hy-dch"/>
                                                             <constraint firstAttribute="bottom" secondItem="8RO-CU-FtF" secondAttribute="bottom" constant="20" id="VhM-Ik-AAa"/>
+                                                            <constraint firstAttribute="trailing" secondItem="Iwa-85-9Nq" secondAttribute="trailing" constant="8" id="mnF-cS-7UQ"/>
                                                             <constraint firstAttribute="trailing" secondItem="8RO-CU-FtF" secondAttribute="trailing" constant="95" id="nS5-Af-Xo4"/>
+                                                            <constraint firstItem="Iwa-85-9Nq" firstAttribute="leading" secondItem="8RO-CU-FtF" secondAttribute="trailing" constant="18" id="zoa-rI-DOI"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vcA-tM-diY">
@@ -141,7 +148,7 @@
                                                                 <buttonConfiguration key="configuration" style="plain" title="View Rating"/>
                                                                 <connections>
                                                                     <action selector="viewRatingsTapped:" destination="4az-pw-Y4H" eventType="touchUpInside" id="jcL-fk-6gd"/>
-                                                                    <segue destination="GBx-PG-PUj" kind="push" id="iqk-2H-Nkz"/>
+                                                                    <segue destination="GBx-PG-PUj" kind="show" id="g9R-qu-zYQ"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -199,9 +206,9 @@
                                                                     <constraint firstAttribute="width" secondItem="3gc-oB-cXk" secondAttribute="height" multiplier="207:64" id="F03-8y-yl8"/>
                                                                     <constraint firstAttribute="height" constant="128" id="MWD-Yg-SIB"/>
                                                                 </constraints>
-                                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
                                                                 <color key="textColor" systemColor="labelColor"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                             </textView>
                                                         </subviews>
@@ -233,9 +240,9 @@
                                                                     <constraint firstAttribute="height" constant="128" id="FIN-UZ-CJE"/>
                                                                     <constraint firstAttribute="width" constant="414" id="vkm-pv-cg5"/>
                                                                 </constraints>
-                                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
                                                                 <color key="textColor" systemColor="labelColor"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                             </textView>
                                                         </subviews>
@@ -616,7 +623,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="pencil" catalog="system" width="128" height="113"/>
+        <image name="Image" width="166.66667175292969" height="169"/>
         <image name="star" catalog="system" width="128" height="116"/>
         <namedColor name="AccentColor">
             <color red="1" green="0.79199999570846558" blue="0.15700000524520874" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
