@@ -29,7 +29,7 @@ class DashboardViewController: UITableViewController {
     }
     
     func fetchAndPrint(startDate: Date?) {
-        let userId = "9264ab1a-5d43-403b-a23f-bf4d6b332fff"
+        let userId = "b89889f7-6593-48f5-987e-8b459f45fcf2"
         
         Order.fetchUserMetrics(userId: userId, startDate: startDate) { result in
             switch result {

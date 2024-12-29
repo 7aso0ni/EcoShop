@@ -86,7 +86,7 @@ class AddProductViewController: UITableViewController {
                 productName: productName,
                 metrics: metrics,
                 quantity: amountBrought,
-                userId: "9264ab1a-5d43-403b-a23f-bf4d6b332fff"
+                userId: "b89889f7-6593-48f5-987e-8b459f45fcf2"
             )
         
         // Save the product metric

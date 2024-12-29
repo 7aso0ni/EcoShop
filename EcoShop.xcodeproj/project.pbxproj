@@ -229,20 +229,6 @@
 			path = "Product Details";
 			sourceTree = "<group>";
 		};
-		02D575E32D02609A0092AB5B /* Admin */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Admin;
-			sourceTree = "<group>";
-		};
-		02D575E42D0260A70092AB5B /* Shop */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Shop;
-			sourceTree = "<group>";
-		};
 		3A145E672D070DF2000E82AF /* views */ = {
 			isa = PBXGroup;
 			children = (
@@ -410,8 +396,6 @@
 				3A284E5D2D179EF8000BCD54 /* ShoppingCart */,
 				3A9940C52D16A7B3001DBBB3 /* OrderManagement */,
 				3AC1D8ED2CFD9CDD00E3CE71 /* StoreOwnerDashboard */,
-				02D575E42D0260A70092AB5B /* Shop */,
-				02D575E32D02609A0092AB5B /* Admin */,
 				02B69B542D1F622A004C9505 /* Login */,
 				029208F62D1C26DA00BA5D05 /* Home */,
 				02D575E12D025F6A0092AB5B /* Product Details */,
