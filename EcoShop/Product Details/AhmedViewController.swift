@@ -9,7 +9,7 @@ import UIKit
 import FirebaseFirestore
 
 class AhmedViewController: UIViewController {
-    
+    let userId = "b89889f7-6593-48f5-987e-8b459f45fcf2"
     // MARK: - Outlets
     @IBOutlet weak var productImageView: UIImageView!
     @IBOutlet weak var productNameLabel: UILabel!
@@ -24,6 +24,7 @@ class AhmedViewController: UIViewController {
     @IBOutlet weak var star4: UIButton!
     @IBOutlet weak var star5: UIButton!
     
+    @IBOutlet var addToCartBtn: UIButton!
     @IBOutlet private weak var topRatedImage1: UIImageView!
     @IBOutlet private weak var topRatedImage2: UIImageView!
     @IBOutlet private weak var topRatedImage3: UIImageView!
@@ -288,7 +289,25 @@ class AhmedViewController: UIViewController {
     @IBAction func addToCartTapped(_ sender: Any) {
         guard let product = product else { return }
         // TODO: Implement cart functionality
-        showAlert(title: "Success", message: "\(selectedQuantity) x \(product.name) added to cart!")
+        addToCartBtn.isEnabled.toggle()
+        Task {
+            do {
+                try await Cart.addProductToCart(userId: userId, productId: product.id, quantity: selectedQuantity)
+                let cartStoryboard = UIStoryboard(name: "ShoppingCart", bundle: nil)
+                if let cartVC = cartStoryboard.instantiateViewController(withIdentifier: "CartTableViewController") as? CartTableViewController {
+                    navigationController?.pushViewController(cartVC, animated: true)
+                }
+                DispatchQueue.main.async{
+                    self.addToCartBtn.isEnabled.toggle()
+                }
+
+            } catch {
+                showAlert(title: "Error", message: "An error occured while adding the product to your cart.")
+                DispatchQueue.main.async{
+                    self.addToCartBtn.isEnabled.toggle()
+                }
+            }
+        }
     }
     
     @IBAction func viewRatingsTapped(_ sender: Any) {

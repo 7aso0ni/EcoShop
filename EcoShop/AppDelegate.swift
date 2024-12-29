@@ -16,6 +16,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Configure Firebase
         FirebaseApp.configure()
         
+        let secondaryOptions = FirebaseOptions(googleAppID: "1:409841563321:ios:5b70bff9e95eb6d1830d68", gcmSenderID: "409841563321")
+        secondaryOptions.apiKey = "AIzaSyAlMSFBfBgRSFLrrVa0HL4PSXxHoF2objI"
+        secondaryOptions.storageBucket = "tesla-clone-a0f5d.appspot.com"
+        FirebaseApp.configure(name: "secondary", options: secondaryOptions)
         // Enable Firestore debug logging during development
         let db = Firestore.firestore()
         let settings = db.settings
