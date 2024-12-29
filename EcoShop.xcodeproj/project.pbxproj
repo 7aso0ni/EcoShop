@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -39,6 +39,8 @@
 		570F2DE72CFB112E0025C9E3 /* EcoShopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570F2DE62CFB112E0025C9E3 /* EcoShopTests.swift */; };
 		570F2DF12CFB112E0025C9E3 /* EcoShopUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570F2DF02CFB112E0025C9E3 /* EcoShopUITests.swift */; };
 		570F2DF32CFB112E0025C9E3 /* EcoShopUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570F2DF22CFB112E0025C9E3 /* EcoShopUITestsLaunchTests.swift */; };
+		836627182D20D57C004DEF13 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 836627172D20D57C004DEF13 /* Profile.storyboard */; };
+		8366271A2D20DEB9004DEF13 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836627192D20DEB9004DEF13 /* ProfileViewController.swift */; };
 		C20A57142D00A7720062197B /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20A57132D00A7720062197B /* ReviewViewController.swift */; };
 		C20A57162D00A7A60062197B /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20A57152D00A7A60062197B /* Review.swift */; };
 		C20A57182D00A8850062197B /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20A57172D00A8850062197B /* FirebaseManager.swift */; };
@@ -99,6 +101,8 @@
 		570F2DEC2CFB112E0025C9E3 /* EcoShopUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EcoShopUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		570F2DF02CFB112E0025C9E3 /* EcoShopUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EcoShopUITests.swift; sourceTree = "<group>"; };
 		570F2DF22CFB112E0025C9E3 /* EcoShopUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EcoShopUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		836627172D20D57C004DEF13 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		836627192D20DEB9004DEF13 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		C20A57132D00A7720062197B /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 		C20A57152D00A7A60062197B /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		C20A57172D00A8850062197B /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
@@ -161,6 +165,8 @@
 				02B69B572D1F6242004C9505 /* OnboardingViewController.swift */,
 				02B69B592D1F6242004C9505 /* ProfileSetupViewController.swift */,
 				02B69B5A2D1F6242004C9505 /* SignUpViewController.swift */,
+				836627172D20D57C004DEF13 /* Profile.storyboard */,
+				836627192D20DEB9004DEF13 /* ProfileViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -200,6 +206,7 @@
 				570F2DE52CFB112E0025C9E3 /* EcoShopTests */,
 				570F2DEF2CFB112E0025C9E3 /* EcoShopUITests */,
 				570F2DCD2CFB112C0025C9E3 /* Products */,
+				836627162D20D564004DEF13 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -248,6 +255,14 @@
 				570F2DF22CFB112E0025C9E3 /* EcoShopUITestsLaunchTests.swift */,
 			);
 			path = EcoShopUITests;
+			sourceTree = "<group>";
+		};
+		836627162D20D564004DEF13 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				83E104CB2D1E88D00032B4D1 /* Login */,
+			);
+			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -367,6 +382,7 @@
 			files = (
 				570F2DDC2CFB112D0025C9E3 /* LaunchScreen.storyboard in Resources */,
 				570CA38B2CFD8E750055927E /* Dashboard.storyboard in Resources */,
+				836627182D20D57C004DEF13 /* Profile.storyboard in Resources */,
 				029208FD2D1C289500BA5D05 /* Product.storyboard in Resources */,
 				C27DA67E2D00E24900E85102 /* ReviewCell.xib in Resources */,
 				3A87630D2CFC22550025CF46 /* GoogleService-Info.plist in Resources */,
@@ -420,6 +436,7 @@
 				C2E054822D003AB700E291CE /* Product.swift in Sources */,
 				C20A57142D00A7720062197B /* ReviewViewController.swift in Sources */,
 				02B2FE202D0704CA0088703F /* AddProductViewController.swift in Sources */,
+				8366271A2D20DEB9004DEF13 /* ProfileViewController.swift in Sources */,
 				02974FB22D188161002F0E57 /* ProductMetrics.swift in Sources */,
 				02B69B5E2D1F6243004C9505 /* MainUIViewController.swift in Sources */,
 			);
