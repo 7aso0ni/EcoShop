@@ -156,7 +156,11 @@ struct StoreProduct: Identifiable {
            "stockQuantity": stockQuantity,
            "description": description as Any,
            "price": price as Any,
-           "metrics": metrics as Any
+           "metrics": metrics as Any,
+           "averageRating": 0,
+           "RatingNumber": 0,
+           "RatingTotal": 0,
+           "isCertified": true
        ]
               
        try await db.collection("products").document(id).setData(productData)

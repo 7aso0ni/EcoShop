@@ -8,7 +8,7 @@
 import UIKit
 
 protocol CartProductsTableViewDelegate {
-    func onQuantityChange(sender: CartProductsTableView, newPrice: Double)
+    func onQuantityChange(sender: CartProductsTableView, newPrice: Double, newCartProducts: [CartItem])
 }
 
 class CartProductsTableView: UITableView, UITableViewDataSource, UITableViewDelegate, CartProductTableViewCellDelegate  {
@@ -70,7 +70,7 @@ class CartProductsTableView: UITableView, UITableViewDataSource, UITableViewDele
                         quantity: newQuantity
                     )
                     DispatchQueue.main.async{
-                        self.parentDelegate?.onQuantityChange(sender: self, newPrice: cart.totalPrice )
+                        self.parentDelegate?.onQuantityChange(sender: self, newPrice: cart.totalPrice, newCartProducts: cart.productIds)
                     }
                 } catch {
                     print("Error updating quantity: \(error)")

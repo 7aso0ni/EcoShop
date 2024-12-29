@@ -43,7 +43,10 @@ class CartTableViewController: UITableViewController, CartProductsTableViewDeleg
         }
     }
     
-    func onQuantityChange(sender: CartProductsTableView, newPrice: Double) {
+    func onQuantityChange(sender: CartProductsTableView, newPrice: Double, newCartProducts: [CartItem]) {
+        cart?.updateTotalPrice(newPrice)
+        cart?.productIds = newCartProducts
+        
         self.totalPriceLabel.text = "\(round(newPrice)) BD"
     }
 
@@ -72,6 +75,8 @@ class CartTableViewController: UITableViewController, CartProductsTableViewDeleg
         if let checkoutVC = storyboard?.instantiateViewController(withIdentifier: "CheckoutViewController") as? CheckoutTableViewController{
             checkoutVC.cart = cart
             checkoutVC.checkoutProducts = cartProductsTable.cartProducts
+            
+            print("Price: \(checkoutVC.cart?.totalPrice ?? 0)")
             
             navigationController?.pushViewController(checkoutVC, animated: true)
             tableView.reloadData()

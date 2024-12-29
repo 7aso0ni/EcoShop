@@ -826,29 +826,6 @@
             </objects>
             <point key="canvasLocation" x="925.95419847328242" y="489.43661971830988"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="oSA-qI-LFr">
-            <objects>
-                <navigationController id="LGb-fi-WDS" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Mgc-w3-qGv">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
-                            <color key="textColor" red="0.098039215690000001" green="0.2666666667" blue="0.23137254900000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </textAttributes>
-                        <textAttributes key="largeTitleTextAttributes">
-                            <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
-                        </textAttributes>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="f40-JN-0kq" kind="relationship" relationship="rootViewController" id="vty-HV-rge"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fRY-bS-9Rx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="34" y="1246"/>
-        </scene>
         <!--Order Confirmation-->
         <scene sceneID="Z8s-SP-Mwd">
             <objects>
@@ -916,30 +893,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qng-3e-L4x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="884.73282442748086" y="1226.7605633802818"/>
-        </scene>
-        <!--Checkout-->
-        <scene sceneID="ZTd-oU-4iW">
-            <objects>
-                <navigationController title="Checkout" modalPresentationStyle="overFullScreen" id="xcu-fP-nTs" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="Bug-Po-DO2"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="k20-CF-8YE">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
-                            <color key="textColor" red="0.098039215690000001" green="0.2666666667" blue="0.23137254900000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </textAttributes>
-                    </navigationBar>
-                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4H1-lZ-GKi">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </toolbar>
-                    <connections>
-                        <segue destination="vM8-Jf-Cyu" kind="relationship" relationship="rootViewController" destinationCreationSelector="checkout:sender:" id="EVA-Bz-IdS"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZFm-QZ-iNL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="21" y="490"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tpn-e2-Cui">

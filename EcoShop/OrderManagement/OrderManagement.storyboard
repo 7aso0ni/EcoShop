@@ -217,7 +217,7 @@
                             <outlet property="delegate" destination="yLz-Tz-MHG" id="NO9-EL-Ybb"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Orders" image="cube.box.fill" catalog="system" selectedImage="shippingbox.fill" id="n6g-EA-w5r"/>
+                    <tabBarItem key="tabBarItem" title="Orders" image="cube.box.fill" catalog="system" id="n6g-EA-w5r"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y0W-02-GXx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -227,7 +227,6 @@
     </scenes>
     <resources>
         <image name="cube.box.fill" catalog="system" width="128" height="123"/>
-        <image name="shippingbox.fill" catalog="system" width="128" height="123"/>
         <image name="swiftpm_step3.png" width="1463" height="916"/>
         <systemColor name="systemGray6Color">
             <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -142,6 +142,8 @@ struct Cart: Identifiable {
                 "quantity": $0.quantity
             ]}
         ])
+        
+        productIds = updatedProductIds
     }
     mutating func fetchCartProducts() async throws -> [StoreProduct] {
        let db = Firestore.firestore()
