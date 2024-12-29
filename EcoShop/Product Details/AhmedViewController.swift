@@ -29,12 +29,14 @@ class AhmedViewController: UIViewController {
     @IBOutlet private weak var topRatedImage2: UIImageView!
     @IBOutlet private weak var topRatedImage3: UIImageView!
     @IBOutlet weak var certificationImageView: UIImageView!
+    @IBOutlet weak var storeOwnerLabel: UILabel!
     
     // MARK: - Properties
     var productId: String?
     private var product: Product?
     private var selectedQuantity: Int = 1
     private var topRatedProducts: [Product] = []
+    private var storeOwnerName: String = "EcoShop" // Default value
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -186,25 +188,51 @@ class AhmedViewController: UIViewController {
     }
     
     private func fetchProductDetails(for productId: String) {
-        Task {
-            do {
-                if let fetchedProduct = try await Product.fetchProduct(withId: productId) {
-                    print("Successfully fetched product: \(fetchedProduct.name)")
-                    self.product = fetchedProduct
-                    await MainActor.run {
-                        self.updateUI(with: fetchedProduct)
-                    }
-                } else {
-                    print("No product found with ID: \(productId)")
-                    await MainActor.run {
-                        self.showAlert(title: "Error", message: "Product not found")
-                    }
+        let db = Firestore.firestore()
+        db.collection("products").document(productId).getDocument { [weak self] (document, error) in
+            guard let self = self,
+                  let document = document,
+                  document.exists,
+                  let data = document.data() else {
+                print("Error fetching product details: \(error?.localizedDescription ?? "Unknown error")")
+                return
+            }
+            
+            // Get store owner name directly from product data
+            if let ownerName = data["storeOwnerName"] as? String {
+                DispatchQueue.main.async {
+                    self.storeOwnerName = ownerName
+                    self.storeOwnerLabel.text = "By \(ownerName)"
                 }
-            } catch {
-                print("Error fetching product: \(error)")
-                await MainActor.run {
-                    self.showAlert(title: "Error", message: "Failed to load product details. Please try again.")
-                }
+            }
+            
+            // Create metrics array from data
+            let metricsData = data["metrics"] as? [[String: Any]] ?? []
+            let metrics = metricsData.compactMap { metricData -> Metric? in
+                guard let name = metricData["name"] as? String,
+                      let unit = metricData["unit"] as? String,
+                      let value = metricData["value"] as? Double else { return nil }
+                return Metric(name: name, unit: unit, value: value)
+            }
+            
+            // Create product instance
+            let product = Product(
+                id: document.documentID,
+                name: data["name"] as? String ?? "",
+                price: data["price"] as? Double ?? 0.0,
+                description: data["description"] as? String ?? "",
+                imageURL: data["imageURL"] as? String ?? "",
+                stockQuantity: data["stockQuantity"] as? Int ?? 0,
+                storeOwnerId: data["storeOwnerId"] as? String ?? "",
+                metrics: metrics,
+                isCertified: data["isCertified"] as? Bool ?? false,
+                category: data["category"] as? String ?? "Uncategorized"
+            )
+            
+            print("Successfully fetched product: \(product.name)")
+            self.product = product
+            DispatchQueue.main.async {
+                self.updateUI(with: product)
             }
         }
     }

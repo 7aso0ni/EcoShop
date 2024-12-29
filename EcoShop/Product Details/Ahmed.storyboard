@@ -65,15 +65,6 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By EcoShop" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ugd-2Q-FmX">
-                                                                <rect key="frame" x="8" y="52" width="136" height="32"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" secondItem="ugd-2Q-FmX" secondAttribute="height" multiplier="17:4" id="62U-6h-AF5"/>
-                                                                </constraints>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7 BD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Gp-f2-XKA">
                                                                 <rect key="frame" x="8" y="92" width="50" height="29"/>
                                                                 <constraints>
@@ -151,6 +142,15 @@
                                                                     <segue destination="Nh1-MM-YiD" kind="show" id="TeC-Y5-yZ7"/>
                                                                 </connections>
                                                             </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By EcoShop" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ugd-2Q-FmX">
+                                                                <rect key="frame" x="8" y="52" width="212" height="32"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="ugd-2Q-FmX" secondAttribute="height" multiplier="17:4" constant="76" id="62U-6h-AF5"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
                                                         </subviews>
                                                         <viewLayoutGuide key="safeArea" id="GIk-hU-qRR"/>
                                                         <color key="backgroundColor" name="background"/>
@@ -401,6 +401,7 @@
                         <outlet property="star3" destination="O5w-3s-Sn8" id="5kb-nH-Phd"/>
                         <outlet property="star4" destination="jvw-jE-c30" id="luY-Gh-yfe"/>
                         <outlet property="star5" destination="Cb9-ld-mx2" id="RT4-Vw-IpH"/>
+                        <outlet property="storeOwnerLabel" destination="ugd-2Q-FmX" id="m9f-wk-gPp"/>
                         <outlet property="topRatedImage1" destination="d97-Ca-sh7" id="jmA-fd-SM0"/>
                         <outlet property="topRatedImage2" destination="vEm-iz-brv" id="t1W-sL-zdP"/>
                         <outlet property="topRatedImage3" destination="5fd-wG-lbZ" id="9NC-QV-CAm"/>
