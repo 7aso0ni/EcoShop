@@ -39,22 +39,22 @@ struct Product: Codable {
         get async throws {
             print("📊 Calculating average rating for product: \(id)")
             let reviews = try await Review.fetchReviews(for: id)
-            print("📝 Found \(reviews.count) reviews")
+            print("Found \(reviews.count) reviews")
             
             if reviews.isEmpty {
-                print("ℹ️ No reviews found, returning 0.0")
+                print("No reviews found, returning 0.0")
                 return 0.0
             }
             
             // Print individual ratings
             reviews.forEach { review in
-                print("⭐️ Review by \(review.username): \(review.rating) stars")
+                print("Review by \(review.username): \(review.rating) stars")
             }
             
             let totalRating = reviews.reduce(0) { $0 + $1.rating }
             let average = Double(totalRating) / Double(reviews.count)
-            print("✨ Total rating: \(totalRating)")
-            print("📈 Average rating: \(average)")
+            print("Total rating: \(totalRating)")
+            print("Average rating: \(average)")
             
             return average
         }
@@ -89,7 +89,7 @@ struct Product: Codable {
         )
     }
     static func fetchTopRatedProducts(limit: Int = 3) async throws -> [Product] {
-        print("🔍 Fetching top \(limit) rated products")
+        print("Fetching top \(limit) rated products")
         let db = Firestore.firestore()
         let productsRef = db.collection("products")
         
@@ -131,7 +131,7 @@ struct Product: Codable {
                 
                 productsWithRatings.append((product, avgRating))
             } catch {
-                print("❌ Error processing product document: \(error)")
+                print("Error processing product document: \(error)")
                 continue
             }
         }
@@ -140,9 +140,9 @@ struct Product: Codable {
         productsWithRatings.sort { $0.1 > $1.1 }
         let topProducts = productsWithRatings.prefix(limit).map { $0.0 }
         
-        print("✅ Found top \(topProducts.count) rated products:")
+        print("Found top \(topProducts.count) rated products:")
         topProducts.forEach { product in
-            print("🏆 \(product.name)")
+            print("\(product.name)")
         }
         
         return Array(topProducts)

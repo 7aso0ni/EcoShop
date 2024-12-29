@@ -20,14 +20,14 @@ class ReviewViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("⚠️ ReviewViewController loaded")
+        print("ReviewViewController loaded")
         setupUI()
         fetchReviews()
     }
     
     // MARK: - UI Setup
     private func setupUI() {
-        print("🎨 Setting up UI")
+        print("Setting up UI")
         
         // TableView setup
         reviewTableView.dataSource = self
@@ -36,10 +36,10 @@ class ReviewViewController: UIViewController {
         reviewTableView.estimatedRowHeight = 150
         
         // Register cell nib
-        print("📑 Attempting to register ReviewCell nib")
+        print("Attempting to register ReviewCell nib")
         let nib = UINib(nibName: "ReviewCell", bundle: Bundle.main)
         reviewTableView.register(nib, forCellReuseIdentifier: "ReviewCell")
-        print("✅ Successfully registered ReviewCell nib")
+        print("Successfully registered ReviewCell nib")
         
         // Review input setup
         newReviewTextView.delegate = self
@@ -89,11 +89,11 @@ class ReviewViewController: UIViewController {
         }
         
         guard let productId = productId else {
-            print("❌ No productId found")
+            print("No productId found")
             return
         }
         
-        print("📝 Submitting review for productId: \(productId)")
+        print("Submitting review for productId: \(productId)")
         print("Content: \(content)")
         print("Rating: \(selectedRating)")
         
@@ -106,7 +106,7 @@ class ReviewViewController: UIViewController {
                     rating: selectedRating,
                     username: "Anonymous"
                 )
-                print("✅ Review submitted successfully")
+                print("Review submitted successfully")
                 
                 // Add to local array and update UI
                 DispatchQueue.main.async {
@@ -122,7 +122,7 @@ class ReviewViewController: UIViewController {
                     self.showAlert(title: "Success", message: "Your review has been submitted!")
                 }
             } catch {
-                print("❌ Error submitting review: \(error)")
+                print("Error submitting review: \(error)")
                 DispatchQueue.main.async {
                     self.showAlert(title: "Error", message: "Failed to submit review. Please try again.")
                 }
@@ -139,7 +139,7 @@ class ReviewViewController: UIViewController {
     // MARK: - Firebase Operations
     private func fetchReviews() {
         guard let productId = productId else {
-            print("❌ No productId found")
+            print("No productId found")
             return
         }
         print("🔍 Fetching reviews for productId: \(productId)")
@@ -147,14 +147,14 @@ class ReviewViewController: UIViewController {
         Task {
             do {
                 let fetchedReviews = try await Review.fetchReviews(for: productId)
-                print("✅ Found \(fetchedReviews.count) reviews")
+                print("Found \(fetchedReviews.count) reviews")
                 
                 DispatchQueue.main.async {
                     self.reviews = fetchedReviews
                     self.reviewTableView.reloadData()
                 }
             } catch {
-                print("❌ Error fetching reviews: \(error)")
+                print("Error fetching reviews: \(error)")
                 DispatchQueue.main.async {
                     self.showAlert(title: "Error", message: "Failed to load reviews. Please try again.")
                 }
@@ -166,7 +166,7 @@ class ReviewViewController: UIViewController {
 // MARK: - TableView DataSource & Delegate
 extension ReviewViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("📊 Number of reviews: \(reviews.count)")
+        print("Number of reviews: \(reviews.count)")
         return reviews.count
     }
     
@@ -174,12 +174,12 @@ extension ReviewViewController: UITableViewDataSource, UITableViewDelegate {
         print("🔄 Configuring cell at index: \(indexPath.row)")
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewCell", for: indexPath) as? ReviewCell else {
-            print("❌ Failed to dequeue ReviewCell")
+            print("Failed to dequeue ReviewCell")
             return UITableViewCell()
         }
         
         let review = reviews[indexPath.row]
-        print("📝 Configuring cell with review: \(review)")
+        print("Configuring cell with review: \(review)")
         cell.configure(with: review)
         
         // Configure cell appearance
