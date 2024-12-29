@@ -35,7 +35,7 @@ class ProductViewController: UIViewController, UITableViewDataSource, UITableVie
         table.dataSource = self
         table.delegate = self
         searchBar.delegate = self
-        
+            
         // Method to fetch products and reviews
         Task {
             await fetchProductsAndReviews()
