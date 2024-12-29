@@ -22,9 +22,9 @@
                     <connections>
                         <segue destination="DZi-So-uaQ" kind="relationship" relationship="viewControllers" id="XrC-Kd-shs"/>
                         <segue destination="eK5-gI-FLC" kind="relationship" relationship="viewControllers" id="HnC-Pp-Nie"/>
-                        <segue destination="HUU-bh-mJP" kind="relationship" relationship="viewControllers" id="ecs-jf-qlN"/>
                         <segue destination="k5J-WY-XOu" kind="relationship" relationship="viewControllers" id="Xda-tD-FZ2"/>
                         <segue destination="Hkx-hk-0hN" kind="relationship" relationship="viewControllers" id="c1M-Sz-NGa"/>
+                        <segue destination="aSJ-m5-dFh" kind="relationship" relationship="viewControllers" id="EzR-Dy-2oF"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eHt-2V-nu2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -42,20 +42,14 @@
             <point key="canvasLocation" x="991" y="-202"/>
         </scene>
         <!--Profile-->
-        <scene sceneID="ZU6-dP-Lub">
+        <scene sceneID="NcG-B3-N0c">
             <objects>
-                <viewController id="HUU-bh-mJP" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="pGi-C2-kUi">
-                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="EqT-tm-YDW"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Profile" image="person.crop.circle.fill" catalog="system" id="uEj-im-FGd"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qJ4-Ja-0UA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="Profile" id="aSJ-m5-dFh" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="uQR-WD-bxl"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bcP-y8-aSd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1291" y="309"/>
+            <point key="canvasLocation" x="870" y="264"/>
         </scene>
         <!--Dashboard-waw-->
         <scene sceneID="dA0-6W-qTS">
@@ -75,7 +69,7 @@
             <objects>
                 <viewController id="k5J-WY-XOu" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qNf-u6-PJn">
-                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="Wvx-5y-t5i"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -120,7 +114,6 @@
     <resources>
         <image name="gearshape.fill" catalog="system" width="128" height="123"/>
         <image name="leaf.fill" catalog="system" width="128" height="109"/>
-        <image name="person.crop.circle.fill" catalog="system" width="128" height="123"/>
         <namedColor name="containerColor">
             <color red="0.69800001382827759" green="0.75700002908706665" blue="0.62400001287460327" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
