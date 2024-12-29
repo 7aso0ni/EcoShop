@@ -16,7 +16,7 @@ struct Review: Codable {
     let username: String
     
     static func fetchReviews(for productId: String) async throws -> [Review] {
-        print("🔍 Review - Fetching reviews for productId: \(productId)")
+        print("Review - Fetching reviews for productId: \(productId)")
         let db = Firestore.firestore()
         
         // Add retry logic
@@ -38,11 +38,11 @@ struct Review: Codable {
                         username: document["username"] as? String ?? "Anonymous"
                     )
                 }
-                print("✅ Review - Found \(reviews.count) reviews")
+                print("Review - Found \(reviews.count) reviews")
                 return reviews
             } catch {
                 attempts += 1
-                print("❌ Review - Attempt \(attempts) failed: \(error.localizedDescription)")
+                print("Review - Attempt \(attempts) failed: \(error.localizedDescription)")
                 if attempts == maxAttempts { throw error }
                 try await Task.sleep(nanoseconds: 1_000_000_000) // Wait 1 second before retry
             }
@@ -51,7 +51,7 @@ struct Review: Codable {
     }
     
     static func submitReview(content: String, productId: String, rating: Int, username: String) async throws -> Review {
-        print("📝 Review - Submitting new review")
+        print("Review - Submitting new review")
         let db = Firestore.firestore()
         
         // Add retry logic
@@ -81,11 +81,11 @@ struct Review: Codable {
                     username: username
                 )
                 
-                print("✅ Review - Successfully submitted review with id: \(review.id)")
+                print("Review - Successfully submitted review with id: \(review.id)")
                 return review
             } catch {
                 attempts += 1
-                print("❌ Review - Attempt \(attempts) failed: \(error.localizedDescription)")
+                print("Review - Attempt \(attempts) failed: \(error.localizedDescription)")
                 if attempts == maxAttempts { throw error }
                 try await Task.sleep(nanoseconds: 1_000_000_000) // Wait 1 second before retry
             }

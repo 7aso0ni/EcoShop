@@ -122,7 +122,7 @@ class AhmedViewController: UIViewController {
                     updateTopRatedProductsUI()
                 }
             } catch {
-                print("❌ Error fetching top rated products: \(error)")
+                print("Error fetching top rated products: \(error)")
             }
         }
     }
@@ -140,7 +140,7 @@ class AhmedViewController: UIViewController {
                 guard self != nil else { return }
                 
                 if let error = error {
-                    print("❌ Error loading image: \(error)")
+                    print("Error loading image: \(error)")
                     return
                 }
                 
@@ -157,31 +157,31 @@ class AhmedViewController: UIViewController {
         print("🔵 Image tapped")
         
         guard let index = gesture.view?.tag else {
-            print("❌ Could not get tag from tapped view")
+            print("Could not get tag from tapped view")
             return
         }
         
         print("📍 Tapped image index: \(index)")
         
         guard index < topRatedProducts.count else {
-            print("❌ Index out of bounds. Index: \(index), Products count: \(topRatedProducts.count)")
+            print("Index out of bounds. Index: \(index), Products count: \(topRatedProducts.count)")
             return
         }
         
         let product = topRatedProducts[index]
-        print("✅ Found product: \(product.name) with ID: \(product.id)")
+        print("Found product: \(product.name) with ID: \(product.id)")
         
         // Navigate to product details
         let storyboard = UIStoryboard(name: "Ahmed", bundle: nil)
         print("📱 Got storyboard reference")
         
         if let detailsVC = storyboard.instantiateViewController(withIdentifier: "AhmedViewController") as? AhmedViewController {
-            print("✅ Successfully created details view controller")
+            print("Successfully created details view controller")
             detailsVC.productId = product.id
             print("➡️ Attempting navigation push")
             navigationController?.pushViewController(detailsVC, animated: true)
         } else {
-            print("❌ Failed to create details view controller")
+            print("Failed to create details view controller")
         }
     }
     
@@ -189,19 +189,19 @@ class AhmedViewController: UIViewController {
         Task {
             do {
                 if let fetchedProduct = try await Product.fetchProduct(withId: productId) {
-                    print("✅ Successfully fetched product: \(fetchedProduct.name)")
+                    print("Successfully fetched product: \(fetchedProduct.name)")
                     self.product = fetchedProduct
                     await MainActor.run {
                         self.updateUI(with: fetchedProduct)
                     }
                 } else {
-                    print("❌ No product found with ID: \(productId)")
+                    print("No product found with ID: \(productId)")
                     await MainActor.run {
                         self.showAlert(title: "Error", message: "Product not found")
                     }
                 }
             } catch {
-                print("❌ Error fetching product: \(error)")
+                print("Error fetching product: \(error)")
                 await MainActor.run {
                     self.showAlert(title: "Error", message: "Failed to load product details. Please try again.")
                 }
@@ -226,13 +226,13 @@ class AhmedViewController: UIViewController {
             do {
                 print("🔄 Starting average rating calculation for product: \(product.name)")
                 let avgRating = try await product.averageRating
-                print("✅ Final average rating: \(avgRating)")
+                print("Final average rating: \(avgRating)")
                 await MainActor.run {
-                    print("🌟 Updating UI with rounded rating: \(Int(round(avgRating)))")
+                    print("Updating UI with rounded rating: \(Int(round(avgRating)))")
                     self.updateRatingStars(rating: Int(round(avgRating)))
                 }
             } catch {
-                print("❌ Error calculating average rating: \(error)")
+                print("Error calculating average rating: \(error)")
             }
         }
         
@@ -315,13 +315,13 @@ class AhmedViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print("🔄 AhmedViewController - Preparing for segue")
+        print("AhmedViewController - Preparing for segue")
         if let reviewVC = segue.destination as? ReviewViewController {
-            print("✅ AhmedViewController - Found ReviewViewController")
+            print("AhmedViewController - Found ReviewViewController")
             reviewVC.productId = self.productId
-            print("📦 AhmedViewController - Set productId: \(String(describing: self.productId))")
+            print("AhmedViewController - Set productId: \(String(describing: self.productId))")
         } else {
-            print("❌ AhmedViewController - Failed to cast to ReviewViewController")
+            print("AhmedViewController - Failed to cast to ReviewViewController")
         }
     }
 }
