@@ -170,4 +170,45 @@ struct Cart: Identifiable {
        
        return products
    }
+    
+    static func addProductToCart(userId: String, productId: String, quantity: Int) async throws {
+           let db = Firestore.firestore()
+           
+           // First check if user has a cart
+           let cartSnapshot = try await db.collection("carts")
+               .whereField("userId", isEqualTo: userId)
+               .getDocuments()
+           
+           if let existingCart = cartSnapshot.documents.first {
+               // Get existing product IDs
+               var productIds = existingCart.data()["productIds"] as? [[String: Any]] ?? []
+               
+               // Check if product already exists in cart
+               if let index = productIds.firstIndex(where: { ($0["id"] as? String) == productId }) {
+                   // Update quantity
+                   productIds[index]["quantity"] = quantity
+               } else {
+                   // Add new product
+                   productIds.append([
+                       "id": productId,
+                       "quantity": quantity
+                   ])
+               }
+               
+               // Update cart
+               try await db.collection("carts").document(existingCart.documentID).updateData([
+                   "productIds": productIds
+               ])
+               
+           } else {
+               // Create new cart for user
+               try await db.collection("carts").addDocument(data: [
+                   "userId": userId,
+                   "productIds": [[
+                       "id": productId,
+                       "quantity": quantity
+                   ]]
+               ])
+           }
+    }
 }

@@ -60,7 +60,7 @@ class StoreOrdersTableViewController: UITableViewController, OrderedViewCellDele
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! OrderedViewCell
         let order = orders[indexPath.row - 1]
         
-        cell.orderIdLabel.text = "StoreOrder ID: \(String(order.id.prefix(5).uppercased()))"
+        cell.orderIdLabel.text = "Order ID: \(String(order.id.prefix(5).uppercased()))"
         
         let formatter = DateFormatter()
         formatter.dateFormat = "dd/MM/yyyy"

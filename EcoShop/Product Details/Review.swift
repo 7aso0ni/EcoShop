@@ -30,7 +30,7 @@ struct Review: Codable {
                     .getDocuments()
                 
                 let reviews = snapshot.documents.compactMap { document in
-                    try? Review(
+                    Review(
                         id: document.documentID,
                         content: document["content"] as? String ?? "",
                         productId: document["productId"] as? String ?? "",

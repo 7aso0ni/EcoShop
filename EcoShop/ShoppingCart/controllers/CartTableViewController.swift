@@ -74,6 +74,7 @@ class CartTableViewController: UITableViewController, CartProductsTableViewDeleg
             checkoutVC.checkoutProducts = cartProductsTable.cartProducts
             
             navigationController?.pushViewController(checkoutVC, animated: true)
+            tableView.reloadData()
         }
     }
 

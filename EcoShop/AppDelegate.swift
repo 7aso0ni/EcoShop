@@ -23,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Enable Firestore debug logging during development
         let db = Firestore.firestore()
         let settings = db.settings
+        // Use the simpler persistence setting
         settings.isPersistenceEnabled = true
         db.settings = settings
         

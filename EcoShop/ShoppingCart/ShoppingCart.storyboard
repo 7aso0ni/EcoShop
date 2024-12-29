@@ -11,7 +11,7 @@
         <!--SHOPPING CART-->
         <scene sceneID="s6r-qh-BEb">
             <objects>
-                <tableViewController id="5va-YF-iDC" customClass="CartTableViewController" customModule="EcoShop" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="CartTableViewController" id="5va-YF-iDC" customClass="CartTableViewController" customModule="EcoShop" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" id="PuL-l2-hdG">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -185,7 +185,7 @@
                             <outlet property="delegate" destination="5va-YF-iDC" id="07V-ga-Izx"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="SHOPPING CART" id="fNv-tQ-9DZ"/>
+                    <navigationItem key="navigationItem" title="SHOPPING CART" largeTitleDisplayMode="always" id="fNv-tQ-9DZ"/>
                     <connections>
                         <outlet property="cartProductsTable" destination="yxK-z1-f7Q" id="eVC-GC-apn"/>
                         <outlet property="checkoutBtn" destination="p36-OX-Roh" id="IEx-MX-exj"/>
@@ -315,6 +315,7 @@
                                                 </view>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.8980392157" green="0.92156862750000001" blue="0.87450980389999999" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ShippingAddressIdentifier" rowHeight="338" id="r6J-k0-uxZ">
                                         <rect key="frame" x="0.0" y="370" width="393" height="338"/>
@@ -419,6 +420,7 @@
                                                 </view>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.8980392157" green="0.92156862750000001" blue="0.87450980389999999" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PaymentMethodsdentifier" rowHeight="332" id="zDQ-HL-hoe">
                                         <rect key="frame" x="0.0" y="708" width="393" height="332"/>
@@ -545,6 +547,7 @@
                                                 </view>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.8980392157" green="0.92156862750000001" blue="0.87450980389999999" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CardDetailsIdentifier" rowHeight="338" id="ncb-pt-Tcq">
                                         <rect key="frame" x="0.0" y="1040" width="393" height="338"/>
@@ -635,6 +638,7 @@
                                                 </view>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.8980392157" green="0.92156862750000001" blue="0.87450980389999999" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DeliveryNotesIdentifier" rowHeight="252" id="tCV-Yj-tff">
                                         <rect key="frame" x="0.0" y="1378" width="393" height="252"/>
@@ -689,6 +693,7 @@
                                                 </view>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.8980392157" green="0.92156862750000001" blue="0.87450980389999999" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AmountIdentifier" rowHeight="203" id="eu5-Dc-iKE">
                                         <rect key="frame" x="0.0" y="1630" width="393" height="203"/>
@@ -763,6 +768,7 @@
                                                 </view>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.8980392157" green="0.92156862750000001" blue="0.87450980389999999" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CheckoutIdentifier" rowHeight="53" id="cCt-Mq-Bbx">
                                         <rect key="frame" x="0.0" y="1833" width="393" height="53"/>
@@ -789,6 +795,7 @@
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.8980392157" green="0.92156862750000001" blue="0.87450980389999999" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
