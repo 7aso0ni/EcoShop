@@ -74,38 +74,29 @@ class LoginViewController: UIViewController {
     }
 
     func handleLoginSuccess(for userType: String) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        var viewController: UIViewController?
+        
         switch userType {
         case "user":
-            // Navigate to user dashboard
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            if let mainVC = storyboard.instantiateViewController(withIdentifier: "MainTabBar") as?
-                MainUIViewController {
-                    // If there's no navigation controller, present full screen
-                mainVC.modalPresentationStyle = .fullScreen
-                present(mainVC, animated: true, completion: nil)
-            }
+            // Perform segue to user tab bar controller
+            viewController = storyboard.instantiateViewController(withIdentifier: "userTabBar") as? UITabBarController
         case "owner":
-            // Navigate to owner dashboard
-            let storyboard = UIStoryboard(name: "Owner{storyboary}", bundle: nil)
-            if let mainVC = storyboard.instantiateViewController(withIdentifier: "OwnerTabBar") as?
-                MainUIViewController {
-                // If there's no navigation controller, present full screen
-                mainVC.modalPresentationStyle = .fullScreen
-                present(mainVC, animated: true, completion: nil)
-            }
+            // Perform segue to owner tab bar controller
+            performSegue(withIdentifier: "toOwnerTabBar", sender: nil)
         case "admin":
-            // Navigate to admin dashboard
-                let storyboard = UIStoryboard(name: "admin{storyboary}", bundle: nil)
-                if let mainVC = storyboard.instantiateViewController(withIdentifier: "adminTabBar") as?
-                    MainUIViewController {
-                    // If there's no navigation controller, present full screen
-                    mainVC.modalPresentationStyle = .fullScreen
-                    present(mainVC, animated: true, completion: nil)
-                }
+            // Perform segue to admin tab bar controller
+            performSegue(withIdentifier: "toAdminTabBar", sender: nil)
         default:
             showAlert(title: "Error", message: "Invalid user type")
         }
+        
+        if let viewController = viewController {
+            viewController.modalPresentationStyle = .fullScreen
+            present(viewController, animated: true, completion: nil)
+        }
     }
+
 
     func showAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -119,7 +110,11 @@ class LoginViewController: UIViewController {
                 loginVC.modalPresentationStyle = .fullScreen
             }
         }
-    }    
+        
+        if segue.identifier == "userTabBar" {
+            print("Navigating to User Tab Bar Controller")
+        }
+    }
 
     
 }
