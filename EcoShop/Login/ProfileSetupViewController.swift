@@ -71,18 +71,41 @@ class ProfileSetupViewController: UIViewController, UIImagePickerControllerDeleg
             }
             
             self?.showAlert(title: "Success", message: "Profile updated successfully") {
-                // Navigate to user dashboard
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                if let mainVC = storyboard.instantiateViewController(withIdentifier: "MainTabBar") as?
-                    MainUIViewController {
-                        // If there's no navigation controller, present full screen
-                    mainVC.modalPresentationStyle = .fullScreen
-                    self?.present(mainVC, animated: true, completion: nil)
-                }
+                self?.navigateToDashboard(for: "user")
             }
         }
     }
-    
+
+    func navigateToDashboard(for userType: String) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        var viewController: UIViewController?
+
+        switch userType {
+        case "user":
+            // Navigate to user tab bar controller
+            viewController = storyboard.instantiateViewController(withIdentifier: "userTabBar") as? UITabBarController
+        case "owner":
+            // Navigate to owner tab bar controller
+            viewController = storyboard.instantiateViewController(withIdentifier: "ownerTabBar") as? UITabBarController
+        case "admin":
+            // Navigate to admin tab bar controller
+            viewController = storyboard.instantiateViewController(withIdentifier: "adminTabBar") as? UITabBarController
+        default:
+            showAlert(title: "Error", message: "Invalid user type")
+            return
+        }
+
+        if let viewController = viewController {
+            viewController.modalPresentationStyle = .fullScreen
+            present(viewController, animated: true, completion: nil)
+        }
+    }
+
+    @IBAction func laterBtnClicked(_ sender: Any) {
+        // Navigate directly to the user dashboard
+        navigateToDashboard(for: "user")
+    }
+
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         DispatchQueue.main.async {
             if let pickedImage = info[.originalImage] as? UIImage {
@@ -103,14 +126,5 @@ class ProfileSetupViewController: UIViewController, UIImagePickerControllerDeleg
             completion?()
         }))
         present(alert, animated: true, completion: nil)
-    }
-    @IBAction func laterBtnClicked(_ sender: Any) {
-        // Navigate to user dashboard
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        if let mainVC = storyboard.instantiateViewController(withIdentifier: "MainTabBar") as?
-            MainUIViewController {
-            mainVC.modalPresentationStyle = .fullScreen
-            present(mainVC, animated: true, completion: nil)
-        }
     }
 }
