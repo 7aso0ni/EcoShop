@@ -6,18 +6,49 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        guard let windowScene = scene as? UIWindowScene else { return }
+
+        // Initialize the UIWindow with the windowScene
+        let window = UIWindow(windowScene: windowScene)
+        self.window = window
+
+        // Load the Main storyboard
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+
+        // Check if the user is logged in
+        let isLoggedIn = checkUserLoggedIn()
+
+        if isLoggedIn {
+            // Load the TabBarController for logged-in users
+            guard let tabBarController = storyboard.instantiateViewController(withIdentifier: "userTabBar") as? UITabBarController else {
+                print("Error: Unable to instantiate MainTabBarController")
+                return
+            }
+            window.rootViewController = tabBarController
+        } else {
+            // Load the LoginViewController for new users
+            guard let loginViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController else {
+                print("Error: Unable to instantiate LoginViewController")
+                return
+            }
+            window.rootViewController = loginViewController
+        }
+
+        // Make the window key and visible
+        window.makeKeyAndVisible()
     }
+
+    private func checkUserLoggedIn() -> Bool {
+        return Auth.auth().currentUser != nil
+    }
+}
 
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
@@ -48,5 +79,5 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
 
-}
+
 

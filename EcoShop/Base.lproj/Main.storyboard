@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Fu9-K1-yAI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
@@ -26,6 +26,7 @@
                         <segue destination="k5J-WY-XOu" kind="relationship" relationship="viewControllers" id="Xda-tD-FZ2"/>
                         <segue destination="Hkx-hk-0hN" kind="relationship" relationship="viewControllers" id="c1M-Sz-NGa"/>
                         <segue destination="kDa-ai-vlM" kind="relationship" relationship="viewControllers" id="Sad-pY-GYh"/>
+                        <segue destination="CC0-Ls-UaX" kind="show" id="cDa-yN-dcp"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eHt-2V-nu2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -81,6 +82,16 @@
             </objects>
             <point key="canvasLocation" x="-518" y="652"/>
         </scene>
+        <!--Hasan-->
+        <scene sceneID="IqZ-6P-eA5">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="Hasan" storyboardName="Hasan" id="CC0-Ls-UaX" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="GFa-en-kUZ"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pof-Lh-jIC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-571" y="-368"/>
+        </scene>
         <!--OrderManagement-->
         <scene sceneID="fyk-Rg-N1B">
             <objects>
@@ -111,7 +122,7 @@
             </objects>
             <point key="canvasLocation" x="-1249" y="178"/>
         </scene>
-        <!--Login View Controller-->
+        <!--Item-->
         <scene sceneID="0tU-Sv-lzR">
             <objects>
                 <viewController storyboardIdentifier="LoginViewController" id="Fu9-K1-yAI" customClass="LoginViewController" customModule="EcoShop" customModuleProvider="target" sceneMemberID="viewController">
@@ -180,6 +191,7 @@
                             <constraint firstItem="swX-Fj-CrB" firstAttribute="trailing" secondItem="Vs4-vv-z1R" secondAttribute="trailing" id="u9j-LQ-5CZ"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="cPS-VI-gcd"/>
                     <navigationItem key="navigationItem" id="Q1k-3L-LJ4"/>
                     <connections>
                         <outlet property="emailField" destination="swX-Fj-CrB" id="zlS-Cr-WHn"/>
@@ -298,7 +310,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Profile Setup" textAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhi-w2-JUD">
-                                <rect key="frame" x="112.33333333333333" y="20" width="168.66666666666669" height="33.666666666666657"/>
+                                <rect key="frame" x="112.33333333333333" y="19.999999999999996" width="168.66666666666669" height="33.666666666666657"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                 <color key="textColor" red="0.0" green="0.33000000000000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </label>
@@ -383,6 +395,9 @@
             <point key="canvasLocation" x="-3000" y="928"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="vRk-MK-JkX"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="gearshape.fill" catalog="system" width="128" height="123"/>
         <image name="leaf.fill" catalog="system" width="128" height="109"/>

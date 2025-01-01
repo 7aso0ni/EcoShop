@@ -74,38 +74,39 @@ class LoginViewController: UIViewController {
     }
 
     func handleLoginSuccess(for userType: String) {
-        var viewController: UIViewController?
+        guard let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate else {
+            showAlert(title: "Error", message: "Unable to switch scenes")
+            return
+        }
+
+        let storyboard: UIStoryboard
+        var tabBarController: UITabBarController?
 
         switch userType {
         case "user":
-            // Navigate to user tab bar controller
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            viewController = storyboard.instantiateViewController(withIdentifier: "userTabBar") as? UITabBarController
-            
+            storyboard = UIStoryboard(name: "Main", bundle: nil)
+            tabBarController = storyboard.instantiateViewController(withIdentifier: "userTabBar") as? UITabBarController
+
         case "owner":
-            // Navigate to owner tab bar controller
-            let storyboard = UIStoryboard(name: "StoreOnwerDashboardStoryboard", bundle: nil)
-            viewController = storyboard.instantiateViewController(withIdentifier: "StoreOwnerTabBarController") as? UITabBarController
-            
+            storyboard = UIStoryboard(name: "StoreOnwerDashboardStoryboard", bundle: nil)
+            tabBarController = storyboard.instantiateViewController(withIdentifier: "StoreOwnerTabBarController") as? UITabBarController
+
         case "admin":
-            // Navigate to admin tab bar controller
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            viewController = storyboard.instantiateViewController(withIdentifier: "adminTabBar") as? UITabBarController
-            
+            storyboard = UIStoryboard(name: "Main", bundle: nil)
+            tabBarController = storyboard.instantiateViewController(withIdentifier: "adminTabBar") as? UITabBarController
+
         default:
             showAlert(title: "Error", message: "Invalid user type")
             return
         }
-        
-        // Present the view controller if it exists
-        if let viewController = viewController {
-            viewController.modalPresentationStyle = .fullScreen
-            present(viewController, animated: true, completion: nil)
+
+        if let tabBarController = tabBarController {
+            sceneDelegate.window?.rootViewController = tabBarController
+            sceneDelegate.window?.makeKeyAndVisible()
         } else {
             showAlert(title: "Error", message: "Failed to load the \(userType) dashboard")
         }
     }
-
 
     func showAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
