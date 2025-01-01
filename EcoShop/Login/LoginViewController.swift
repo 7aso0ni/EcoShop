@@ -74,26 +74,35 @@ class LoginViewController: UIViewController {
     }
 
     func handleLoginSuccess(for userType: String) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
         var viewController: UIViewController?
-        
+
         switch userType {
         case "user":
-            // Perform segue to user tab bar controller
+            // Navigate to user tab bar controller
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
             viewController = storyboard.instantiateViewController(withIdentifier: "userTabBar") as? UITabBarController
+            
         case "owner":
-            // Perform segue to owner tab bar controller
-            performSegue(withIdentifier: "toOwnerTabBar", sender: nil)
+            // Navigate to owner tab bar controller
+            let storyboard = UIStoryboard(name: "StoreOnwerDashboardStoryboard", bundle: nil)
+            viewController = storyboard.instantiateViewController(withIdentifier: "StoreOwnerTabBarController") as? UITabBarController
+            
         case "admin":
-            // Perform segue to admin tab bar controller
-            performSegue(withIdentifier: "toAdminTabBar", sender: nil)
+            // Navigate to admin tab bar controller
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            viewController = storyboard.instantiateViewController(withIdentifier: "adminTabBar") as? UITabBarController
+            
         default:
             showAlert(title: "Error", message: "Invalid user type")
+            return
         }
         
+        // Present the view controller if it exists
         if let viewController = viewController {
             viewController.modalPresentationStyle = .fullScreen
             present(viewController, animated: true, completion: nil)
+        } else {
+            showAlert(title: "Error", message: "Failed to load the \(userType) dashboard")
         }
     }
 

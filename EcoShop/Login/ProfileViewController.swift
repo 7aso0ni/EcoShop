@@ -103,16 +103,26 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
     
     @objc private func logoutTapped() {
-        // Handle logout logic here
+        let alert = UIAlertController(
+            title: "Logout",
+            message: "Are you sure you want to logout?",
+            preferredStyle: .alert
+        )
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Logout", style: .destructive) { _ in
+            self.performLogout()
+        })
+        present(alert, animated: true)
+    }
+
+    private func performLogout() {
         do {
             try Auth.auth().signOut()
-            // Navigate to login screen or handle logout UI
             let storyboard = UIStoryboard(name: "Hasan", bundle: nil)
-                  if let loginVC = storyboard.instantiateViewController(withIdentifier: "OnboardingViewController") as? OnboardingViewController {
-                      loginVC.modalPresentationStyle = .fullScreen
-                      present(loginVC, animated: true, completion: nil)
-                  }
-
+            if let loginVC = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController {
+                loginVC.modalPresentationStyle = .fullScreen
+                present(loginVC, animated: true, completion: nil)
+            }
         } catch let signOutError as NSError {
             print("Error signing out: %@", signOutError)
         }

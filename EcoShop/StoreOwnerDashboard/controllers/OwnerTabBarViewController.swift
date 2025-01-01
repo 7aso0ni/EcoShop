@@ -1,13 +1,13 @@
 //
-//  MainUIViewController.swift
+//  OwnerTabBarViewController.swift
 //  EcoShop
 //
-//  Created by Hasan Khesro on 27/12/2024.
+//  Created by Hasan Khesro on 01/01/2025.
 //
 
 import UIKit
 
-class MainUIViewController: UITabBarController {
+class OwnerTabBarViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
