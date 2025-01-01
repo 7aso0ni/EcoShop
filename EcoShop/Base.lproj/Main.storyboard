@@ -192,14 +192,6 @@
             </objects>
             <point key="canvasLocation" x="-1891" y="-202"/>
         </scene>
-        <!--Storyboard Reference-->
-        <scene sceneID="SQR-eT-jha">
-            <objects>
-                <viewControllerPlaceholder id="NXm-Dp-xJ6" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wpK-AC-jF9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-3707" y="363"/>
-        </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="fN2-lp-x7t">
             <objects>
@@ -233,7 +225,7 @@
                                 <state key="normal" title="Sign Up"/>
                                 <connections>
                                     <action selector="signUpButtonTapped:" destination="whw-mU-q2W" eventType="touchUpInside" id="qX0-Uo-1o2"/>
-                                    <segue destination="tfi-88-jfF" kind="show" id="qOm-a3-pFq"/>
+                                    <segue destination="tfi-88-jfF" kind="show" identifier="toProfileSetup" id="qOm-a3-pFq"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Already have an account?" textAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IJ1-QL-Lny">
@@ -245,7 +237,7 @@
                                 <color key="backgroundColor" systemColor="systemGrayColor"/>
                                 <state key="normal" title="Log In"/>
                                 <connections>
-                                    <segue destination="Fu9-K1-yAI" kind="show" id="sls-kQ-OhH"/>
+                                    <segue destination="Fu9-K1-yAI" kind="show" identifier="toLogin" id="sls-kQ-OhH"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xiW-qq-yLw">
