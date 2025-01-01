@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -137,6 +138,15 @@
                                     <segue destination="0kH-tH-IIR" kind="show" identifier="toLogin" id="GTH-9c-pVu"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yfj-6M-PDR">
+                                <rect key="frame" x="140" y="486" width="113" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Use Google"/>
+                                <connections>
+                                    <action selector="googleButtonTapped:" destination="xFU-cH-9hk" eventType="touchUpInside" id="Khg-zT-4s2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ztd-aN-NaM"/>
                         <color key="backgroundColor" name="background"/>
@@ -171,6 +181,7 @@
                         <outlet property="nameField" destination="nameField" id="G4q-NI-RCS"/>
                         <outlet property="passwordField" destination="passwordField" id="z8B-j3-lKI"/>
                         <outlet property="signUpButton" destination="signUpButton" id="KEH-hu-sNd"/>
+                        <outlet property="useGoogle" destination="Yfj-6M-PDR" id="hLv-vH-reo"/>
                         <segue destination="r1W-Xt-VYv" kind="show" identifier="toProfileSetup" id="fMz-Fq-oXM"/>
                     </connections>
                 </viewController>
