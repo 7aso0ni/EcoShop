@@ -137,6 +137,15 @@
                                     <segue destination="0kH-tH-IIR" kind="show" identifier="toLogin" id="GTH-9c-pVu"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Uy-WI-WeF">
+                                <rect key="frame" x="109" y="493" width="175" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Sign up with google"/>
+                                <connections>
+                                    <action selector="googleButtonTapped:" destination="xFU-cH-9hk" eventType="touchUpInside" id="YrS-9O-XXK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ztd-aN-NaM"/>
                         <color key="backgroundColor" name="background"/>
@@ -167,6 +176,7 @@
                     <navigationItem key="navigationItem" id="eD5-F8-mW4"/>
                     <connections>
                         <outlet property="emailField" destination="emailField" id="qXO-Zc-Rdt"/>
+                        <outlet property="googleBtn" destination="3Uy-WI-WeF" id="T9u-Fm-5pN"/>
                         <outlet property="loginButton" destination="loginButton" id="xng-pn-pY6"/>
                         <outlet property="nameField" destination="nameField" id="G4q-NI-RCS"/>
                         <outlet property="passwordField" destination="passwordField" id="z8B-j3-lKI"/>
@@ -273,7 +283,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="f9O-r2-O8K"/>
+        <segue reference="GTH-9c-pVu"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="person.crop.circle" catalog="system" width="128" height="123"/>
@@ -281,10 +291,10 @@
             <color red="0.89800000190734863" green="0.92199999094009399" blue="0.875" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <systemColor name="systemGrayColor">
-            <color red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGreenColor">
-            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

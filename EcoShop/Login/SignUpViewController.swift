@@ -1,6 +1,8 @@
 import UIKit
 import FirebaseAuth
 import FirebaseFirestore
+import FirebaseCore
+import GoogleSignIn
 
 class SignUpViewController: UIViewController {
 
@@ -10,6 +12,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var loginButton: UIButton!
 
+    @IBOutlet weak var googleBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
        // navigationController?.setNavigationBarHidden(true, animated: false)
@@ -90,4 +93,62 @@ class SignUpViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
-}
+    @IBAction func googleButtonTapped(_ sender: UIButton) {
+            //for validation and error handling
+            print("Google button tapped")
+            
+            if let filePath = Bundle.main.path(forResource: "GoogleService-Info", ofType: "plist") {
+                   print("Found GoogleService-Info.plist at: \(filePath)")
+                   if let clientID = FirebaseApp.app()?.options.clientID {
+                       print("Client ID found: \(clientID)")
+                   }
+               } else {
+                   print("GoogleService-Info.plist not found in bundle")
+               }
+            guard let clientID = FirebaseApp.app()?.options.clientID else {
+                print("No client ID found")
+                return }
+            
+         
+            
+            let config = GIDConfiguration(clientID: clientID)
+            print("Attempting Google sign in...")
+            
+            GIDSignIn.sharedInstance.signIn(withPresenting: self) { [weak self] result, error in
+                guard let self = self else { return }
+                print("Sign in callback received")
+                if let error = error {
+                    self.showAlert(title: "Error", message: error.localizedDescription)
+                    return
+                }
+                
+                guard let user = result?.user,
+                      let idToken = user.idToken?.tokenString else {
+                    self.showAlert(title: "Error", message: "Failed to get user data")
+                    return
+                }
+                
+                let credential = GoogleAuthProvider.credential(
+                    withIDToken: idToken,
+                    accessToken: user.accessToken.tokenString
+                )
+                
+                // Sign in with Firebase
+                Auth.auth().signIn(with: credential) { [weak self] result, error in
+                    if let error = error {
+                        self?.showAlert(title: "Error", message: error.localizedDescription)
+                        return
+                    }
+                    
+                    guard let firebaseUser = result?.user else { return }
+                    
+                    self?.createUserProfile(
+                        for: firebaseUser,
+                        withName: user.profile?.name ?? "",
+                        email: user.profile?.email ?? ""
+                    )
+                }
+            }
+        }
+        
+    }

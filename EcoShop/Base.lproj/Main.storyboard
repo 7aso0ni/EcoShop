@@ -192,6 +192,14 @@
             </objects>
             <point key="canvasLocation" x="-1891" y="-202"/>
         </scene>
+        <!--Storyboard Reference-->
+        <scene sceneID="SQR-eT-jha">
+            <objects>
+                <viewControllerPlaceholder id="NXm-Dp-xJ6" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wpK-AC-jF9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3707" y="363"/>
+        </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="fN2-lp-x7t">
             <objects>
@@ -240,6 +248,15 @@
                                     <segue destination="Fu9-K1-yAI" kind="show" id="sls-kQ-OhH"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xiW-qq-yLw">
+                                <rect key="frame" x="128" y="489" width="175" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Sign up with google"/>
+                                <connections>
+                                    <action selector="googleButtonTapped:" destination="whw-mU-q2W" eventType="touchUpInside" id="nsJ-EQ-296"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9li-Om-98B"/>
                         <color key="backgroundColor" name="background"/>
@@ -278,7 +295,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bml-gG-JvN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3117" y="113"/>
+            <point key="canvasLocation" x="-3103" y="160"/>
         </scene>
         <!--Profile Setup View Controller-->
         <scene sceneID="A15-xg-vaA">
